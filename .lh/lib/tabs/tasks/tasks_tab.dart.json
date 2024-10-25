@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 89,
             "patches": [
                 {
                     "date": 1729867183994,
@@ -16,6 +16,354 @@
                 {
                     "date": 1729867206033,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,9 @@\n   const TasksTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return const Center(\r\n+      child: const Text('Tasks'),\r\n+    );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729872478154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,11 @@\n   const TasksTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Center(\r\n-      child: const Text('Tasks'),\r\n+    return const Column(\r\n+      children: [\r\n+        \r\n+      ],\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729872488262,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Column(\r\n       children: [\r\n-        \r\n+        Container()\r\n       ],\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729872852353,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,14 @@\n import 'package:flutter/material.dart';\r\n \r\n class TasksTab extends StatelessWidget {\r\n   const TasksTab({super.key});\r\n-\r\n+d\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Column(\r\n+    return  Column(\r\n       children: [\r\n-        Container()\r\n+        Container(),\r\n       ],\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729872860466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class TasksTab extends StatelessWidget {\r\n   const TasksTab({super.key});\r\n-d\r\n+double screenHeight = Med\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return  Column(\r\n       children: [\r\n"
+                },
+                {
+                    "date": 1729872867587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class TasksTab extends StatelessWidget {\r\n   const TasksTab({super.key});\r\n-double screenHeight = Med\r\n+double screenHeight = MediaQuery.sizeOf(context)\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return  Column(\r\n       children: [\r\n"
+                },
+                {
+                    "date": 1729872878063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,17 @@\n import 'package:flutter/material.dart';\r\n \r\n-class TasksTab extends StatelessWidget {\r\n+class TasksTab extends StatefulWidget {\r\n   const TasksTab({super.key});\r\n-double screenHeight = MediaQuery.sizeOf(context)\r\n+\r\n   @override\r\n+  State<TasksTab> createState() => _TasksTabState();\r\n+}\r\n+\r\n+class _TasksTabState extends State<TasksTab> {\r\n+double screenHeight = MediaQuery.sizeOf(context).height;\r\n+\r\n+  @override\r\n   Widget build(BuildContext context) {\r\n     return  Column(\r\n       children: [\r\n         Container(),\r\n"
+                },
+                {
+                    "date": 1729872891123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n   State<TasksTab> createState() => _TasksTabState();\r\n }\r\n \r\n class _TasksTabState extends State<TasksTab> {\r\n-double screenHeight = MediaQuery.sizeOf(context).height;\r\n \r\n+\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return  Column(\r\n       children: [\r\n"
+                },
+                {
+                    "date": 1729872900880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,11 +11,14 @@\n \r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n+    double screenHeight = MediaQuery.sizeOf(context).height;\r\n     return  Column(\r\n       children: [\r\n-        Container(),\r\n+        Container(\r\n+          height: screenHeight ,\r\n+        ),\r\n       ],\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729872906306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,10 @@\n     double screenHeight = MediaQuery.sizeOf(context).height;\r\n     return  Column(\r\n       children: [\r\n         Container(\r\n-          height: screenHeight ,\r\n+          height: screenHeight * 0.15,\r\n+          c\r\n         ),\r\n       ],\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729872912410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     return  Column(\r\n       children: [\r\n         Container(\r\n           height: screenHeight * 0.15,\r\n-          c\r\n+          color: app,\r\n         ),\r\n       ],\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729872920325,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     return  Column(\r\n       children: [\r\n         Container(\r\n           height: screenHeight * 0.15,\r\n-          color: app,\r\n+          color: App,\r\n         ),\r\n       ],\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729872926096,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     return  Column(\r\n       children: [\r\n         Container(\r\n           height: screenHeight * 0.15,\r\n-          color: App,\r\n+          color: AppTheme.primary,\r\n         ),\r\n       ],\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729873052587,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo/app_theme.dart';\r\n \r\n class TasksTab extends StatefulWidget {\r\n   const TasksTab({super.key});\r\n \r\n@@ -7,19 +8,18 @@\n   State<TasksTab> createState() => _TasksTabState();\r\n }\r\n \r\n class _TasksTabState extends State<TasksTab> {\r\n-\r\n-\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     double screenHeight = MediaQuery.sizeOf(context).height;\r\n-    return  Column(\r\n+    return Column(\r\n       children: [\r\n         Container(\r\n           height: screenHeight * 0.15,\r\n           color: AppTheme.primary,\r\n+          tex\r\n         ),\r\n       ],\r\n     );\r\n\\ No newline at end of file\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729873058508,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n       children: [\r\n         Container(\r\n           height: screenHeight * 0.15,\r\n           color: AppTheme.primary,\r\n-          tex\r\n         ),\r\n+        Text(data)\r\n       ],\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729873095171,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n         Container(\r\n           height: screenHeight * 0.15,\r\n           color: AppTheme.primary,\r\n         ),\r\n-        Text(data)\r\n+        const Text('ToDo')\r\n       ],\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729873100313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,11 @@\n         Container(\r\n           height: screenHeight * 0.15,\r\n           color: AppTheme.primary,\r\n         ),\r\n-        const Text('ToDo')\r\n+        const Text(\r\n+          'ToDo List',\r\n+        ),\r\n       ],\r\n\\ No newline at end of file\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729873214123,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n           color: AppTheme.primary,\r\n         ),\r\n         const Text(\r\n           'ToDo List',\r\n+          style: ,\r\n         ),\r\n       ],\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729873223038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,28 @@\n+import 'package:flutter/material.dart';\r\n+import 'package:todo/app_theme.dart';\r\n+\r\n+class TasksTab extends StatefulWidget {\r\n+  const TasksTab({super.key});\r\n+\r\n+  @override\r\n+  State<TasksTab> createState() => _TasksTabState();\r\n+}\r\n+\r\n+class _TasksTabState extends State<TasksTab> {\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    double screenHeight = MediaQuery.sizeOf(context).height;\r\n+    return Column(\r\n+      children: [\r\n+        Container(\r\n+          height: screenHeight * 0.15,\r\n+          color: AppTheme.primary,\r\n+        ),\r\n+        const Text(\r\n+          'ToDo List',\r\n+          style: Theme.of(context).textTheme.tit,\r\n+        ),\r\n+      ],\r\n+    );\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1729873233061,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,38 +19,10 @@\n           color: AppTheme.primary,\r\n         ),\r\n         const Text(\r\n           'ToDo List',\r\n-          style: Theme.of(context).textTheme.tit,\r\n+          style: Theme.of(context).textTheme.titleM,\r\n         ),\r\n       ],\r\n     );\r\n   }\r\n }\r\n-import 'package:flutter/material.dart';\r\n-import 'package:todo/app_theme.dart';\r\n-\r\n-class TasksTab extends StatefulWidget {\r\n-  const TasksTab({super.key});\r\n-\r\n-  @override\r\n-  State<TasksTab> createState() => _TasksTabState();\r\n-}\r\n-\r\n-class _TasksTabState extends State<TasksTab> {\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    double screenHeight = MediaQuery.sizeOf(context).height;\r\n-    return Column(\r\n-      children: [\r\n-        Container(\r\n-          height: screenHeight * 0.15,\r\n-          color: AppTheme.primary,\r\n-        ),\r\n-        const Text(\r\n-          'ToDo List',\r\n-          style: ,\r\n-        ),\r\n-      ],\r\n-    );\r\n-  }\r\n\\ No newline at end of file\n-}\n"
+                },
+                {
+                    "date": 1729873239358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n           color: AppTheme.primary,\r\n         ),\r\n         const Text(\r\n           'ToDo List',\r\n-          style: Theme.of(context).textTheme.titleM,\r\n+          style: Theme.of(context).textTheme.titleMedium,\r\n         ),\r\n       ],\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729873247484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n           color: AppTheme.primary,\r\n         ),\r\n         const Text(\r\n           'ToDo List',\r\n-          style: Theme.of(context).textTheme.titleMedium,\r\n+          style: Theme.of(context).textTheme.titleMedium?.copy,\r\n         ),\r\n       ],\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729873254225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n           color: AppTheme.primary,\r\n         ),\r\n         const Text(\r\n           'ToDo List',\r\n-          style: Theme.of(context).textTheme.titleMedium?.copy,\r\n+          style: Theme.of(context).textTheme.titleMedium?.copyWith(color: appth),\r\n         ),\r\n       ],\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729873262322,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,28 @@\n+import 'package:flutter/material.dart';\r\n+import 'package:todo/app_theme.dart';\r\n+\r\n+class TasksTab extends StatefulWidget {\r\n+  const TasksTab({super.key});\r\n+\r\n+  @override\r\n+  State<TasksTab> createState() => _TasksTabState();\r\n+}\r\n+\r\n+class _TasksTabState extends State<TasksTab> {\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    double screenHeight = MediaQuery.sizeOf(context).height;\r\n+    return Column(\r\n+      children: [\r\n+        Container(\r\n+          height: screenHeight * 0.15,\r\n+          color: AppTheme.primary,\r\n+        ),\r\n+        const Text(\r\n+          'ToDo List',\r\n+          style: Theme.of(context).textTheme.titleMedium?.copyWith(color: AppTheme.white),\r\n+        ),\r\n+      ],\r\n+    );\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1729873291930,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,46 +11,11 @@\n class _TasksTabState extends State<TasksTab> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     double screenHeight = MediaQuery.sizeOf(context).height;\r\n-    return Column(\r\n+    return const Column(\r\n       children: [\r\n-        Container(\r\n-          height: screenHeight * 0.15,\r\n-          color: AppTheme.primary,\r\n-        ),\r\n-        const Text(\r\n-          'ToDo List',\r\n-          style: Theme.of(context).textTheme.titleMedium?.copyWith(color: AppTheme.white),\r\n-        ),\r\n+       \r\n       ],\r\n     );\r\n   }\r\n }\r\n-import 'package:flutter/material.dart';\r\n-import 'package:todo/app_theme.dart';\r\n-\r\n-class TasksTab extends StatefulWidget {\r\n-  const TasksTab({super.key});\r\n-\r\n-  @override\r\n-  State<TasksTab> createState() => _TasksTabState();\r\n-}\r\n-\r\n-class _TasksTabState extends State<TasksTab> {\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    double screenHeight = MediaQuery.sizeOf(context).height;\r\n-    return Column(\r\n-      children: [\r\n-        Container(\r\n-          height: screenHeight * 0.15,\r\n-          color: AppTheme.primary,\r\n-        ),\r\n-        const Text(\r\n-          'ToDo List',\r\n-          style: Theme.of(context).textTheme.titleMedium?.copyWith(color: appth),\r\n-        ),\r\n-      ],\r\n-    );\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1729873298051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,22 @@\n   Widget build(BuildContext context) {\r\n     double screenHeight = MediaQuery.sizeOf(context).height;\r\n     return const Column(\r\n       children: [\r\n-       \r\n+       Stack(\r\n+        children: [\r\n+           Container(\r\n+          height: screenHeight * 0.15,\r\n+          color: AppTheme.primary,\r\n+        ),\r\n+        Text(\r\n+          'ToDo List',\r\n+          style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n+                color: AppTheme.white,\r\n+              ),\r\n+        ),\r\n+        ],\r\n+       )\r\n       ],\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729873372568,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,24 +11,27 @@\n class _TasksTabState extends State<TasksTab> {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     double screenHeight = MediaQuery.sizeOf(context).height;\r\n-    return const Column(\r\n+    return Column(\r\n       children: [\r\n-       Stack(\r\n-        children: [\r\n-           Container(\r\n-          height: screenHeight * 0.15,\r\n-          color: AppTheme.primary,\r\n-        ),\r\n-        Text(\r\n-          'ToDo List',\r\n-          style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n-                color: AppTheme.white,\r\n+        Stack(\r\n+          children: [\r\n+            Container(\r\n+              height: screenHeight * 0.15,\r\n+              color: AppTheme.primary,\r\n+            ),\r\n+            Positioned(\r\n+              top: 45,\r\n+              child: Text(\r\n+                'ToDo List',\r\n+                style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n+                      color: AppTheme.white,\r\n+                    ),\r\n               ),\r\n-        ),\r\n-        ],\r\n-       )\r\n+            ),\r\n+          ],\r\n+        )\r\n       ],\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729873381588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n               color: AppTheme.primary,\r\n             ),\r\n             Positioned(\r\n               top: 45,\r\n+              left: 20,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873433182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,8 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             Positioned(\r\n-              top: 45,\r\n-              left: 20,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873440233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             Container(\r\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n-            Positioned(\r\n+            SafeArea(\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873452987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n+              \r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873458418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n-              \r\n+              top: 45,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873464607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n-              top: 45,\r\n+              top: screenHeight,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873469898,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n-              top: screenHeight,\r\n+              top: 45,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873477862,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n-              top: 45,\r\n+              top: false,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873483634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n-              top: false,\r\n+              top: true,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873491718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n               top: true,\r\n+              left: false,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873498059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n               top: true,\r\n-              left: false,\r\n+              left: true,\r\n+              \r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873505337,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             ),\r\n             SafeArea(\r\n               top: true,\r\n               left: true,\r\n-              \r\n+              right: true,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873522944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n-              top: true,\r\n+              top: false,\r\n               left: true,\r\n               right: true,\r\n               child: Text(\r\n                 'ToDo List',\r\n"
+                },
+                {
+                    "date": 1729873530678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n             SafeArea(\r\n               top: false,\r\n               left: true,\r\n               right: true,\r\n+              bottom: true,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873538178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,12 +20,12 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n-              top: false,\r\n+              top: true,\r\n               left: true,\r\n               right: true,\r\n-              bottom: true,\r\n+              bottom: false,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873547406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,12 +20,8 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             SafeArea(\r\n-              top: true,\r\n-              left: true,\r\n-              right: true,\r\n-              bottom: false,\r\n               child: Text(\r\n                 'ToDo List',\r\n                 style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n                       color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729873565155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,14 +19,16 @@\n             Container(\r\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n-            SafeArea(\r\n-              child: Text(\r\n-                'ToDo List',\r\n-                style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n-                      color: AppTheme.white,\r\n-                    ),\r\n+            widget(\r\n+              child: SafeArea(\r\n+                child: Text(\r\n+                  'ToDo List',\r\n+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n+                        color: AppTheme.white,\r\n+                      ),\r\n+                ),\r\n               ),\r\n             ),\r\n           ],\r\n         )\r\n"
+                },
+                {
+                    "date": 1729873570878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             Container(\r\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n-            widget(\r\n+            Post(\r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n                   style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729873586445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,11 @@\n             Container(\r\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n-            Post(\r\n+            Positioned(\r\n+              top: 45,\r\n+              left: 20,\r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n                   style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729873625968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,10 +20,10 @@\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n             Positioned(\r\n-              top: 45,\r\n-              left: 20,\r\n+              top: 20,\r\n+              right: 20,\r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n                   style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729873635139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n               color: AppTheme.primary,\r\n             ),\r\n             Positioned(\r\n               top: 20,\r\n-              right: 20,\r\n+              left: 20,\r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n                   style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729873652343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             Container(\r\n               height: screenHeight * 0.15,\r\n               color: AppTheme.primary,\r\n             ),\r\n-            Positioned(\r\n+            PositionedDirectional(\r\n               top: 20,\r\n               left: 20,\r\n               child: SafeArea(\r\n                 child: Text(\r\n"
+                },
+                {
+                    "date": 1729873661106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n               color: AppTheme.primary,\r\n             ),\r\n             PositionedDirectional(\r\n               top: 20,\r\n-              left: 20,\r\n+              start: 20,\r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n                   style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729873816610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n         Stack(\r\n           children: [\r\n             Container(\r\n               height: screenHeight * 0.15,\r\n+              width: do,\r\n               color: AppTheme.primary,\r\n             ),\r\n             PositionedDirectional(\r\n               top: 20,\r\n"
+                },
+                {
+                    "date": 1729873826470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,12 @@\n         Stack(\r\n           children: [\r\n             Container(\r\n               height: screenHeight * 0.15,\r\n-              width: do,\r\n+              width: double.infinity,\r\n               color: AppTheme.primary,\r\n             ),\r\n-            PositionedDirectional(\r\n+            Padding(\r\n               top: 20,\r\n               start: 20,\r\n               child: SafeArea(\r\n                 child: Text(\r\n"
+                },
+                {
+                    "date": 1729873832740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n               width: double.infinity,\r\n               color: AppTheme.primary,\r\n             ),\r\n             Padding(\r\n-              top: 20,\r\n+\r\n+padding: edginsd,              top: 20,\r\n               start: 20,\r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n"
+                },
+                {
+                    "date": 1729873840464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n               color: AppTheme.primary,\r\n             ),\r\n             Padding(\r\n \r\n-padding: edginsd,              top: 20,\r\n+padding: const EdgeInsetsDirectional.only(start: 20),              top: 20,\r\n               start: 20,\r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n"
+                },
+                {
+                    "date": 1729873853207,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,9 @@\n               width: double.infinity,\r\n               color: AppTheme.primary,\r\n             ),\r\n             Padding(\r\n-\r\n-padding: const EdgeInsetsDirectional.only(start: 20),              top: 20,\r\n-              start: 20,\r\n+              padding: const EdgeInsetsDirectional.only(start: 20,),\r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n                   style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729873863419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,12 @@\n               width: double.infinity,\r\n               color: AppTheme.primary,\r\n             ),\r\n             Padding(\r\n-              padding: const EdgeInsetsDirectional.only(start: 20,),\r\n+              padding: const EdgeInsetsDirectional.only(\r\n+                top: 40,\r\n+                start: 20,\r\n+              ),\r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n                   style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729873870712,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n               color: AppTheme.primary,\r\n             ),\r\n             Padding(\r\n               padding: const EdgeInsetsDirectional.only(\r\n-                top: 40,\r\n+                top: 20,\r\n                 start: 20,\r\n               ),\r\n               child: SafeArea(\r\n                 child: Text(\r\n"
+                },
+                {
+                    "date": 1729873974228,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n               color: AppTheme.primary,\r\n             ),\r\n             Padding(\r\n               padding: const EdgeInsetsDirectional.only(\r\n-                top: 20,\r\n+                top: 25,\r\n                 start: 20,\r\n               ),\r\n               child: SafeArea(\r\n                 child: Text(\r\n"
+                },
+                {
+                    "date": 1729873979649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n               color: AppTheme.primary,\r\n             ),\r\n             Padding(\r\n               padding: const EdgeInsetsDirectional.only(\r\n-                top: 25,\r\n+                top: 40,\r\n                 start: 20,\r\n               ),\r\n               child: SafeArea(\r\n                 child: Text(\r\n"
+                },
+                {
+                    "date": 1729874455728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,12 +21,9 @@\n               width: double.infinity,\r\n               color: AppTheme.primary,\r\n             ),\r\n             Padding(\r\n-              padding: const EdgeInsetsDirectional.only(\r\n-                top: 40,\r\n-                start: 20,\r\n-              ),\r\n+             \r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n                   style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729874461149,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n               height: screenHeight * 0.15,\r\n               width: double.infinity,\r\n               color: AppTheme.primary,\r\n             ),\r\n-            Padding(\r\n+            PositionedDirectional(\r\n              \r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n"
+                },
+                {
+                    "date": 1729874472014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n               width: double.infinity,\r\n               color: AppTheme.primary,\r\n             ),\r\n             PositionedDirectional(\r\n-             \r\n+              top: 25,\r\n+              start: 20,\r\n               child: SafeArea(\r\n                 child: Text(\r\n                   'ToDo List',\r\n                   style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729874480102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n                       ),\r\n                 ),\r\n               ),\r\n             ),\r\n+            \r\n           ],\r\n         )\r\n       ],\r\n     );\r\n"
+                },
+                {
+                    "date": 1729874485553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                       ),\r\n                 ),\r\n               ),\r\n             ),\r\n-            \r\n+            easyinfi\r\n           ],\r\n         )\r\n       ],\r\n     );\r\n"
+                },
+                {
+                    "date": 1729874496119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                       ),\r\n                 ),\r\n               ),\r\n             ),\r\n-            easyinfi\r\n+            EasyInf\r\n           ],\r\n         )\r\n       ],\r\n     );\r\n"
+                },
+                {
+                    "date": 1729874504535,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                       ),\r\n                 ),\r\n               ),\r\n             ),\r\n-            EasyInf\r\n+            EasyIniteDateTimeLine\r\n           ],\r\n         )\r\n       ],\r\n     );\r\n"
+                },
+                {
+                    "date": 1729874555931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,9 +32,9 @@\n                       ),\r\n                 ),\r\n               ),\r\n             ),\r\n-            EasyIniteDateTimeLine\r\n+            EasyInfiniteDateTimeLine()\r\n           ],\r\n         )\r\n       ],\r\n     );\r\n"
+                },
+                {
+                    "date": 1729874562949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import 'package:easy_date_timeline/easy_date_timeline.dart';\r\n import 'package:flutter/material.dart';\r\n import 'package:todo/app_theme.dart';\r\n \r\n class TasksTab extends StatefulWidget {\r\n@@ -32,9 +33,11 @@\n                       ),\r\n                 ),\r\n               ),\r\n             ),\r\n-            EasyInfiniteDateTimeLine()\r\n+            const EasyInfiniteDateTimeLine(\r\n+              \r\n+            ),\r\n           ],\r\n         )\r\n       ],\r\n     );\r\n"
+                },
+                {
+                    "date": 1729874568310,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,8 +34,9 @@\n                 ),\r\n               ),\r\n             ),\r\n             const EasyInfiniteDateTimeLine(\r\n+              firstDate: ,\r\n               \r\n             ),\r\n           ],\r\n         )\r\n"
+                },
+                {
+                    "date": 1729874574057,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,10 @@\n               ),\r\n             ),\r\n             const EasyInfiniteDateTimeLine(\r\n               firstDate: ,\r\n-              \r\n+              focusDate: ,\r\n+              lastDate: ,\r\n             ),\r\n           ],\r\n         )\r\n       ],\r\n"
+                },
+                {
+                    "date": 1729874702392,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                 ),\r\n               ),\r\n             ),\r\n             const EasyInfiniteDateTimeLine(\r\n-              firstDate: ,\r\n+              firstDate: Datt,\r\n               focusDate: ,\r\n               lastDate: ,\r\n             ),\r\n           ],\r\n"
+                },
+                {
+                    "date": 1729874710059,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                 ),\r\n               ),\r\n             ),\r\n             const EasyInfiniteDateTimeLine(\r\n-              firstDate: Datt,\r\n+              firstDate: DateTime(),\r\n               focusDate: ,\r\n               lastDate: ,\r\n             ),\r\n           ],\r\n"
+                },
+                {
+                    "date": 1729874732099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                 ),\r\n               ),\r\n             ),\r\n             const EasyInfiniteDateTimeLine(\r\n-              firstDate: DateTime(),\r\n+              firstDate: DateTime(2002),\r\n               focusDate: ,\r\n               lastDate: ,\r\n             ),\r\n           ],\r\n"
+                },
+                {
+                    "date": 1729874737627,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,10 +33,10 @@\n                       ),\r\n                 ),\r\n               ),\r\n             ),\r\n-            const EasyInfiniteDateTimeLine(\r\n-              firstDate: DateTime(2002),\r\n+             EasyInfiniteDateTimeLine(\r\n+              firstDate: DateTime(2024),\r\n               focusDate: ,\r\n               lastDate: ,\r\n             ),\r\n           ],\r\n"
+                },
+                {
+                    "date": 1729874749749,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                 ),\r\n               ),\r\n             ),\r\n              EasyInfiniteDateTimeLine(\r\n-              firstDate: DateTime(2024),\r\n+              firstDate: DateTime(2023,),\r\n               focusDate: ,\r\n               lastDate: ,\r\n             ),\r\n           ],\r\n"
+                },
+                {
+                    "date": 1729874756561,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,12 +33,12 @@\n                       ),\r\n                 ),\r\n               ),\r\n             ),\r\n-             EasyInfiniteDateTimeLine(\r\n-              firstDate: DateTime(2023,),\r\n-              focusDate: ,\r\n-              lastDate: ,\r\n+            EasyInfiniteDateTimeLine(\r\n+              firstDate: DateTime(2023, 10, 13),\r\n+              focusDate: DateTime(2023, 10, 13),\r\n+              lastDate: DateTime(2023, 10, 13),\r\n             ),\r\n           ],\r\n         )\r\n       ],\r\n"
+                },
+                {
+                    "date": 1729874773420,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n               ),\r\n             ),\r\n             EasyInfiniteDateTimeLine(\r\n               firstDate: DateTime(2023, 10, 13),\r\n-              focusDate: DateTime(2023, 10, 13),\r\n+              focusDate: DateTime(2024, 10, 13),\r\n               lastDate: DateTime(2023, 10, 13),\r\n             ),\r\n           ],\r\n         )\r\n"
+                },
+                {
+                    "date": 1729874798456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,11 +34,11 @@\n                 ),\r\n               ),\r\n             ),\r\n             EasyInfiniteDateTimeLine(\r\n-              firstDate: DateTime(2023, 10, 13),\r\n+              firstDate: DateTime(2023, 10, 25),\r\n               focusDate: DateTime(2024, 10, 13),\r\n-              lastDate: DateTime(2023, 10, 13),\r\n+              lastDate: DateTime(2025, 10, 13),\r\n             ),\r\n           ],\r\n         )\r\n       ],\r\n"
+                },
+                {
+                    "date": 1729874808143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,10 +35,10 @@\n               ),\r\n             ),\r\n             EasyInfiniteDateTimeLine(\r\n               firstDate: DateTime(2023, 10, 25),\r\n-              focusDate: DateTime(2024, 10, 13),\r\n-              lastDate: DateTime(2025, 10, 13),\r\n+              focusDate: DateTime(2024, 10, 25),\r\n+              lastDate: DateTime(2025, 10, 25),\r\n             ),\r\n           ],\r\n         )\r\n       ],\r\n"
+                },
+                {
+                    "date": 1729874825733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,9 +36,9 @@\n             ),\r\n             EasyInfiniteDateTimeLine(\r\n               firstDate: DateTime(2023, 10, 25),\r\n               focusDate: DateTime(2024, 10, 25),\r\n-              lastDate: DateTime(2025, 10, 25),\r\n+              lastDate: DateTime(2024, 10, 25),\r\n             ),\r\n           ],\r\n         )\r\n       ],\r\n"
+                },
+                {
+                    "date": 1729874884990,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,10 @@\n                 ),\r\n               ),\r\n             ),\r\n             EasyInfiniteDateTimeLine(\r\n-              firstDate: DateTime(2023, 10, 25),\r\n-              focusDate: DateTime(2024, 10, 25),\r\n+              firstDate: DateTime(2024, 10, 25),\r\n+              focusDate: DateTime.now,\r\n               lastDate: DateTime(2024, 10, 25),\r\n             ),\r\n           ],\r\n         )\r\n"
+                },
+                {
+                    "date": 1729874900676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,47 @@\n+import 'package:easy_date_timeline/easy_date_timeline.dart';\r\n+import 'package:flutter/material.dart';\r\n+import 'package:todo/app_theme.dart';\r\n+\r\n+class TasksTab extends StatefulWidget {\r\n+  const TasksTab({super.key});\r\n+\r\n+  @override\r\n+  State<TasksTab> createState() => _TasksTabState();\r\n+}\r\n+\r\n+class _TasksTabState extends State<TasksTab> {\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    double screenHeight = MediaQuery.sizeOf(context).height;\r\n+    return Column(\r\n+      children: [\r\n+        Stack(\r\n+          children: [\r\n+            Container(\r\n+              height: screenHeight * 0.15,\r\n+              width: double.infinity,\r\n+              color: AppTheme.primary,\r\n+            ),\r\n+            PositionedDirectional(\r\n+              top: 25,\r\n+              start: 20,\r\n+              child: SafeArea(\r\n+                child: Text(\r\n+                  'ToDo List',\r\n+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n+                        color: AppTheme.white,\r\n+                      ),\r\n+                ),\r\n+              ),\r\n+            ),\r\n+            EasyInfiniteDateTimeLine(\r\n+              firstDate: DateTime.now(),\r\n+              focusDate: DateTime.now(),\r\n+              lastDate: DateTime(2024, 10, 25),\r\n+            ),\r\n+          ],\r\n+        )\r\n+      ],\r\n+    );\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1729874907222,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -36,59 +36,12 @@\n             ),\r\n             EasyInfiniteDateTimeLine(\r\n               firstDate: DateTime.now(),\r\n               focusDate: DateTime.now(),\r\n-              lastDate: DateTime(2024, 10, 25),\r\n+              lastDate: DateTime.now(),\r\n             ),\r\n           ],\r\n         )\r\n       ],\r\n     );\r\n   }\r\n }\r\n-import 'package:easy_date_timeline/easy_date_timeline.dart';\r\n-import 'package:flutter/material.dart';\r\n-import 'package:todo/app_theme.dart';\r\n-\r\n-class TasksTab extends StatefulWidget {\r\n-  const TasksTab({super.key});\r\n-\r\n-  @override\r\n-  State<TasksTab> createState() => _TasksTabState();\r\n-}\r\n-\r\n-class _TasksTabState extends State<TasksTab> {\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    double screenHeight = MediaQuery.sizeOf(context).height;\r\n-    return Column(\r\n-      children: [\r\n-        Stack(\r\n-          children: [\r\n-            Container(\r\n-              height: screenHeight * 0.15,\r\n-              width: double.infinity,\r\n-              color: AppTheme.primary,\r\n-            ),\r\n-            PositionedDirectional(\r\n-              top: 25,\r\n-              start: 20,\r\n-              child: SafeArea(\r\n-                child: Text(\r\n-                  'ToDo List',\r\n-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n-                        color: AppTheme.white,\r\n-                      ),\r\n-                ),\r\n-              ),\r\n-            ),\r\n-            EasyInfiniteDateTimeLine(\r\n-              firstDate: DateTime(2024, 10, 25),\r\n-              focusDate: DateTime.now,\r\n-              lastDate: DateTime(2024, 10, 25),\r\n-            ),\r\n-          ],\r\n-        )\r\n-      ],\r\n-    );\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1729874921865,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                 ),\r\n               ),\r\n             ),\r\n             EasyInfiniteDateTimeLine(\r\n-              firstDate: DateTime.now(),\r\n+              firstDate: DateTime.now().subtract(duration),\r\n               focusDate: DateTime.now(),\r\n               lastDate: DateTime.now(),\r\n             ),\r\n           ],\r\n"
+                },
+                {
+                    "date": 1729874944958,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,11 +34,11 @@\n                 ),\r\n               ),\r\n             ),\r\n             EasyInfiniteDateTimeLine(\r\n-              firstDate: DateTime.now().subtract(duration),\r\n+              firstDate: DateTime.now().subtract(days),\r\n               focusDate: DateTime.now(),\r\n-              lastDate: DateTime.now(),\r\n+              lastDate: DateTime.now().add(duration),\r\n             ),\r\n           ],\r\n         )\r\n       ],\r\n"
+                },
+                {
+                    "date": 1729874956563,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,9 +34,9 @@\n                 ),\r\n               ),\r\n             ),\r\n             EasyInfiniteDateTimeLine(\r\n-              firstDate: DateTime.now().subtract(days),\r\n+              firstDate: DateTime.now().subtract(Duration(days:)),\r\n               focusDate: DateTime.now(),\r\n               lastDate: DateTime.now().add(duration),\r\n             ),\r\n           ],\r\n"
+                },
+                {
+                    "date": 1729874977678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,9 +41,9 @@\n                 ),\r\n               ),\r\n               focusDate: DateTime.now(),\r\n               lastDate: DateTime.now().add(\r\n-                Duration(\r\n+                const Duration(\r\n                   days: 365,\r\n                 ),\r\n               ),\r\n             ),\r\n"
+                },
+                {
+                    "date": 1729875102954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,56 @@\n+import 'package:easy_date_timeline/easy_date_timeline.dart';\r\n+import 'package:flutter/material.dart';\r\n+import 'package:todo/app_theme.dart';\r\n+\r\n+class TasksTab extends StatefulWidget {\r\n+  const TasksTab({super.key});\r\n+\r\n+  @override\r\n+  State<TasksTab> createState() => _TasksTabState();\r\n+}\r\n+\r\n+class _TasksTabState extends State<TasksTab> {\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    double screenHeight = MediaQuery.sizeOf(context).height;\r\n+    return Column(\r\n+      children: [\r\n+        Stack(\r\n+          children: [\r\n+            Container(\r\n+              height: screenHeight * 0.15,\r\n+              width: double.infinity,\r\n+              color: AppTheme.primary,\r\n+            ),\r\n+            PositionedDirectional(\r\n+              top: 25,\r\n+              start: 20,\r\n+              child: SafeArea(\r\n+                child: Text(\r\n+                  'ToDo List',\r\n+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n+                        color: AppTheme.white,\r\n+                      ),\r\n+                ),\r\n+              ),\r\n+            ),\r\n+           \r\n+          ],\r\n+        )\r\n+         EasyInfiniteDateTimeLine(\r\n+              firstDate: DateTime.now().subtract(\r\n+                const Duration(\r\n+                  days: 365,\r\n+                ),\r\n+              ),\r\n+              focusDate: DateTime.now(),\r\n+              lastDate: DateTime.now().add(\r\n+                const Duration(\r\n+                  days: 365,\r\n+                ),\r\n+              ),\r\n+            ),\r\n+      ],\r\n+    );\r\n+  }\r\n+}\r\n"
                 }
             ],
             "date": 1729867183994,
