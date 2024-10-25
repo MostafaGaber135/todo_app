@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 85,
             "patches": [
                 {
                     "date": 1729864660073,
@@ -88,6 +88,266 @@
                 {
                     "date": 1729865383148,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n         bottomNavigationBar: BottomNavigationBar(items: const [\r\n           BottomNavigationBarItem(icon: Icon(Icons.list,), label: 'Tasks',),\r\n-             BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),\r\n+             BottomNavigationBarItem(icon: Icon(Icons.settings,), label: 'Settings',),\r\n     ],),);\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729867275696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,33 @@\n import 'package:flutter/material.dart';\r\n \r\n-class HomeScreen extends StatelessWidget {\r\n+class HomeScreen extends StatefulWidget {\r\n   const HomeScreen({super.key});\r\n   static const String routeName = '/home-screen';\r\n+\r\n   @override\r\n+  State<HomeScreen> createState() => _HomeScreenState();\r\n+}\r\n+\r\n+class _HomeScreenState extends State<HomeScreen> {\r\n+  @override\r\n   Widget build(BuildContext context) {\r\n\\ No newline at end of file\n     return Scaffold(\r\n-        bottomNavigationBar: BottomNavigationBar(items: const [\r\n-          BottomNavigationBarItem(icon: Icon(Icons.list,), label: 'Tasks',),\r\n-             BottomNavigationBarItem(icon: Icon(Icons.settings,), label: 'Settings',),\r\n-    ],),);\r\n+      bottomNavigationBar: BottomNavigationBar(\r\n+        items: const [\r\n+          BottomNavigationBarItem(\r\n+            icon: Icon(\r\n+              Icons.list,\r\n+            ),\r\n+            label: 'Tasks',\r\n+          ),\r\n+          BottomNavigationBarItem(\r\n+            icon: Icon(\r\n+              Icons.settings,\r\n+            ),\r\n+            label: 'Settings',\r\n+          ),\r\n+        ],\r\n+      ),\r\n+    );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729867511452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n   State<HomeScreen> createState() => _HomeScreenState();\r\n }\r\n \r\n class _HomeScreenState extends State<HomeScreen> {\r\n+  List<\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n@@ -29,5 +30,5 @@\n         ],\r\n       ),\r\n     );\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1729867520422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   State<HomeScreen> createState() => _HomeScreenState();\r\n }\r\n \r\n class _HomeScreenState extends State<HomeScreen> {\r\n-  List<\r\n+  List<Widget> tabs = [];\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n"
+                },
+                {
+                    "date": 1729867527748,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,36 @@\n+import 'package:flutter/material.dart';\r\n+\r\n+class HomeScreen extends StatefulWidget {\r\n+  const HomeScreen({super.key});\r\n+  static const String routeName = '/home-screen';\r\n+\r\n+  @override\r\n+  State<HomeScreen> createState() => _HomeScreenState();\r\n+}\r\n+\r\n+class _HomeScreenState extends State<HomeScreen> {\r\n+  List<Widget> tabs = [\r\n+    task\r\n+  ];\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Scaffold(\r\n+      bottomNavigationBar: BottomNavigationBar(\r\n+        items: const [\r\n+          BottomNavigationBarItem(\r\n+            icon: Icon(\r\n+              Icons.list,\r\n+            ),\r\n+            label: 'Tasks',\r\n+          ),\r\n+          BottomNavigationBarItem(\r\n+            icon: Icon(\r\n+              Icons.settings,\r\n+            ),\r\n+            label: 'Settings',\r\n+          ),\r\n+        ],\r\n+      ),\r\n+    );\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1729867538013,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo/tabs/tasks/tasks_tab.dart';\r\n \r\n class HomeScreen extends StatefulWidget {\r\n   const HomeScreen({super.key});\r\n   static const String routeName = '/home-screen';\r\n@@ -9,9 +10,10 @@\n }\r\n \r\n class _HomeScreenState extends State<HomeScreen> {\r\n   List<Widget> tabs = [\r\n-    task\r\n+    const TasksTab(),\r\n+    sett\r\n   ];\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n@@ -33,38 +35,4 @@\n       ),\r\n     );\r\n   }\r\n }\r\n-import 'package:flutter/material.dart';\r\n-\r\n-class HomeScreen extends StatefulWidget {\r\n-  const HomeScreen({super.key});\r\n-  static const String routeName = '/home-screen';\r\n-\r\n-  @override\r\n-  State<HomeScreen> createState() => _HomeScreenState();\r\n-}\r\n-\r\n-class _HomeScreenState extends State<HomeScreen> {\r\n-  List<Widget> tabs = [];\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    return Scaffold(\r\n-      bottomNavigationBar: BottomNavigationBar(\r\n-        items: const [\r\n-          BottomNavigationBarItem(\r\n-            icon: Icon(\r\n-              Icons.list,\r\n-            ),\r\n-            label: 'Tasks',\r\n-          ),\r\n-          BottomNavigationBarItem(\r\n-            icon: Icon(\r\n-              Icons.settings,\r\n-            ),\r\n-            label: 'Settings',\r\n-          ),\r\n-        ],\r\n-      ),\r\n-    );\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1729867558119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo/tabs/settings/settings_tab.dart';\r\n import 'package:todo/tabs/tasks/tasks_tab.dart';\r\n \r\n class HomeScreen extends StatefulWidget {\r\n   const HomeScreen({super.key});\r\n@@ -11,10 +12,11 @@\n \r\n class _HomeScreenState extends State<HomeScreen> {\r\n   List<Widget> tabs = [\r\n     const TasksTab(),\r\n-    sett\r\n+    const SettingsTab(),\r\n   ];\r\n+  int \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n"
+                },
+                {
+                    "date": 1729867567914,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   List<Widget> tabs = [\r\n     const TasksTab(),\r\n     const SettingsTab(),\r\n   ];\r\n-  int \r\n+  int selected\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n"
+                },
+                {
+                    "date": 1729867574424,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   List<Widget> tabs = [\r\n     const TasksTab(),\r\n     const SettingsTab(),\r\n   ];\r\n-  int selected\r\n+  int selectedTabIndex = 0;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n"
+                },
+                {
+                    "date": 1729867590597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n   List<Widget> tabs = [\r\n     const TasksTab(),\r\n     const SettingsTab(),\r\n   ];\r\n-  int selectedTabIndex = 0;\r\n+  int cTabIndex = 0;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n"
+                },
+                {
+                    "date": 1729867607301,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,13 +14,14 @@\n   List<Widget> tabs = [\r\n     const TasksTab(),\r\n     const SettingsTab(),\r\n   ];\r\n-  int cTabIndex = 0;\r\n+  int currentTabIndex = 0;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n+        c\r\n         items: const [\r\n           BottomNavigationBarItem(\r\n             icon: Icon(\r\n               Icons.list,\r\n"
+                },
+                {
+                    "date": 1729867622024,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,10 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n-        c\r\n+        currentIndex: currentTabIndex,\r\n+        onTap: (index) =>,\r\n         items: const [\r\n           BottomNavigationBarItem(\r\n             icon: Icon(\r\n               Icons.list,\r\n"
+                },
+                {
+                    "date": 1729867676241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n         currentIndex: currentTabIndex,\r\n-        onTap: (index) =>,\r\n+        onTap: (index) => set,\r\n         items: const [\r\n           BottomNavigationBarItem(\r\n             icon: Icon(\r\n               Icons.list,\r\n"
+                },
+                {
+                    "date": 1729867691629,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n         currentIndex: currentTabIndex,\r\n-        onTap: (index) => set,\r\n+        onTap: (index) => setState(() ;,\r\n         items: const [\r\n           BottomNavigationBarItem(\r\n             icon: Icon(\r\n               Icons.list,\r\n"
+                },
+                {
+                    "date": 1729867697194,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n         currentIndex: currentTabIndex,\r\n-        onTap: (index) => setState(() ;,\r\n+        onTap: (index) => setState(() => ,\r\n         items: const [\r\n           BottomNavigationBarItem(\r\n             icon: Icon(\r\n               Icons.list,\r\n"
+                },
+                {
+                    "date": 1729867704579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n         currentIndex: currentTabIndex,\r\n-        onTap: (index) => setState(() => ,\r\n+        onTap: (index) => setState(() => currentTabIndex = index,\r\n         items: const [\r\n           BottomNavigationBarItem(\r\n             icon: Icon(\r\n               Icons.list,\r\n"
+                },
+                {
+                    "date": 1729867717372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,11 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       bottomNavigationBar: BottomNavigationBar(\r\n         currentIndex: currentTabIndex,\r\n-        onTap: (index) => setState(() => currentTabIndex = index,\r\n+        onTap: (index) => setState(\r\n+          () => currentTabIndex = index,\r\n+        ),\r\n         items: const [\r\n           BottomNavigationBarItem(\r\n             icon: Icon(\r\n               Icons.list,\r\n"
+                },
+                {
+                    "date": 1729867749646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n   int currentTabIndex = 0;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n+      b\r\n       bottomNavigationBar: BottomNavigationBar(\r\n         currentIndex: currentTabIndex,\r\n         onTap: (index) => setState(\r\n           () => currentTabIndex = index,\r\n"
+                },
+                {
+                    "date": 1729867758799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   int currentTabIndex = 0;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n-      b\r\n+      body: tabs[],\r\n       bottomNavigationBar: BottomNavigationBar(\r\n         currentIndex: currentTabIndex,\r\n         onTap: (index) => setState(\r\n           () => currentTabIndex = index,\r\n"
+                },
+                {
+                    "date": 1729867772987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n   int currentTabIndex = 0;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n-      body: tabs[],\r\n+      body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomNavigationBar(\r\n         currentIndex: currentTabIndex,\r\n         onTap: (index) => setState(\r\n           () => currentTabIndex = index,\r\n"
+                },
+                {
+                    "date": 1729868494632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,8 +37,9 @@\n               Icons.settings,\r\n             ),\r\n             label: 'Settings',\r\n           ),\r\n+          \r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729868500385,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n               Icons.settings,\r\n             ),\r\n             label: 'Settings',\r\n           ),\r\n-          \r\n+          FloatingActionButton(onPressed: ())\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729868509248,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,22 +24,22 @@\n         currentIndex: currentTabIndex,\r\n         onTap: (index) => setState(\r\n           () => currentTabIndex = index,\r\n         ),\r\n-        items: const [\r\n-          BottomNavigationBarItem(\r\n-            icon: Icon(\r\n+        items:  [\r\n+          const BottomNavigationBarItem(\r\n+            icon: const Icon(\r\n               Icons.list,\r\n             ),\r\n             label: 'Tasks',\r\n           ),\r\n-          BottomNavigationBarItem(\r\n-            icon: Icon(\r\n+          const BottomNavigationBarItem(\r\n+            icon: const Icon(\r\n               Icons.settings,\r\n             ),\r\n             label: 'Settings',\r\n           ),\r\n-          FloatingActionButton(onPressed: ())\r\n+          FloatingActionButton(onPressed: (){})\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729868545380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n               Icons.settings,\r\n             ),\r\n             label: 'Settings',\r\n           ),\r\n-          FloatingActionButton(onPressed: (){})\r\n+          FloatingActionButton(onPressed: (){}, child: I,)\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729868551372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n               Icons.settings,\r\n             ),\r\n             label: 'Settings',\r\n           ),\r\n-          FloatingActionButton(onPressed: (){}, child: I,)\r\n+          FloatingActionButton(onPressed: (){}, child: const Icon(Icons.add,),)\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729868557816,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n               Icons.settings,\r\n             ),\r\n             label: 'Settings',\r\n           ),\r\n-          FloatingActionButton(onPressed: (){}, child: const Icon(Icons.add,),)\r\n+          FloatingActionButton(onPressed: (){}, child: const Icon(Icons.add, size: 32,),)\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729868572381,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         currentIndex: currentTabIndex,\r\n         onTap: (index) => setState(\r\n           () => currentTabIndex = index,\r\n         ),\r\n-        items:  [\r\n+        items: [\r\n           const BottomNavigationBarItem(\r\n             icon: const Icon(\r\n               Icons.list,\r\n             ),\r\n@@ -37,9 +37,15 @@\n               Icons.settings,\r\n             ),\r\n             label: 'Settings',\r\n           ),\r\n-          FloatingActionButton(onPressed: (){}, child: const Icon(Icons.add, size: 32,),)\r\n+        floatactb  FloatingActionButton(\r\n+            onPressed: () {},\r\n+            child: const Icon(\r\n+              Icons.add,\r\n+              size: 32,\r\n+            ),\r\n+          )\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729868577618,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,9 +37,9 @@\n               Icons.settings,\r\n             ),\r\n             label: 'Settings',\r\n           ),\r\n-        floatactb  FloatingActionButton(\r\n+        FloatingActionButton:  FloatingActionButton(\r\n             onPressed: () {},\r\n             child: const Icon(\r\n               Icons.add,\r\n               size: 32,\r\n"
+                },
+                {
+                    "date": 1729868584191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,15 +37,9 @@\n               Icons.settings,\r\n             ),\r\n             label: 'Settings',\r\n           ),\r\n-        FloatingActionButton:  FloatingActionButton(\r\n-            onPressed: () {},\r\n-            child: const Icon(\r\n-              Icons.add,\r\n-              size: 32,\r\n-            ),\r\n-          )\r\n+   \r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729868589479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,8 +39,16 @@\n             label: 'Settings',\r\n           ),\r\n    \r\n         ],\r\n+        \r\n       ),\r\n+           FloatingActionButton:  FloatingActionButton(\r\n+            onPressed: () {},\r\n+            child: const Icon(\r\n+              Icons.add,\r\n+              size: 32,\r\n+            ),\r\n+          )\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868599502,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,37 +18,34 @@\n   int currentTabIndex = 0;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n-      body: tabs[currentTabIndex],\r\n-      bottomNavigationBar: BottomNavigationBar(\r\n-        currentIndex: currentTabIndex,\r\n-        onTap: (index) => setState(\r\n-          () => currentTabIndex = index,\r\n-        ),\r\n-        items: [\r\n-          const BottomNavigationBarItem(\r\n-            icon: const Icon(\r\n-              Icons.list,\r\n-            ),\r\n-            label: 'Tasks',\r\n+        body: tabs[currentTabIndex],\r\n+        bottomNavigationBar: BottomNavigationBar(\r\n+          currentIndex: currentTabIndex,\r\n+          onTap: (index) => setState(\r\n+            () => currentTabIndex = index,\r\n           ),\r\n-          const BottomNavigationBarItem(\r\n-            icon: const Icon(\r\n-              Icons.settings,\r\n+          items: const [\r\n+            const BottomNavigationBarItem(\r\n+              icon: const Icon(\r\n+                Icons.list,\r\n+              ),\r\n+              label: 'Tasks',\r\n             ),\r\n-            label: 'Settings',\r\n+            const BottomNavigationBarItem(\r\n+              icon: const Icon(\r\n+                Icons.settings,\r\n+              ),\r\n+              label: 'Settings',\r\n+            ),\r\n+          ],\r\n+        ),\r\n+        floatingActionButton: FloatingActionButton(\r\n+          onPressed: () {},\r\n+          child: const Icon(\r\n+            Icons.add,\r\n+            size: 32,\r\n           ),\r\n-   \r\n-        ],\r\n-        \r\n-      ),\r\n-           FloatingActionButton:  FloatingActionButton(\r\n-            onPressed: () {},\r\n-            child: const Icon(\r\n-              Icons.add,\r\n-              size: 32,\r\n-            ),\r\n-          )\r\n-    );\r\n+        ));\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868606395,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,34 +18,35 @@\n   int currentTabIndex = 0;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n-        body: tabs[currentTabIndex],\r\n-        bottomNavigationBar: BottomNavigationBar(\r\n-          currentIndex: currentTabIndex,\r\n-          onTap: (index) => setState(\r\n-            () => currentTabIndex = index,\r\n+      body: tabs[currentTabIndex],\r\n+      bottomNavigationBar: BottomNavigationBar(\r\n+        currentIndex: currentTabIndex,\r\n+        onTap: (index) => setState(\r\n+          () => currentTabIndex = index,\r\n+        ),\r\n+        items: const [\r\n+          BottomNavigationBarItem(\r\n+            icon: Icon(\r\n+              Icons.list,\r\n+            ),\r\n+            label: 'Tasks',\r\n           ),\r\n-          items: const [\r\n-            const BottomNavigationBarItem(\r\n-              icon: const Icon(\r\n-                Icons.list,\r\n-              ),\r\n-              label: 'Tasks',\r\n+          BottomNavigationBarItem(\r\n+            icon: Icon(\r\n+              Icons.settings,\r\n             ),\r\n-            const BottomNavigationBarItem(\r\n-              icon: const Icon(\r\n-                Icons.settings,\r\n-              ),\r\n-              label: 'Settings',\r\n-            ),\r\n-          ],\r\n+            label: 'Settings',\r\n+          ),\r\n+        ],\r\n+      ),\r\n+      floatingActionButton: FloatingActionButton(\r\n+        onPressed: () {},\r\n+        child: const Icon(\r\n+          Icons.add,\r\n+          size: 32,\r\n         ),\r\n-        floatingActionButton: FloatingActionButton(\r\n-          onPressed: () {},\r\n-          child: const Icon(\r\n-            Icons.add,\r\n-            size: 32,\r\n-          ),\r\n-        ));\r\n+      ),\r\n+    );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868762143,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,7 +46,8 @@\n           Icons.add,\r\n           size: 32,\r\n         ),\r\n       ),\r\n+      flo\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868775524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,8 +46,8 @@\n           Icons.add,\r\n           size: 32,\r\n         ),\r\n       ),\r\n-      flo\r\n+      floatingActionButtonLocation: floatingActionButtonLocation.center,\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868782659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,8 +46,8 @@\n           Icons.add,\r\n           size: 32,\r\n         ),\r\n       ),\r\n-      floatingActionButtonLocation: floatingActionButtonLocation.center,\r\n+      floatingActionButtonLocation: Floatacb.center,\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868788101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,8 +46,8 @@\n           Icons.add,\r\n           size: 32,\r\n         ),\r\n       ),\r\n-      floatingActionButtonLocation: Floatacb.center,\r\n+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat.center,\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868802091,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,8 +46,8 @@\n           Icons.add,\r\n           size: 32,\r\n         ),\r\n       ),\r\n-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat.center,\r\n+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868898255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,7 +47,8 @@\n           size: 32,\r\n         ),\r\n       ),\r\n       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,\r\n+      botna\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868905517,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,8 @@\n           size: 32,\r\n         ),\r\n       ),\r\n       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,\r\n-      botna\r\n+      botnaap\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868911116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,8 +47,8 @@\n           size: 32,\r\n         ),\r\n       ),\r\n       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,\r\n-      botnaap\r\n+      bottomap\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729868968471,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,27 +19,29 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n-      bottomNavigationBar: BottomNavigationBar(\r\n-        currentIndex: currentTabIndex,\r\n-        onTap: (index) => setState(\r\n-          () => currentTabIndex = index,\r\n-        ),\r\n-        items: const [\r\n-          BottomNavigationBarItem(\r\n-            icon: Icon(\r\n-              Icons.list,\r\n-            ),\r\n-            label: 'Tasks',\r\n+      bottomNavigationBar: BottomAppBar(\r\n+        child: BottomNavigationBar(\r\n+          currentIndex: currentTabIndex,\r\n+          onTap: (index) => setState(\r\n+            () => currentTabIndex = index,\r\n           ),\r\n-          BottomNavigationBarItem(\r\n-            icon: Icon(\r\n-              Icons.settings,\r\n+          items: const [\r\n+            BottomNavigationBarItem(\r\n+              icon: Icon(\r\n+                Icons.list,\r\n+              ),\r\n+              label: 'Tasks',\r\n             ),\r\n-            label: 'Settings',\r\n-          ),\r\n-        ],\r\n+            BottomNavigationBarItem(\r\n+              icon: Icon(\r\n+                Icons.settings,\r\n+              ),\r\n+              label: 'Settings',\r\n+            ),\r\n+          ],\r\n+        ),\r\n       ),\r\n       floatingActionButton: FloatingActionButton(\r\n         onPressed: () {},\r\n         child: const Icon(\r\n@@ -47,8 +49,7 @@\n           size: 32,\r\n         ),\r\n       ),\r\n       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,\r\n-      bottomap\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729869000449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n+        \r\n         child: BottomNavigationBar(\r\n           currentIndex: currentTabIndex,\r\n           onTap: (index) => setState(\r\n             () => currentTabIndex = index,\r\n"
+                },
+                {
+                    "date": 1729869006954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n-        \r\n+        padding: edg,\r\n         child: BottomNavigationBar(\r\n           currentIndex: currentTabIndex,\r\n           onTap: (index) => setState(\r\n             () => currentTabIndex = index,\r\n"
+                },
+                {
+                    "date": 1729869098736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,57 @@\n+import 'package:flutter/material.dart';\r\n+import 'package:todo/tabs/settings/settings_tab.dart';\r\n+import 'package:todo/tabs/tasks/tasks_tab.dart';\r\n+\r\n+class HomeScreen extends StatefulWidget {\r\n+  const HomeScreen({super.key});\r\n+  static const String routeName = '/home-screen';\r\n+\r\n+  @override\r\n+  State<HomeScreen> createState() => _HomeScreenState();\r\n+}\r\n+\r\n+class _HomeScreenState extends State<HomeScreen> {\r\n+  List<Widget> tabs = [\r\n+    const TasksTab(),\r\n+    const SettingsTab(),\r\n+  ];\r\n+  int currentTabIndex = 0;\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Scaffold(\r\n+      body: tabs[currentTabIndex],\r\n+      bottomNavigationBar: BottomAppBar(\r\n+        color: Colors.white,\r\n+        padding: EdgeInsets.zero,\r\n+        child: BottomNavigationBar(\r\n+          currentIndex: currentTabIndex,\r\n+          onTap: (index) => setState(\r\n+            () => currentTabIndex = index,\r\n+          ),\r\n+          items: const [\r\n+            BottomNavigationBarItem(\r\n+              icon: Icon(\r\n+                Icons.list,\r\n+              ),\r\n+              label: 'Tasks',\r\n+            ),\r\n+            BottomNavigationBarItem(\r\n+              icon: Icon(\r\n+                Icons.settings,\r\n+              ),\r\n+              label: 'Settings',\r\n+            ),\r\n+          ],\r\n+        ),\r\n+      ),\r\n+      floatingActionButton: FloatingActionButton(\r\n+        onPressed: () {},\r\n+        child: const Icon(\r\n+          Icons.add,\r\n+          size: 32,\r\n+        ),\r\n+      ),\r\n+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,\r\n+    );\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1729869105195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,9 @@\n       bottomNavigationBar: BottomAppBar(\r\n         color: Colors.white,\r\n         padding: EdgeInsets.zero,\r\n         child: BottomNavigationBar(\r\n+          elevation: 0,\r\n           currentIndex: currentTabIndex,\r\n           onTap: (index) => setState(\r\n             () => currentTabIndex = index,\r\n           ),\r\n@@ -54,60 +55,4 @@\n       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,\r\n     );\r\n   }\r\n }\r\n-import 'package:flutter/material.dart';\r\n-import 'package:todo/tabs/settings/settings_tab.dart';\r\n-import 'package:todo/tabs/tasks/tasks_tab.dart';\r\n-\r\n-class HomeScreen extends StatefulWidget {\r\n-  const HomeScreen({super.key});\r\n-  static const String routeName = '/home-screen';\r\n-\r\n-  @override\r\n-  State<HomeScreen> createState() => _HomeScreenState();\r\n-}\r\n-\r\n-class _HomeScreenState extends State<HomeScreen> {\r\n-  List<Widget> tabs = [\r\n-    const TasksTab(),\r\n-    const SettingsTab(),\r\n-  ];\r\n-  int currentTabIndex = 0;\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    return Scaffold(\r\n-      body: tabs[currentTabIndex],\r\n-      bottomNavigationBar: BottomAppBar(\r\n-        padding: edg,\r\n-        child: BottomNavigationBar(\r\n-          currentIndex: currentTabIndex,\r\n-          onTap: (index) => setState(\r\n-            () => currentTabIndex = index,\r\n-          ),\r\n-          items: const [\r\n-            BottomNavigationBarItem(\r\n-              icon: Icon(\r\n-                Icons.list,\r\n-              ),\r\n-              label: 'Tasks',\r\n-            ),\r\n-            BottomNavigationBarItem(\r\n-              icon: Icon(\r\n-                Icons.settings,\r\n-              ),\r\n-              label: 'Settings',\r\n-            ),\r\n-          ],\r\n-        ),\r\n-      ),\r\n-      floatingActionButton: FloatingActionButton(\r\n-        onPressed: () {},\r\n-        child: const Icon(\r\n-          Icons.add,\r\n-          size: 32,\r\n-        ),\r\n-      ),\r\n-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,\r\n-    );\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1729869146225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n           items: const [\r\n             BottomNavigationBarItem(\r\n               icon: Icon(\r\n                 Icons.list,\r\n+                s\r\n               ),\r\n               label: 'Tasks',\r\n             ),\r\n             BottomNavigationBarItem(\r\n"
+                },
+                {
+                    "date": 1729869153267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,15 +32,16 @@\n           items: const [\r\n             BottomNavigationBarItem(\r\n               icon: Icon(\r\n                 Icons.list,\r\n-                s\r\n+                size: 32,\r\n               ),\r\n               label: 'Tasks',\r\n             ),\r\n             BottomNavigationBarItem(\r\n               icon: Icon(\r\n                 Icons.settings,\r\n+                size: 32,\r\n               ),\r\n               label: 'Settings',\r\n             ),\r\n           ],\r\n"
+                },
+                {
+                    "date": 1729870605909,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n+        \r\n         color: Colors.white,\r\n         padding: EdgeInsets.zero,\r\n         child: BottomNavigationBar(\r\n           elevation: 0,\r\n"
+                },
+                {
+                    "date": 1729870995100,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n-        \r\n+        notchMargin: 10,\r\n         color: Colors.white,\r\n         padding: EdgeInsets.zero,\r\n         child: BottomNavigationBar(\r\n           elevation: 0,\r\n"
+                },
+                {
+                    "date": 1729871001982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n+        shape: const CircularNotchedRectangle(),\r\n         notchMargin: 10,\r\n         color: Colors.white,\r\n         padding: EdgeInsets.zero,\r\n         child: BottomNavigationBar(\r\n"
+                },
+                {
+                    "date": 1729871009983,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n+        clipBehavior: cli,\r\n         shape: const CircularNotchedRectangle(),\r\n         notchMargin: 10,\r\n         color: Colors.white,\r\n         padding: EdgeInsets.zero,\r\n"
+                },
+                {
+                    "date": 1729871095316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n-        clipBehavior: cli,\r\n+        clipBehavior: clip,\r\n         shape: const CircularNotchedRectangle(),\r\n         notchMargin: 10,\r\n         color: Colors.white,\r\n         padding: EdgeInsets.zero,\r\n"
+                },
+                {
+                    "date": 1729871102590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n-        clipBehavior: clip,\r\n+        clipBehavior: Clip.Ant,\r\n         shape: const CircularNotchedRectangle(),\r\n         notchMargin: 10,\r\n         color: Colors.white,\r\n         padding: EdgeInsets.zero,\r\n"
+                },
+                {
+                    "date": 1729871127635,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,11 +20,11 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n-        clipBehavior: Clip.Ant,\r\n+        clipBehavior: Clip.antiAliasWithSaveLayer,\r\n         shape: const CircularNotchedRectangle(),\r\n-        notchMargin: 10,\r\n+        notchMargin: 20,\r\n         color: Colors.white,\r\n         padding: EdgeInsets.zero,\r\n         child: BottomNavigationBar(\r\n           elevation: 0,\r\n"
+                },
+                {
+                    "date": 1729871139445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n         clipBehavior: Clip.antiAliasWithSaveLayer,\r\n         shape: const CircularNotchedRectangle(),\r\n-        notchMargin: 20,\r\n+        notchMargin: 10,\r\n         color: Colors.white,\r\n         padding: EdgeInsets.zero,\r\n         child: BottomNavigationBar(\r\n           elevation: 0,\r\n"
+                },
+                {
+                    "date": 1729871606657,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n   ];\r\n   int currentTabIndex = 0;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n+    b\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: BottomAppBar(\r\n         clipBehavior: Clip.antiAliasWithSaveLayer,\r\n"
+                },
+                {
+                    "date": 1729871621894,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,39 +17,40 @@\n   ];\r\n   int currentTabIndex = 0;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    b\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n-      bottomNavigationBar: BottomAppBar(\r\n-        clipBehavior: Clip.antiAliasWithSaveLayer,\r\n-        shape: const CircularNotchedRectangle(),\r\n-        notchMargin: 10,\r\n-        color: Colors.white,\r\n-        padding: EdgeInsets.zero,\r\n-        child: BottomNavigationBar(\r\n-          elevation: 0,\r\n-          currentIndex: currentTabIndex,\r\n-          onTap: (index) => setState(\r\n-            () => currentTabIndex = index,\r\n-          ),\r\n-          items: const [\r\n-            BottomNavigationBarItem(\r\n-              icon: Icon(\r\n-                Icons.list,\r\n-                size: 32,\r\n-              ),\r\n-              label: 'Tasks',\r\n+      bottomNavigationBar: ClipRRect(\r\n+        child: BottomAppBar(\r\n+          clipBehavior: Clip.antiAliasWithSaveLayer,\r\n+          shape: const CircularNotchedRectangle(),\r\n+          notchMargin: 10,\r\n+          color: Colors.white,\r\n+          padding: EdgeInsets.zero,\r\n+          child: BottomNavigationBar(\r\n+            elevation: 0,\r\n+            currentIndex: currentTabIndex,\r\n+            onTap: (index) => setState(\r\n+              () => currentTabIndex = index,\r\n             ),\r\n-            BottomNavigationBarItem(\r\n-              icon: Icon(\r\n-                Icons.settings,\r\n-                size: 32,\r\n+            items: const [\r\n+              BottomNavigationBarItem(\r\n+                icon: Icon(\r\n+                  Icons.list,\r\n+                  size: 32,\r\n+                ),\r\n+                label: 'Tasks',\r\n               ),\r\n-              label: 'Settings',\r\n-            ),\r\n-          ],\r\n+              BottomNavigationBarItem(\r\n+                icon: Icon(\r\n+                  Icons.settings,\r\n+                  size: 32,\r\n+                ),\r\n+                label: 'Settings',\r\n+              ),\r\n+            ],\r\n+          ),\r\n         ),\r\n       ),\r\n       floatingActionButton: FloatingActionButton(\r\n         onPressed: () {},\r\n"
+                },
+                {
+                    "date": 1729871628783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: ClipRRect(\r\n+        borderRadius: bord,\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n           shape: const CircularNotchedRectangle(),\r\n           notchMargin: 10,\r\n"
+                },
+                {
+                    "date": 1729871635805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: ClipRRect(\r\n-        borderRadius: bord,\r\n+        borderRadius: BorderRadius.all(radius),\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n           shape: const CircularNotchedRectangle(),\r\n           notchMargin: 10,\r\n"
+                },
+                {
+                    "date": 1729871641793,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n-      bottomNavigationBar: ClipRRect(\r\n-        borderRadius: BorderRadius.all(radius),\r\n+      bottomNavigationBar: const ClipRRect(\r\n+        borderRadius: const BorderRadius.all(10),\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n           shape: const CircularNotchedRectangle(),\r\n           notchMargin: 10,\r\n"
+                },
+                {
+                    "date": 1729871656357,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: const ClipRRect(\r\n-        borderRadius: const BorderRadius.all(10),\r\n+        borderRadius: const BorderRadius.all(Radius.circular(radius)),\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n           shape: const CircularNotchedRectangle(),\r\n           notchMargin: 10,\r\n"
+                },
+                {
+                    "date": 1729871665388,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n-      bottomNavigationBar: const ClipRRect(\r\n-        borderRadius: const BorderRadius.all(Radius.circular(radius)),\r\n+      bottomNavigationBar:  ClipRRect(\r\n+        borderRadius: const BorderRadius.all(Radius.circular(10),),\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n           shape: const CircularNotchedRectangle(),\r\n           notchMargin: 10,\r\n"
+                },
+                {
+                    "date": 1729871670608,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,12 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n-      bottomNavigationBar:  ClipRRect(\r\n-        borderRadius: const BorderRadius.all(Radius.circular(10),),\r\n+      bottomNavigationBar: ClipRRect(\r\n+        borderRadius: const BorderRadius.all(\r\n+          Radius.circular(10),\r\n+        ),\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n           shape: const CircularNotchedRectangle(),\r\n           notchMargin: 10,\r\n"
+                },
+                {
+                    "date": 1729871682283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: ClipRRect(\r\n         borderRadius: const BorderRadius.all(\r\n-          Radius.circular(10),\r\n+          Radius.circular(60),\r\n         ),\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n           shape: const CircularNotchedRectangle(),\r\n"
+                },
+                {
+                    "date": 1729871705762,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: ClipRRect(\r\n         borderRadius: const BorderRadius.all(\r\n-          Radius.circular(60),\r\n+          Radius.circular(12),\r\n         ),\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n           shape: const CircularNotchedRectangle(),\r\n"
+                },
+                {
+                    "date": 1729871715153,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,11 @@\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: ClipRRect(\r\n         borderRadius: const BorderRadius.all(\r\n-          Radius.circular(12),\r\n+          Radius.circular(\r\n+            15,\r\n+          ),\r\n         ),\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n           shape: const CircularNotchedRectangle(),\r\n"
                 }
             ],
             "date": 1729864660073,

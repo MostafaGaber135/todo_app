@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo/app_theme.dart';
 import 'package:todo/screens/home_screen.dart';
 import 'package:todo/widgets/custom_splash_screen.dart';
 
@@ -19,6 +20,9 @@ class MyApp extends StatelessWidget {
       },
       initialRoute: CustomSplashScreen.routeName,
       home: const CustomSplashScreen(),
+      theme: AppTheme.lightTheme,
+      darkTheme: AppTheme.darkTheme,
+      themeMode: ThemeMode.light,
     );
   }
 }

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1729865499414,
@@ -24,6 +24,54 @@
                 {
                     "date": 1729865541313,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n-  static ThemeData lightTheme = Theme\r\n+  static ThemeData lightTheme = ThemeData();\r\n+  static ThemeData lightTheme = ThemeData();\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729865718519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,8 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n-  static ThemeData lightTheme = ThemeData();\r\n-  static ThemeData lightTheme = ThemeData();\r\n+  static ThemeData lightTheme = ThemeData(\r\n+    \r\n+  );\r\n+  static ThemeData darkTheme = ThemeData();\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729866494048,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n   static ThemeData lightTheme = ThemeData(\r\n-    \r\n+    static const Color\r\n   );\r\n   static ThemeData darkTheme = ThemeData();\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729866508405,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n   static ThemeData lightTheme = ThemeData(\r\n-    static const Color\r\n+    static const Color pr\r\n   );\r\n   static ThemeData darkTheme = ThemeData();\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729866514507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n   static ThemeData lightTheme = ThemeData(\r\n-    static const Color pr\r\n+    static const Color primary \r\n   );\r\n   static ThemeData darkTheme = ThemeData();\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729866521052,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n   static ThemeData lightTheme = ThemeData(\r\n-    static const Color primary \r\n+    static const Color primary = const Color(0XFF)\r\n   );\r\n   static ThemeData darkTheme = ThemeData();\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729866528305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n   static ThemeData lightTheme = ThemeData(\r\n-    static const Color primary = const Color(0XFF)\r\n+    static const Color primary = const Color(0XFF5D9CEC);\r\n   );\r\n   static ThemeData darkTheme = ThemeData();\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729866548857,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n   static ThemeData lightTheme = ThemeData(\r\n-    static const Color primary = const Color(0XFF5D9CEC);\r\n+   \r\n   );\r\n   static ThemeData darkTheme = ThemeData();\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729866556650,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,7 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n-  static ThemeData lightTheme = ThemeData(\r\n-   \r\n-  );\r\n+  static const Color primary = const Color(0XFF5D9CEC);\r\n+  static ThemeData lightTheme = ThemeData();\r\n\\ No newline at end of file\n   static ThemeData darkTheme = ThemeData();\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729866565060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,15 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n-  static const Color primary = const Color(0XFF5D9CEC);\r\n+  static const Color primary =  Color(0XFF5D9CEC);\r\n+  static const Color primary =  Color(0XFF5D9CEC);\r\n+  static const Color primary =  Color(0XFF5D9CEC);\r\n\\ No newline at end of file\n+  static const Color primary =  Color(0XFF5D9CEC);\r\n+  static const Color primary =  Color(0XFF5D9CEC);\r\n+  static const Color primary =  Color(0XFF5D9CEC);\r\n+  static const Color primary =  Color(0XFF5D9CEC);\r\n+  static const Color primary =  Color(0XFF5D9CEC);\r\n+  \r\n   static ThemeData lightTheme = ThemeData();\r\n   static ThemeData darkTheme = ThemeData();\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729866577260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,15 @@\n import 'package:flutter/material.dart';\r\n \r\n class AppTheme {\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n+  static const Color backgroundLight =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n-  static const Color primary =  Color(0XFF5D9CEC);\r\n-  \r\n+\r\n   static ThemeData lightTheme = ThemeData();\r\n\\ No newline at end of file\n   static ThemeData darkTheme = ThemeData();\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729866583198,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n class AppTheme {\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color backgroundLight =  Color(0XFF5D9CEC);\r\n-  static const Color backgroundLight =  Color(0XFF5D9CEC);\r\n+  static const Color backgroundDark =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n"
+                },
+                {
+                    "date": 1729866671648,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n class AppTheme {\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color backgroundLight =  Color(0XFFDFECDB);\r\n   static const Color backgroundDark =  Color(0XFF060E1E);\r\n-  static const Color black =  Color(0XFF);\r\n+  static const Color black =  Color(0XFF3);\r\n   static const Color white =  Color(0XFFFFFFFF);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n   static const Color primary =  Color(0XFF5D9CEC);\r\n"
                 }
             ],
             "date": 1729865499413,

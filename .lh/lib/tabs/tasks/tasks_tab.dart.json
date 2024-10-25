@@ -1,0 +1,26 @@
+{
+    "sourceFile": "lib/tabs/tasks/tasks_tab.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1729867183994,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1729867193116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n-class task extends StatelessWidget {\r\n-  const task({super.key});\r\n+import 'package:flutter/material.dart';\r\n \r\n+class TasksTab extends StatelessWidget {\r\n+  const TasksTab({super.key});\r\n+\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container();\r\n   }\r\n"
+                },
+                {
+                    "date": 1729867206033,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,9 @@\n   const TasksTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return const Center(\r\n+      child: const Text('Tasks'),\r\n+    );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1729867183994,
+            "name": "Commit-0",
+            "content": "class task extends StatelessWidget {\r\n  const task({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}"
+        }
+    ]
+}
