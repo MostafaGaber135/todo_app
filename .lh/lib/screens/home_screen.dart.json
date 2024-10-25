@@ -1,0 +1,98 @@
+{
+    "sourceFile": "lib/screens/home_screen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 20,
+            "patches": [
+                {
+                    "date": 1729864660073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1729864933827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n-class name extends StatelessWidget {\r\n-  const name({super.key});\r\n+import 'package:flutter/material.dart';\r\n \r\n+class HomeScreen extends StatelessWidget {\r\n+  const HomeScreen({super.key});\r\n+static const String routeName = '/custom-splash-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container();\r\n   }\r\n"
+                },
+                {
+                    "date": 1729864939402,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+import 'package:flutter/material.dart';\r\n+\r\n+class HomeScreen extends StatelessWidget {\r\n+  const HomeScreen({super.key});\r\n+static const String routeName = '/home-screen';\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Container();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729865118532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,17 +4,7 @@\n   const HomeScreen({super.key});\r\n static const String routeName = '/home-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return const Scaffold();\r\n   }\r\n-}\n-import 'package:flutter/material.dart';\r\n-\r\n-class HomeScreen extends StatelessWidget {\r\n-  const HomeScreen({super.key});\r\n-static const String routeName = '/custom-splash-screen';\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    return Container();\r\n-  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729865133121,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import 'package:flutter/material.dart';\r\n \r\n class HomeScreen extends StatelessWidget {\r\n   const HomeScreen({super.key});\r\n-static const String routeName = '/home-screen';\r\n+  static const String routeName = '/home-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Scaffold();\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865211203,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,9 @@\n   const HomeScreen({super.key});\r\n   static const String routeName = '/home-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold();\r\n+    return const Scaffold(\r\n+      b\r\n\\ No newline at end of file\n+    );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865218607,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n   static const String routeName = '/home-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Scaffold(\r\n-      b\r\n+      bottomNavigationBar: bottn,\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865224876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   const HomeScreen({super.key});\r\n   static const String routeName = '/home-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold(\r\n-      bottomNavigationBar: bottn,\r\n+    return  Scaffold(\r\n+      bottomNavigationBar: bottomNavigationBar(),\r\n     );\r\n\\ No newline at end of file\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865231548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n   static const String routeName = '/home-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return  Scaffold(\r\n-      bottomNavigationBar: bottomNavigationBar(),\r\n+      bottomNavigationBar: bo\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865236828,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n   static const String routeName = '/home-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return  Scaffold(\r\n-      bottomNavigationBar: bo\r\n+      bottomNavigationBar: BottomNavigationBar(items: items)\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865244021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n   static const String routeName = '/home-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return  Scaffold(\r\n-      bottomNavigationBar: BottomNavigationBar(items: items)\r\n+      bottomNavigationBar: BottomNavigationBar(items: [bottomnav])\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865251842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   const HomeScreen({super.key});\r\n   static const String routeName = '/home-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return  Scaffold(\r\n-      bottomNavigationBar: BottomNavigationBar(items: [bottomnav])\r\n-    );\r\n+    return Scaffold(\r\n+        bottomNavigationBar: BottomNavigationBar(\r\n\\ No newline at end of file\n+            items: [BottomNavigationBarItem(icon: Icon(Icons.abc))]));\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865260068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   static const String routeName = '/home-screen';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n-        bottomNavigationBar: BottomNavigationBar(\r\n-            items: [BottomNavigationBarItem(icon: Icon(Icons.abc))]));\r\n+        bottomNavigationBar: BottomNavigationBar(items: const [\r\n+      const BottomNavigationBarItem(icon: const Icon(Icons.abc))\r\n\\ No newline at end of file\n+    ]));\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865266794,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,7 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n         bottomNavigationBar: BottomNavigationBar(items: const [\r\n-      const BottomNavigationBarItem(icon: const Icon(Icons.abc))\r\n-    ]));\r\n+    ],),);\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865274315,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,8 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n         bottomNavigationBar: BottomNavigationBar(items: const [\r\n+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),\r\n     ],),);\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865280297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,7 +7,8 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n         bottomNavigationBar: BottomNavigationBar(items: const [\r\n           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),\r\n+             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),\r\n     ],),);\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865358142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n         bottomNavigationBar: BottomNavigationBar(items: const [\r\n-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),\r\n+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tasks'),\r\n              BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),\r\n     ],),);\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865363743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n         bottomNavigationBar: BottomNavigationBar(items: const [\r\n-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Tasks'),\r\n-             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),\r\n+          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Tasks'),\r\n+             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'S'),\r\n     ],),);\r\n\\ No newline at end of file\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865370738,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n         bottomNavigationBar: BottomNavigationBar(items: const [\r\n           BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Tasks'),\r\n-             BottomNavigationBarItem(icon: Icon(Icons.home), label: 'S'),\r\n+             BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),\r\n     ],),);\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865377481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n         bottomNavigationBar: BottomNavigationBar(items: const [\r\n-          BottomNavigationBarItem(icon: Icon(Icons.list), label: 'Tasks'),\r\n+          BottomNavigationBarItem(icon: Icon(Icons.list,), label: 'Tasks',),\r\n              BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),\r\n     ],),);\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729865383148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,8 @@\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n         bottomNavigationBar: BottomNavigationBar(items: const [\r\n           BottomNavigationBarItem(icon: Icon(Icons.list,), label: 'Tasks',),\r\n-             BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),\r\n+             BottomNavigationBarItem(icon: Icon(Icons.settings,), label: 'Settings',),\r\n     ],),);\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                }
+            ],
+            "date": 1729864660073,
+            "name": "Commit-0",
+            "content": "class name extends StatelessWidget {\r\n  const name({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}"
+        }
+    ]
+}

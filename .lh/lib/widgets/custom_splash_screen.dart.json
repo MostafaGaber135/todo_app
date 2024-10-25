@@ -1,0 +1,30 @@
+{
+    "sourceFile": "lib/widgets/custom_splash_screen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1728890115692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1728890125272,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,8 @@\n-statles\n\\ No newline at end of file\n+class CustomSplashScreen extends StatelessWidget {\r\n+  const CustomSplashScreen({super.key});\r\n+\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Container();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1728890134326,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Center(\r\n-      child: i,\r\n+      child: ima,\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729864707844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n-static const String routeName = 'H';\r\n+static const String routeName = '';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       backgroundColor: const Color(0XFFDFECDB,),\r\n"
+                }
+            ],
+            "date": 1728890115692,
+            "name": "Commit-0",
+            "content": "statles"
+        }
+    ]
+}
