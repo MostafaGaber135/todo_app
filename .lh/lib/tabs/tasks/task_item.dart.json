@@ -1,0 +1,146 @@
+{
+    "sourceFile": "lib/tabs/tasks/task_item.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 32,
+            "patches": [
+                {
+                    "date": 1729876658099,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1729876668323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n+import 'package:flutter/material.dart';\r\n+\r\n class TaskItem extends StatelessWidget {\r\n   const TaskItem({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container();\r\n\\ No newline at end of file\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729876790798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,13 @@\n   const TaskItem({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return Container(\r\n+      child: const Row(\r\n\\ No newline at end of file\n+        children: [\r\n+          \r\n+        ],\r\n+      ),\r\n+    );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729876803080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,10 @@\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       child: const Row(\r\n         children: [\r\n-          \r\n+          Containe\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729876808702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,12 +5,12 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n-      child: const Row(\r\n+      child:  Row(\r\n         children: [\r\n-          Containe\r\n+          Container(),\r\n         ],\r\n       ),\r\n     );\r\n\\ No newline at end of file\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729876818329,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,10 +7,13 @@\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       child:  Row(\r\n         children: [\r\n-          Container(),\r\n+          Container(\r\n+            height: 62,\r\n+            w\r\n+          ),\r\n         ],\r\n\\ No newline at end of file\n       ),\r\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729876831063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo/app_theme.dart';\r\n \r\n class TaskItem extends StatelessWidget {\r\n   const TaskItem({super.key});\r\n \r\n@@ -9,11 +10,12 @@\n       child:  Row(\r\n         children: [\r\n           Container(\r\n             height: 62,\r\n-            w\r\n+            width: 4,\r\n+            color: AppTheme.primary,\r\n           ),\r\n         ],\r\n       ),\r\n     );\r\n\\ No newline at end of file\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729876843324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n-      child:  Row(\r\n+      child: Row(\r\n         children: [\r\n           Container(\r\n             height: 62,\r\n             width: 4,\r\n@@ -17,5 +17,5 @@\n         ],\r\n       ),\r\n     );\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1729876857095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n             height: 62,\r\n             width: 4,\r\n             color: AppTheme.primary,\r\n           ),\r\n+          Column(children: [],)\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729876863649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,13 @@\n             height: 62,\r\n             width: 4,\r\n             color: AppTheme.primary,\r\n           ),\r\n-          Column(children: [],)\r\n+          const Column(\r\n+            children: [\r\n+              Text('data'),\r\n+            ],\r\n+          )\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729876876181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n           const Column(\r\n             children: [\r\n               Text('data'),\r\n             ],\r\n-          )\r\n+          ),\r\n+          \r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729876897376,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n             color: AppTheme.primary,\r\n           ),\r\n           const Column(\r\n             children: [\r\n-              Text('data'),\r\n+              Text('Play Basketball'),\r\n             ],\r\n           ),\r\n-          \r\n+          Container(),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729876918740,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n   const TaskItem({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n+    TaskTheme\r\n     return Container(\r\n       child: Row(\r\n         children: [\r\n           Container(\r\n@@ -15,9 +16,9 @@\n             color: AppTheme.primary,\r\n           ),\r\n           const Column(\r\n             children: [\r\n-              Text('Play Basketball'),\r\n+              Text('Play Basketball', style: ,),\r\n             ],\r\n           ),\r\n           Container(),\r\n         ],\r\n"
+                },
+                {
+                    "date": 1729876924182,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   const TaskItem({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    TaskTheme\r\n+    TaskTheme text\r\n     return Container(\r\n       child: Row(\r\n         children: [\r\n           Container(\r\n"
+                },
+                {
+                    "date": 1729876933771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   const TaskItem({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    TaskTheme text\r\n+    TaskTheme textTheme = Theme.of(context).text\r\n     return Container(\r\n       child: Row(\r\n         children: [\r\n           Container(\r\n"
+                },
+                {
+                    "date": 1729876946805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n   const TaskItem({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    TaskTheme textTheme = Theme.of(context).text\r\n+    TextTheme textTheme = Theme.of(context).textTheme;\r\n     return Container(\r\n       child: Row(\r\n         children: [\r\n           Container(\r\n"
+                },
+                {
+                    "date": 1729876954087,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             color: AppTheme.primary,\r\n           ),\r\n           const Column(\r\n             children: [\r\n-              Text('Play Basketball', style: ,),\r\n+              Text('Play Basketball', style: textTheme.,),\r\n             ],\r\n           ),\r\n           Container(),\r\n         ],\r\n"
+                },
+                {
+                    "date": 1729876960933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             color: AppTheme.primary,\r\n           ),\r\n           const Column(\r\n             children: [\r\n-              Text('Play Basketball', style: textTheme.,),\r\n+              Text('Play Basketball', style: textTheme.titleMedium?.copyWith,),\r\n             ],\r\n           ),\r\n           Container(),\r\n         ],\r\n"
+                },
+                {
+                    "date": 1729876973479,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n             height: 62,\r\n             width: 4,\r\n             color: AppTheme.primary,\r\n           ),\r\n-          const Column(\r\n+           Column(\r\n             children: [\r\n-              Text('Play Basketball', style: textTheme.titleMedium?.copyWith,),\r\n+              Text('Play Basketball', style: textTheme.titleMedium?.copyWith(color: ),),\r\n             ],\r\n           ),\r\n           Container(),\r\n         ],\r\n"
+                },
+                {
+                    "date": 1729876978636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n             color: AppTheme.primary,\r\n           ),\r\n            Column(\r\n             children: [\r\n-              Text('Play Basketball', style: textTheme.titleMedium?.copyWith(color: ),),\r\n+              Text('Play Basketball', style: textTheme.titleMedium?.copyWith(color: AppTheme.,),\r\n             ],\r\n           ),\r\n           Container(),\r\n         ],\r\n"
+                },
+                {
+                    "date": 1729876992240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,16 @@\n             height: 62,\r\n             width: 4,\r\n             color: AppTheme.primary,\r\n           ),\r\n-           Column(\r\n+          Column(\r\n             children: [\r\n-              Text('Play Basketball', style: textTheme.titleMedium?.copyWith(color: AppTheme.,),\r\n+              Text(\r\n+                'Play Basketball',\r\n+                style: textTheme.titleMedium?.copyWith(\r\n+                  color: AppTheme.primary,\r\n+                ),\r\n+              ),\r\n             ],\r\n           ),\r\n           Container(),\r\n         ],\r\n"
+                },
+                {
+                    "date": 1729877002079,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,8 +22,14 @@\n                 style: textTheme.titleMedium?.copyWith(\r\n                   color: AppTheme.primary,\r\n                 ),\r\n               ),\r\n+               Text(\r\n+                'Play Basketball',\r\n+                style: textTheme.titleMedium?.copyWith(\r\n+                  color: AppTheme.primary,\r\n+                ),\r\n+              ),\r\n             ],\r\n           ),\r\n           Container(),\r\n         ],\r\n"
+                },
+                {
+                    "date": 1729877011584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,10 @@\n                 style: textTheme.titleMedium?.copyWith(\r\n                   color: AppTheme.primary,\r\n                 ),\r\n               ),\r\n-               Text(\r\n-                'Play Basketball',\r\n+              Text(\r\n+                'Task Description',\r\n                 style: textTheme.titleMedium?.copyWith(\r\n                   color: AppTheme.primary,\r\n                 ),\r\n               ),\r\n"
+                },
+                {
+                    "date": 1729877023112,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n                   color: AppTheme.primary,\r\n                 ),\r\n               ),\r\n               Text(\r\n-                'Task Description',\r\n+                'Task Description Task Description',\r\n                 style: textTheme.titleMedium?.copyWith(\r\n                   color: AppTheme.primary,\r\n                 ),\r\n               ),\r\n"
+                },
+                {
+                    "date": 1729877034474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,11 +24,9 @@\n                 ),\r\n               ),\r\n               Text(\r\n                 'Task Description Task Description',\r\n-                style: textTheme.titleMedium?.copyWith(\r\n-                  color: AppTheme.primary,\r\n-                ),\r\n+                style: textTheme.titleSmall,\r\n               ),\r\n             ],\r\n           ),\r\n           Container(),\r\n"
+                },
+                {
+                    "date": 1729877200703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n             width: 4,\r\n             color: AppTheme.primary,\r\n           ),\r\n           Column(\r\n+            crossAxisAlignment: cross,\r\n             children: [\r\n               Text(\r\n                 'Play Basketball',\r\n                 style: textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729877218614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,12 +12,13 @@\n         children: [\r\n           Container(\r\n             height: 62,\r\n             width: 4,\r\n+            margin: edgi,\r\n             color: AppTheme.primary,\r\n           ),\r\n           Column(\r\n-            crossAxisAlignment: cross,\r\n+            crossAxisAlignment: CrossAxisAlignment.start,\r\n             children: [\r\n               Text(\r\n                 'Play Basketball',\r\n                 style: textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729877234172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,14 +7,15 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     TextTheme textTheme = Theme.of(context).textTheme;\r\n     return Container(\r\n+      decoration: ,\r\n       child: Row(\r\n         children: [\r\n           Container(\r\n             height: 62,\r\n             width: 4,\r\n-            margin: edgi,\r\n+            margin: const EdgeInsetsDirectional.only(),\r\n             color: AppTheme.primary,\r\n           ),\r\n           Column(\r\n             crossAxisAlignment: CrossAxisAlignment.start,\r\n"
+                },
+                {
+                    "date": 1729877241271,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,11 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     TextTheme textTheme = Theme.of(context).textTheme;\r\n     return Container(\r\n-      decoration: ,\r\n+      decoration: const BoxDecoration(\r\n+        color: AppTheme.backgroundColor,\r\n+      ),\r\n       child: Row(\r\n         children: [\r\n           Container(\r\n             height: 62,\r\n"
+                },
+                {
+                    "date": 1729877252154,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,16 +8,16 @@\n   Widget build(BuildContext context) {\r\n     TextTheme textTheme = Theme.of(context).textTheme;\r\n     return Container(\r\n       decoration: const BoxDecoration(\r\n-        color: AppTheme.backgroundColor,\r\n+        color: AppTheme.white,\r\n       ),\r\n       child: Row(\r\n         children: [\r\n           Container(\r\n             height: 62,\r\n             width: 4,\r\n-            margin: const EdgeInsetsDirectional.only(),\r\n+            margin: const EdgeInsetsDirectional.only(end: 12),\r\n             color: AppTheme.primary,\r\n           ),\r\n           Column(\r\n             crossAxisAlignment: CrossAxisAlignment.start,\r\n"
+                },
+                {
+                    "date": 1729877270022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,17 +7,22 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     TextTheme textTheme = Theme.of(context).textTheme;\r\n     return Container(\r\n+        margin: const EdgeInsetsDirectional.only(\r\n+              end: 12,\r\n+            ),\r\n       decoration: const BoxDecoration(\r\n         color: AppTheme.white,\r\n       ),\r\n       child: Row(\r\n         children: [\r\n           Container(\r\n             height: 62,\r\n             width: 4,\r\n-            margin: const EdgeInsetsDirectional.only(end: 12),\r\n+            margin: const EdgeInsetsDirectional.only(\r\n+              end: 12,\r\n+            ),\r\n             color: AppTheme.primary,\r\n           ),\r\n           Column(\r\n             crossAxisAlignment: CrossAxisAlignment.start,\r\n"
+                },
+                {
+                    "date": 1729877275830,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     TextTheme textTheme = Theme.of(context).textTheme;\r\n     return Container(\r\n-        margin: const EdgeInsets.all.only(\r\n+        margin: const EdgeInsets.all(\r\n               end: 12,\r\n             ),\r\n       decoration: const BoxDecoration(\r\n         color: AppTheme.white,\r\n"
+                },
+                {
+                    "date": 1729877470298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n               ),\r\n             ],\r\n           ),\r\n           Container(\r\n-            height: 34,\r\n+            height: \r\n           ),\r\n         ],\r\n       ),\r\n     );\r\n"
+                }
+            ],
+            "date": 1729876658099,
+            "name": "Commit-0",
+            "content": "class TaskItem extends StatelessWidget {\r\n  const TaskItem({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}"
+        }
+    ]
+}
