@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 24,
+            "activePatchIndex": 29,
             "patches": [
                 {
                     "date": 1728890091943,
@@ -104,6 +104,26 @@
                 {
                     "date": 1729864954255,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo/screens/home_screen.dart';\r\n import 'package:todo/widgets/custom_splash_screen.dart';\r\n \r\n void main() {\r\n   runApp(const MyApp());\r\n@@ -9,16 +10,15 @@\n   const MyApp({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return   MaterialApp(\r\n+    return MaterialApp(\r\n       debugShowCheckedModeBanner: false,\r\n       routes: {\r\n         CustomSplashScreen.routeName: (_) => const CustomSplashScreen(),\r\n-         CustomSplashScreen.routeName: (_) => const CustomSplashScreen(),\r\n+        HomeScreen.routeName: (_) => const HomeScreen(),\r\n       },\r\n       initialRoute: CustomSplashScreen.routeName,\r\n       home: const CustomSplashScreen(),\r\n     );\r\n   }\r\n }\r\n-\r\n"
+                },
+                {
+                    "date": 1729865642846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,7 +18,8 @@\n         HomeScreen.routeName: (_) => const HomeScreen(),\r\n       },\r\n       initialRoute: CustomSplashScreen.routeName,\r\n       home: const CustomSplashScreen(),\r\n+      \r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729865650735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,8 @@\n         HomeScreen.routeName: (_) => const HomeScreen(),\r\n       },\r\n       initialRoute: CustomSplashScreen.routeName,\r\n       home: const CustomSplashScreen(),\r\n-      \r\n+      theme: Appthe,\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729865660582,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo/app_theme.dart';\r\n import 'package:todo/screens/home_screen.dart';\r\n import 'package:todo/widgets/custom_splash_screen.dart';\r\n \r\n void main() {\r\n@@ -18,8 +19,9 @@\n         HomeScreen.routeName: (_) => const HomeScreen(),\r\n       },\r\n       initialRoute: CustomSplashScreen.routeName,\r\n       home: const CustomSplashScreen(),\r\n-      theme: Appthe,\r\n+      theme: AppTheme.lightTheme,\r\n+      darkTheme: appth,\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729865666230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n       },\r\n       initialRoute: CustomSplashScreen.routeName,\r\n       home: const CustomSplashScreen(),\r\n       theme: AppTheme.lightTheme,\r\n-      darkTheme: appth,\r\n+      darkTheme: AppTheme.darkTheme,\r\n+      them\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729865674477,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,8 @@\n       initialRoute: CustomSplashScreen.routeName,\r\n       home: const CustomSplashScreen(),\r\n       theme: AppTheme.lightTheme,\r\n       darkTheme: AppTheme.darkTheme,\r\n-      them\r\n+      themeMode: themmo,\r\n     );\r\n   }\r\n }\r\n"
                 }
             ],
             "date": 1728890091943,
