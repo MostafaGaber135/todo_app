@@ -1,0 +1,134 @@
+{
+    "sourceFile": "lib/widgets/custom_elevated_button.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 29,
+            "patches": [
+                {
+                    "date": 1729895205431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1729895218900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n+import 'package:flutter/material.dart';\r\n+\r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return ElevatedButton(\r\n+      \r\n+    );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1729895225742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,7 @@\n   const CustomElevatedButton({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return ElevatedButton(\r\n-      \r\n-    );\r\n+    return ElevatedButton(onPressed: () {);\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729895231192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const CustomElevatedButton({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return ElevatedButton(onPressed: () {);\r\n+    return ElevatedButton(onPressed: () {};\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729895239401,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const CustomElevatedButton({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return ElevatedButton(onPressed: () {};\r\n+    return ElevatedButton(onPressed: () {}, child: const Text('data'),);\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729895244719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,12 @@\n   const CustomElevatedButton({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return ElevatedButton(onPressed: () {}, child: const Text('data'),);\r\n+    return ElevatedButton(\r\n+      onPressed: () {},\r\n\\ No newline at end of file\n+      child: const Text(\r\n+        'data',\r\n+      ),\r\n+    );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729895260403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: () {},\r\n       child: const Text(\r\n-        'data',\r\n+        label,\r\n       ),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1729895266331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton({super.key});\r\n-\r\n+final String \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: () {},\r\n@@ -11,5 +11,5 @@\n         label,\r\n       ),\r\n     );\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1729895274703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton({super.key});\r\n-final String \r\n+final String Label(),;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: () {},\r\n"
+                },
+                {
+                    "date": 1729895283419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,10 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton({super.key});\r\n-final String Label(),;\r\n+final String label;\r\n+final vo\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: () {},\r\n"
+                },
+                {
+                    "date": 1729895292498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton({super.key});\r\n final String label;\r\n-final vo\r\n+final VoidCallback \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: () {},\r\n"
+                },
+                {
+                    "date": 1729895299021,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n-  const CustomElevatedButton({super.key});\r\n+  const CustomElevatedButton({super.key, required this.label, required this.onPressed});\r\n final String label;\r\n-final VoidCallback \r\n+final VoidCallback onPressed;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: () {},\r\n"
+                },
+                {
+                    "date": 1729895322008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: () {},\r\n-      child: const Text(\r\n+      child:  Text(\r\n         label,\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729895602219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,16 +1,18 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n-  const CustomElevatedButton({super.key, required this.label, required this.onPressed});\r\n-final String label;\r\n-final VoidCallback onPressed;\r\n+  const CustomElevatedButton(\r\n+      {super.key, required this.label, required this.onPressed});\r\n+  final String label;\r\n+  final VoidCallback onPressed;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: () {},\r\n-      child:  Text(\r\n+      child: Text(\r\n         label,\r\n+        style: te,\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729895609323,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     return ElevatedButton(\r\n       onPressed: () {},\r\n       child: Text(\r\n         label,\r\n-        style: te,\r\n+        style:Theme.of(context),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729895616245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     return ElevatedButton(\r\n       onPressed: () {},\r\n       child: Text(\r\n         label,\r\n-        style:Theme.of(context),\r\n+        style:Theme.of(context).textTheme.,\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729895622201,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     return ElevatedButton(\r\n       onPressed: () {},\r\n       child: Text(\r\n         label,\r\n-        style:Theme.of(context).textTheme.,\r\n+        style:Theme.of(context).textTheme.titleMedium?.co,\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729895628935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     return ElevatedButton(\r\n       onPressed: () {},\r\n       child: Text(\r\n         label,\r\n-        style:Theme.of(context).textTheme.titleMedium?.co,\r\n+        style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: fontw),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729895639058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     return ElevatedButton(\r\n       onPressed: () {},\r\n       child: Text(\r\n         label,\r\n-        style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: fontw),\r\n+        style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w400,color: AppTheme.),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729895645758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo/app_theme.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton(\r\n       {super.key, required this.label, required this.onPressed});\r\n"
+                },
+                {
+                    "date": 1729895976252,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,12 +8,15 @@\n   final VoidCallback onPressed;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n-      onPressed: () {},\r\n+      onPressed: on,\r\n       child: Text(\r\n         label,\r\n-        style:Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w400,color: AppTheme.),\r\n+        style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n+              fontWeight: FontWeight.w400,\r\n+              color: AppTheme.white,\r\n+            ),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1729896012906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,10 @@\n   final VoidCallback onPressed;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n-      onPressed: on,\r\n+      onPressed: onPressed,\r\n+      style: ,\r\n       child: Text(\r\n         label,\r\n         style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n               fontWeight: FontWeight.w400,\r\n"
+                },
+                {
+                    "date": 1729896019579,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: onPressed,\r\n-      style: ,\r\n+      style: Elevea,\r\n       child: Text(\r\n         label,\r\n         style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n               fontWeight: FontWeight.w400,\r\n"
+                },
+                {
+                    "date": 1729896026358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,11 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: onPressed,\r\n-      style: Elevea,\r\n+      style: ElevatedButton.styleFrom(\r\n+        \r\n+      ),\r\n       child: Text(\r\n         label,\r\n         style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n               fontWeight: FontWeight.w400,\r\n"
+                },
+                {
+                    "date": 1729896031925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: onPressed,\r\n       style: ElevatedButton.styleFrom(\r\n-        \r\n+        fixedSize: Size(width, height)\r\n       ),\r\n       child: Text(\r\n         label,\r\n         style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729896037305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: onPressed,\r\n       style: ElevatedButton.styleFrom(\r\n-        fixedSize: Size(width, height)\r\n+        fixedSize: Size(MediaQuery.of(context), height)\r\n       ),\r\n       child: Text(\r\n         label,\r\n         style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729896042917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: onPressed,\r\n       style: ElevatedButton.styleFrom(\r\n-        fixedSize: Size(MediaQuery.of(context), height)\r\n+        fixedSize: Size(MediaQuery.of(context).wi, height)\r\n       ),\r\n       child: Text(\r\n         label,\r\n         style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729896051141,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: onPressed,\r\n       style: ElevatedButton.styleFrom(\r\n-        fixedSize: Size(MediaQuery.of(context).wi, height)\r\n+        fixedSize: Size(MediaQuery.Sizeof(context).width, height)\r\n       ),\r\n       child: Text(\r\n         label,\r\n         style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729896058200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: onPressed,\r\n       style: ElevatedButton.styleFrom(\r\n-        fixedSize: Size(MediaQuery.Sizeof(context).width, height)\r\n+        fixedSize: Size(MediaQuery.sizeOf(context).width, height)\r\n       ),\r\n       child: Text(\r\n         label,\r\n         style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                },
+                {
+                    "date": 1729896063756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: onPressed,\r\n       style: ElevatedButton.styleFrom(\r\n-        fixedSize: Size(MediaQuery.sizeOf(context).width, 52,)\r\n+        fixedSize: Size(MediaQuery.sizeOf(context).width, 52,),\r\n       ),\r\n       child: Text(\r\n         label,\r\n         style: Theme.of(context).textTheme.titleMedium?.copyWith(\r\n"
+                }
+            ],
+            "date": 1729895205431,
+            "name": "Commit-0",
+            "content": "class CustomElevatedButton extends StatelessWidget {\r\n  const CustomElevatedButton({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}"
+        }
+    ]
+}
