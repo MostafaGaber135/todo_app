@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 85,
+            "activePatchIndex": 90,
             "patches": [
                 {
                     "date": 1729864660073,
@@ -348,6 +348,26 @@
                 {
                     "date": 1729871715153,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,11 @@\n     return Scaffold(\r\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: ClipRRect(\r\n         borderRadius: const BorderRadius.all(\r\n-          Radius.circular(12),\r\n+          Radius.circular(\r\n+            15,\r\n+          ),\r\n         ),\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n           shape: const CircularNotchedRectangle(),\r\n"
+                },
+                {
+                    "date": 1729891713585,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import 'package:flutter/material.dart';\r\n import 'package:todo/tabs/settings/settings_tab.dart';\r\n+import 'package:todo/tabs/tasks/add_task_bottom_sheet.dart';\r\n import 'package:todo/tabs/tasks/tasks_tab.dart';\r\n \r\n class HomeScreen extends StatefulWidget {\r\n   const HomeScreen({super.key});\r\n@@ -22,9 +23,9 @@\n       body: tabs[currentTabIndex],\r\n       bottomNavigationBar: ClipRRect(\r\n         borderRadius: const BorderRadius.all(\r\n           Radius.circular(\r\n-            15,\r\n+            10,\r\n           ),\r\n         ),\r\n         child: BottomAppBar(\r\n           clipBehavior: Clip.antiAliasWithSaveLayer,\r\n@@ -57,9 +58,12 @@\n           ),\r\n         ),\r\n       ),\r\n       floatingActionButton: FloatingActionButton(\r\n-        onPressed: () {},\r\n+        onPressed: () => showModalBottomSheet(\r\n+          context: context,\r\n+          builder: (_) => const AddTaskBottomSheet(),\r\n+        ),\r\n         child: const Icon(\r\n           Icons.add,\r\n           size: 32,\r\n         ),\r\n"
+                },
+                {
+                    "date": 1729891721436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n       ),\r\n       floatingActionButton: FloatingActionButton(\r\n         onPressed: () => showModalBottomSheet(\r\n           context: context,\r\n-          builder: (_) => const AddTaskBottomSheet(),\r\n+          builder: (_) => const AddTaskBottomSheet(),,\r\n         ),\r\n         child: const Icon(\r\n           Icons.add,\r\n           size: 32,\r\n"
+                },
+                {
+                    "date": 1729891728306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n       ),\r\n       floatingActionButton: FloatingActionButton(\r\n         onPressed: () => showModalBottomSheet(\r\n           context: context,\r\n-          builder: (_) => const AddTaskBottomSheet(),,\r\n+          builder: (_) => const AddTaskBottomSheet().is,\r\n         ),\r\n         child: const Icon(\r\n           Icons.add,\r\n           size: 32,\r\n"
+                },
+                {
+                    "date": 1729891737334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n       ),\r\n       floatingActionButton: FloatingActionButton(\r\n         onPressed: () => showModalBottomSheet(\r\n           context: context,\r\n-          builder: (_) => const AddTaskBottomSheet().is,\r\n+          builder: (_) => const AddTaskBottomSheet().isScroll,\r\n         ),\r\n         child: const Icon(\r\n           Icons.add,\r\n           size: 32,\r\n"
+                },
+                {
+                    "date": 1729891759343,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -60,9 +60,9 @@\n       ),\r\n       floatingActionButton: FloatingActionButton(\r\n         onPressed: () => showModalBottomSheet(\r\n           context: context,\r\n-          builder: (_) => const AddTaskBottomSheet().isScroll,\r\n+          builder: (_) => const AddTaskBottomSheet(),\r\n         ),\r\n         child: const Icon(\r\n           Icons.add,\r\n           size: 32,\r\n"
                 }
             ],
             "date": 1729864660073,

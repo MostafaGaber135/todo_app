@@ -1,0 +1,62 @@
+{
+    "sourceFile": "lib/tabs/tasks/add_task_bottom_sheet.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1729887421448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1729887433148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     return Container(\r\n       child: const Column(\r\n         children: [\r\n           Text('Add new task',),\r\n-          de\r\n+          custom_text_form_fielddartdart\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729887440090,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/cupertino.dart';\r\n+import 'package:todo/widgets/custom_text_form_field.dart';\r\n \r\n class AddTaskBottomSheet extends StatelessWidget {\r\n   const AddTaskBottomSheet({super.key});\r\n \r\n@@ -8,9 +9,9 @@\n     return Container(\r\n       child: const Column(\r\n         children: [\r\n           Text('Add new task',),\r\n-          custom_text_form_fielddartdart\r\n+          CustomTextFormField(controller: controller, hintText: hintText)\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729887447073,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,16 @@\n import 'package:flutter/cupertino.dart';\r\n import 'package:todo/widgets/custom_text_form_field.dart';\r\n \r\n-class AddTaskBottomSheet extends StatelessWidget {\r\n+class AddTaskBottomSheet extends StatefulWidget {\r\n   const AddTaskBottomSheet({super.key});\r\n \r\n   @override\r\n+  State<AddTaskBottomSheet> createState() => _AddTaskBottomSheetState();\r\n+}\r\n+\r\n+class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {\r\n+  @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       child: const Column(\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1729887455670,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,9 @@\n   State<AddTaskBottomSheet> createState() => _AddTaskBottomSheetState();\r\n }\r\n \r\n class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {\r\n+  te\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       child: const Column(\r\n"
+                },
+                {
+                    "date": 1729887461027,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   State<AddTaskBottomSheet> createState() => _AddTaskBottomSheetState();\r\n }\r\n \r\n class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {\r\n-  te\r\n+  TextEditingController \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       child: const Column(\r\n"
+                },
+                {
+                    "date": 1729887467764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n   State<AddTaskBottomSheet> createState() => _AddTaskBottomSheetState();\r\n }\r\n \r\n class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {\r\n-  TextEditingController \r\n+  TextEditingController titleController \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       child: const Column(\r\n"
+                },
+                {
+                    "date": 1729887475496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,11 @@\n   State<AddTaskBottomSheet> createState() => _AddTaskBottomSheetState();\r\n }\r\n \r\n class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {\r\n-  TextEditingController titleController \r\n-  @override\r\n+  TextEditingController titleController = TextEditingController();\r\n+\r\n+TextEditingController titleController = TextEditingController();  @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       child: const Column(\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1729887485186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,10 +9,10 @@\n }\r\n \r\n class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {\r\n   TextEditingController titleController = TextEditingController();\r\n-\r\n-TextEditingController titleController = TextEditingController();  @override\r\n+  TextEditingController descriptionController = TextEditingController();\r\n+  @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       child: const Column(\r\n         children: [\r\n"
+                },
+                {
+                    "date": 1729887499185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     return Container(\r\n       child: const Column(\r\n         children: [\r\n           Text('Add new task',),\r\n-          CustomTextFormField(controller: controller, hintText: hintText)\r\n+          CustomTextFormField(controller: titleController, hintText: hintText)\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1729887506037,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       child:  Column(\r\n         children: [\r\n-          const const  const Text('Add new task',),\r\n+          const   const Text('Add new task',),\r\n           CustomTextFormField(controller: titleController, hintText: hintText)\r\n         ],\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1729887541696,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,13 +13,21 @@\n   TextEditingController descriptionController = TextEditingController();\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n-      child:  Column(\r\n+      child: Column(\r\n         children: [\r\n-           const Text('Add new task',),\r\n-          CustomTextFormField(controller: titleController, hintText: 'Enter task title',),\r\n-          CustomTextFormField(controller: descriptionController, hintText: 'Enter task title',),\r\n+          const Text(\r\n+            'Add new task',\r\n+          ),\r\n+          CustomTextFormField(\r\n+            controller: titleController,\r\n+            hintText: 'Enter task title',\r\n+          ),\r\n+          CustomTextFormField(\r\n+            controller: descriptionController,\r\n+            hintText: 'Enter description title',\r\n+          ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                }
+            ],
+            "date": 1729887421448,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/cupertino.dart';\r\n\r\nclass AddTaskBottomSheet extends StatelessWidget {\r\n  const AddTaskBottomSheet({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container(\r\n      child: const Column(\r\n        children: [\r\n          Text('Add new task',),\r\n          de\r\n        ],\r\n      ),\r\n    );\r\n  }\r\n}\r\n"
+        }
+    ]
+}
