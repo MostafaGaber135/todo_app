@@ -20,5 +20,16 @@ class AppTheme {
       showSelectedLabels: false,
       showUnselectedLabels: false,
     ),
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: primary,
+      foregroundColor: white,
+      shape: CircleBorder(
+        side: BorderSide(
+          width: 4,
+          color: white,
+        ),
+      ),
+    ),
   );
+  static ThemeData darkTheme = ThemeData();
 }

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 38,
+            "activePatchIndex": 42,
             "patches": [
                 {
                     "date": 1730470149809,
@@ -160,6 +160,22 @@
                 {
                     "date": 1730470845799,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n       type: BottomNavigationBarType.fixed,\r\n       backgroundColor: white,\r\n       selectedItemColor: primary,\r\n       unselectedItemColor: grey,\r\n-      showSelectedLabels: ,\r\n-      uns\r\n+      showSelectedLabels: false,\r\n+      showUnselectedLabels: \r\n     ),\r\n   );\r\n }\r\n"
+                },
+                {
+                    "date": 1730473054507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n       backgroundColor: white,\r\n       selectedItemColor: primary,\r\n       unselectedItemColor: grey,\r\n       showSelectedLabels: false,\r\n-      showUnselectedLabels: \r\n+      showUnselectedLabels: false,\r\n     ),\r\n   );\r\n+  static \r\n }\r\n"
+                },
+                {
+                    "date": 1730473065241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,6 +20,6 @@\n       showSelectedLabels: false,\r\n       showUnselectedLabels: false,\r\n     ),\r\n   );\r\n-  static \r\n+  static ThemeData darkTheme = ThemeData();\r\n }\r\n"
+                },
+                {
+                    "date": 1730473071504,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n       unselectedItemColor: grey,\r\n       showSelectedLabels: false,\r\n       showUnselectedLabels: false,\r\n     ),\r\n-    floatingActionButtonTheme: \r\n+    floatingActionButtonTheme: F\r\n   );\r\n   static ThemeData darkTheme = ThemeData();\r\n }\r\n"
+                },
+                {
+                    "date": 1730473093881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,8 @@\n       unselectedItemColor: grey,\r\n       showSelectedLabels: false,\r\n       showUnselectedLabels: false,\r\n     ),\r\n-    floatingActionButtonTheme: const FloatingActionButtonThemeData(backgroundColor: ),\r\n+    floatingActionButtonTheme: const FloatingActionButtonThemeData(backgroundColor: primary,),\r\n   );\r\n   static ThemeData darkTheme = ThemeData();\r\n }\r\n"
                 }
             ],
             "date": 1730470149809,
