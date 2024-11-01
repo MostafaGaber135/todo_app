@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 29,
             "patches": [
                 {
                     "date": 1730466603522,
@@ -24,6 +24,106 @@
                 {
                     "date": 1730467084870,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,1 @@\n-import 'package:flutter/material.dart';\r\n-\r\n-class CustomSplashScreen extends StatelessWidget {\r\n-  const CustomSplashScreen({super.key});\r\n-\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    return  Scaffold(\r\n-      body: Center(child: Image.asset(''),),\r\n-    );\r\n-  }\r\n-}\r\n+ statles  \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730467395714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,8 @@\n- statles  \n\\ No newline at end of file\n+class cUS extends StatelessWidget {\r\n+  const cUS({super.key});\r\n+\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Container();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730467402980,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n-class cUS extends StatelessWidget {\r\n-  const cUS({super.key});\r\n+import 'package:flutter/widgets.dart';\r\n \r\n+class CustomSplashScreen extends StatelessWidget {\r\n+  const CustomSplashScreen({super.key});\r\n+\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container();\r\n   }\r\n"
+                },
+                {
+                    "date": 1730467434449,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return const Scaffold();\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730467441484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n-import 'package:flutter/widgets.dart';\r\n+import 'package:flutter/material.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold();\r\n+    return const Scaffold(\r\n\\ No newline at end of file\n+      backgroundColor: ,\r\n+    );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730467651736,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Scaffold(\r\n-      backgroundColor: ,\r\n+      backgroundColor: Color(0XFF#DFECDB),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730467658720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Scaffold(\r\n-      backgroundColor: Color(0XFF#DFECDB),\r\n+      backgroundColor: Color(0XFFDFECDB,),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730467665254,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,7 +6,8 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Scaffold(\r\n       backgroundColor: Color(0XFFDFECDB,),\r\n+      body: Center(),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730467672386,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Scaffold(\r\n       backgroundColor: Color(0XFFDFECDB,),\r\n-      body: Center(),\r\n+      body: Center(child: Image.asset(''),),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730467741117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,10 @@\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold(\r\n-      backgroundColor: Color(0XFFDFECDB,),\r\n-      body: Center(child: Image.asset(''),),\r\n+    return  Scaffold(\r\n+      backgroundColor: const Color(0XFFDFECDB,),\r\n+      body: Center(child: Image.asset('assets/images/logo@3x.png'),),\r\n\\ No newline at end of file\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730467763905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,10 +4,14 @@\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return  Scaffold(\r\n-      backgroundColor: const Color(0XFFDFECDB,),\r\n-      body: Center(child: Image.asset('assets/images/logo@3x.png'),),\r\n+    return Scaffold(\r\n+      backgroundColor: const Color(\r\n+        0XFFDFECDB,\r\n\\ No newline at end of file\n+      ),\r\n+      body: Center(\r\n+        child: Image.asset('assets/images/logo@3x.png'),\r\n+      ),\r\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730467781895,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,11 @@\n       backgroundColor: const Color(\r\n         0XFFDFECDB,\r\n       ),\r\n       body: Center(\r\n-        child: Image.asset('assets/images/logo@3x.png'),\r\n+        child: Image.asset(\r\n+          'assets/images/logo.png',\r\n+        ),\r\n       ),\r\n\\ No newline at end of file\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730467905038,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,5 +15,5 @@\n         ),\r\n       ),\r\n     );\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1730469453881,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n-\r\n+ Timer(Duration(seconds: 3), () {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n"
+                },
+                {
+                    "date": 1730469460946,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,23 @@\n+import 'package:flutter/material.dart';\r\n+\r\n+class CustomSplashScreen extends StatelessWidget {\r\n+  const CustomSplashScreen({super.key});\r\n+ Timer(Duration(seconds: 3), () {\r\n+  Navigator.of(context).pushReplacement(\r\n+        MaterialPageRoute(builder: (context) => HomePage()),\r\n+      );\r\n+    });\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Scaffold(\r\n+      backgroundColor: const Color(\r\n+        0XFFDFECDB,\r\n+      ),\r\n+      body: Center(\r\n+        child: Image.asset(\r\n+          'assets/images/logo.png',\r\n+        ),\r\n+      ),\r\n+    );\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1730469474109,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,32 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n- Timer(Duration(seconds: 3), () {\r\n-  Navigator.of(context).pushReplacement(\r\n-        MaterialPageRoute(builder: (context) => HomePage()),\r\n-      );\r\n-    });\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    return Scaffold(\r\n-      backgroundColor: const Color(\r\n-        0XFFDFECDB,\r\n-      ),\r\n-      body: Center(\r\n-        child: Image.asset(\r\n-          'assets/images/logo.png',\r\n-        ),\r\n-      ),\r\n-    );\r\n-  }\r\n-}\r\n-import 'package:flutter/material.dart';\r\n \r\n-class CustomSplashScreen extends StatelessWidget {\r\n-  const CustomSplashScreen({super.key});\r\n- Timer(Duration(seconds: 3), () {\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n"
+                },
+                {
+                    "date": 1730469668358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n+    Timer(const Duration(seconds: 3))\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n         0XFFDFECDB,\r\n       ),\r\n"
+                },
+                {
+                    "date": 1730469675770,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    Timer(const Duration(seconds: 3))\r\n+    Timer(const Duration(seconds: 3,),);\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n         0XFFDFECDB,\r\n       ),\r\n"
+                },
+                {
+                    "date": 1730469685498,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,10 @@\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    Timer(const Duration(seconds: 3,),);\r\n+    Timer(const Duration(seconds: 3,), (){}\r\n+    );\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n         0XFFDFECDB,\r\n       ),\r\n"
+                },
+                {
+                    "date": 1730469693899,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,16 @@\n+import 'dart:async';\r\n+\r\n import 'package:flutter/material.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    Timer(const Duration(seconds: 3,), (){}\r\n+    Timer(const Duration(seconds: 3,), (){\r\n+      \r\n+    }\r\n     );\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n         0XFFDFECDB,\r\n"
+                },
+                {
+                    "date": 1730469699659,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     Timer(const Duration(seconds: 3,), (){\r\n-      \r\n+      Navigator.p\r\n     }\r\n     );\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n"
+                },
+                {
+                    "date": 1730469705646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     Timer(const Duration(seconds: 3,), (){\r\n-      Navigator.p\r\n+      Navigator.pushReplacement(context, newRoute)\r\n     }\r\n     );\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n"
+                },
+                {
+                    "date": 1730469714798,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     Timer(const Duration(seconds: 3,), (){\r\n-      Navigator.pushReplacement(context, newRoute)\r\n+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)))\r\n     }\r\n     );\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n"
+                },
+                {
+                    "date": 1730469726631,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     Timer(const Duration(seconds: 3,), (){\r\n-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)))\r\n+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomeScreen(),),)\r\n     }\r\n     );\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n"
+                },
+                {
+                    "date": 1730469734101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     Timer(const Duration(seconds: 3,), (){\r\n-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomeScreen(),),)\r\n+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomeScreen(),),);\r\n     }\r\n     );\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n"
+                },
+                {
+                    "date": 1730469752796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,16 @@\n import 'dart:async';\r\n \r\n import 'package:flutter/material.dart';\r\n+import 'package:todo_app/screens/home_screen.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     Timer(const Duration(seconds: 3,), (){\r\n-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomeScreen(),),);\r\n+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const HomeScreen(),),);\r\n     }\r\n     );\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n"
                 }
             ],
             "date": 1730466603521,
