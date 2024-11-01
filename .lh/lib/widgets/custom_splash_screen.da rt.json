@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/widgets/custom_splash_screen.da rt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1730466583456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1730466583456,
+            "name": "Commit-0",
+            "content": " statles"
+        }
+    ]
+}

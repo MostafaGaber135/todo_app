@@ -1,0 +1,34 @@
+{
+    "sourceFile": "lib/widgets/custom_splash_screen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1730466603522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730466617397,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return const Scaffold();\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730466626820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n+import 'package:flutter/material.dart';\r\n+\r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold();\r\n\\ No newline at end of file\n+    return const Scaffold(\r\n+      body: Center(child: Imag,),\r\n+    );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730466634158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold(\r\n-      body: Center(child: Imag,),\r\n+    return  Scaffold(\r\n+      body: Center(child: Image.asset(''),),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730467084870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,1 @@\n-import 'package:flutter/material.dart';\r\n-\r\n-class CustomSplashScreen extends StatelessWidget {\r\n-  const CustomSplashScreen({super.key});\r\n-\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    return  Scaffold(\r\n-      body: Center(child: Image.asset(''),),\r\n-    );\r\n-  }\r\n-}\r\n+ statles  \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1730466603521,
+            "name": "Commit-0",
+            "content": "class CustomSplashScreen extends StatelessWidget {\r\n  const CustomSplashScreen({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}"
+        }
+    ]
+}
