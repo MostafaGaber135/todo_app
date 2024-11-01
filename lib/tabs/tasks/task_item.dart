@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:todo_app/app_theme.dart';
+import 'package:todo_app/models/task_model.dart';
 
 class TaskItem extends StatefulWidget {
-  const TaskItem({super.key});
-
+  const TaskItem({super.key, required this.task});
+  final TaskModel task;
   @override
   State<TaskItem> createState() => _TaskItemState();
 }
@@ -41,7 +42,7 @@ class _TaskItemState extends State<TaskItem> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Play Basketball',
+                widget.task.title,
                 style: textTheme.titleMedium?.copyWith(
                   color: AppTheme.primary,
                 ),
@@ -50,7 +51,7 @@ class _TaskItemState extends State<TaskItem> {
                 height: 4,
               ),
               Text(
-                'Task Description Task Descripition',
+                widget.task.description,
                 style: textTheme.titleSmall,
               ),
             ],

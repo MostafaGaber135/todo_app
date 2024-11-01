@@ -1,6 +1,7 @@
 import 'package:easy_date_timeline/easy_date_timeline.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_app/app_theme.dart';
+import 'package:todo_app/models/task_model.dart';
 import 'package:todo_app/tabs/tasks/task_item.dart';
 
 class TasksTab extends StatelessWidget {
@@ -9,6 +10,14 @@ class TasksTab extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.sizeOf(context).height;
+    List<TaskModel> tasks = List.generate(
+      10,
+      (index) => TaskModel(
+        title: 'Title $index',
+        description: 'Description $index',
+        date: DateTime.now(),
+      ),
+    );
     return Column(
       children: [
         Stack(
@@ -102,8 +111,10 @@ class TasksTab extends StatelessWidget {
             padding: const EdgeInsets.only(
               top: 20,
             ),
-            itemBuilder: (_, index) => const TaskItem(),
-            itemCount: 10,
+            itemBuilder: (_, index) => TaskItem(
+              task: tasks[index],
+            ),
+            itemCount: tasks.length,
           ),
         ),
       ],
