@@ -1,0 +1,70 @@
+{
+    "sourceFile": "lib/widgets/custom_elevated_button.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1730485987957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730485994125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,9 @@\n-class name extends StatelessWidget {\r\n-  const name({super.key});\r\n+import 'package:flutter/material.dart';\r\n \r\n+class CustomElevatedButton extends StatelessWidget {\r\n+  const CustomElevatedButton({super.key});\r\n+\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container();\r\n   }\r\n"
+                },
+                {
+                    "date": 1730485999465,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,9 @@\n   const CustomElevatedButton({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return ElevatedButton(\r\n+      \r\n+    );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730486008273,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n-      \r\n+      onPressed: (){},\r\n+      child: ,\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730486041083,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: (){},\r\n-      child: ,\r\n+      child: Text(data),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730486049106,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton({super.key});\r\n-\r\n+String Label(),;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: (){},\r\n-      child: Text(data),\r\n+      child: const Text(''),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730486055065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton({super.key});\r\n-String Label(),;\r\n+String label;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: (){},\r\n"
+                },
+                {
+                    "date": 1730486063500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton({super.key});\r\n String label;\r\n+voidca\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: (){},\r\n"
+                },
+                {
+                    "date": 1730486069619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton({super.key});\r\n String label;\r\n-voidca\r\n+VoidCallback onPressed;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: (){},\r\n"
+                },
+                {
+                    "date": 1730486080716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n   const CustomElevatedButton({super.key});\r\n-String label;\r\n+final String label;\r\n VoidCallback onPressed;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n"
+                },
+                {
+                    "date": 1730486086393,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n-  const CustomElevatedButton({super.key});\r\n+  const CustomElevatedButton({super.key, required this.label, required this.onPressed});\r\n final String label;\r\n-VoidCallback onPressed;\r\n+final VoidCallback onPressed;\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n       onPressed: (){},\r\n"
+                },
+                {
+                    "date": 1730486099356,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,18 @@\n import 'package:flutter/material.dart';\r\n \r\n class CustomElevatedButton extends StatelessWidget {\r\n-  const CustomElevatedButton({super.key, required this.label, required this.onPressed});\r\n-final String label;\r\n-final VoidCallback onPressed;\r\n+  const CustomElevatedButton({\r\n+    super.key,\r\n+    required this.label,\r\n+    required this.onPressed,\r\n+  });\r\n+  final String label;\r\n+  final VoidCallback onPressed;\r\n   @override\r\n\\ No newline at end of file\n   Widget build(BuildContext context) {\r\n     return ElevatedButton(\r\n-      onPressed: (){},\r\n-      child: const Text(''),\r\n+      onPressed: () {},\r\n+      child: const Text(label,),\r\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730486264578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     return ElevatedButton(\r\n       onPressed: () {},\r\n       child: Text(\r\n         label,\r\n-        style: ,\r\n+        style: T,\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730486279350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n     return ElevatedButton(\r\n       onPressed: () {},\r\n       child: Text(\r\n         label,\r\n-        style: Theme.of(context).textTheme.,\r\n+        style: Theme.of(context).textTheme.titleLarge,\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                }
+            ],
+            "date": 1730485987957,
+            "name": "Commit-0",
+            "content": "class name extends StatelessWidget {\r\n  const name({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}"
+        }
+    ]
+}

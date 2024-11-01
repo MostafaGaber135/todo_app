@@ -1,0 +1,34 @@
+{
+    "sourceFile": "lib/tabs/add_task_bottom_sheet.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1730483128069,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730483258441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n+import 'package:flutter/material.dart';\r\n+\r\n class AddTaskBottomSheet extends StatelessWidget {\r\n   const AddTaskBottomSheet({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return Container(\r\n+      \r\n+    );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730483264247,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container(\r\n-      \r\n+      child: Column(\r\n+        C\r\n+      ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730483279820,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n   Widget build(BuildContext context) {\r\n     return Container(\r\n       child: const Column(\r\n         children: [\r\n-          \r\n+          Text('Add new task',),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1730483544778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,27 @@\n+import 'package:flutter/material.dart';\r\n+import 'package:todo_app/widgets/custom_text_form_field.dart';\r\n+\r\n+class AddTaskBottomSheet extends StatefulWidget {\r\n+  const AddTaskBottomSheet({super.key});\r\n+\r\n+  @override\r\n+  State<AddTaskBottomSheet> createState() => _AddTaskBottomSheetState();\r\n+}\r\n+\r\n+class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {\r\n+  TextEditingController titleController = TextEditingController();\r\n+  TextEditingController \r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Container(\r\n+      child: const Column(\r\n+        children: [\r\n+          Text(\r\n+            'Add new task',\r\n+          ),\r\n+          CustomTextFormField(controller: controller, hintText: hintText)\r\n+        ],\r\n+      ),\r\n+    );\r\n+  }\r\n+}\r\n"
+                }
+            ],
+            "date": 1730483128069,
+            "name": "Commit-0",
+            "content": "class AddTaskBottomSheet extends StatelessWidget {\r\n  const AddTaskBottomSheet({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}"
+        }
+    ]
+}
