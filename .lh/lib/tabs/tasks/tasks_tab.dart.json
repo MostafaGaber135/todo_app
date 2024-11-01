@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1730471419596,
@@ -16,6 +16,14 @@
                 {
                     "date": 1730471435052,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const TasksTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Center(child: te,);\r\n+    return const Center(child: const Text('Tasks tab'),);\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730476603300,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const TasksTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Column\r\n+    return Column()\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730476611822,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,8 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Column(children: [\r\n-      \r\n+      Conta\r\n     ],);\r\n   }\r\n }\r\n"
                 }
             ],
             "date": 1730471419596,
