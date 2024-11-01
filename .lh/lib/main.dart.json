@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1730466185395,
@@ -32,6 +32,46 @@
                 {
                     "date": 1730467426550,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,101 +5,12 @@\n }\r\n \r\n class MyApp extends StatelessWidget {\r\n   const MyApp({super.key});\r\n-\r\n-  // This widget is the root of your application.\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const MaterialApp(\r\n-     \r\n+     debugShowCheckedModeBanner: false,\r\n+     home: Cuspl,\r\n     );\r\n   }\r\n }\r\n-\r\n-class MyHomePage extends StatefulWidget {\r\n-  const MyHomePage({super.key, required this.title});\r\n-\r\n-  // This widget is the home page of your application. It is stateful, meaning\r\n-  // that it has a State object (defined below) that contains fields that affect\r\n-  // how it looks.\r\n-\r\n-  // This class is the configuration for the state. It holds the values (in this\r\n-  // case the title) provided by the parent (in this case the App widget) and\r\n-  // used by the build method of the State. Fields in a Widget subclass are\r\n-  // always marked \"final\".\r\n-\r\n-  final String title;\r\n-\r\n-  @override\r\n-  State<MyHomePage> createState() => _MyHomePageState();\r\n-}\r\n-\r\n-class _MyHomePageState extends State<MyHomePage> {\r\n-  int _counter = 0;\r\n-\r\n-  void _incrementCounter() {\r\n-    setState(() {\r\n-      // This call to setState tells the Flutter framework that something has\r\n-      // changed in this State, which causes it to rerun the build method below\r\n-      // so that the display can reflect the updated values. If we changed\r\n-      // _counter without calling setState(), then the build method would not be\r\n-      // called again, and so nothing would appear to happen.\r\n-      _counter++;\r\n-    });\r\n-  }\r\n-\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    // This method is rerun every time setState is called, for instance as done\r\n-    // by the _incrementCounter method above.\r\n-    //\r\n-    // The Flutter framework has been optimized to make rerunning build methods\r\n-    // fast, so that you can just rebuild anything that needs updating rather\r\n-    // than having to individually change instances of widgets.\r\n-    return Scaffold(\r\n-      appBar: AppBar(\r\n-        // TRY THIS: Try changing the color here to a specific color (to\r\n-        // Colors.amber, perhaps?) and trigger a hot reload to see the AppBar\r\n-        // change color while the other colors stay the same.\r\n-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,\r\n-        // Here we take the value from the MyHomePage object that was created by\r\n-        // the App.build method, and use it to set our appbar title.\r\n-        title: Text(widget.title),\r\n-      ),\r\n-      body: Center(\r\n-        // Center is a layout widget. It takes a single child and positions it\r\n-        // in the middle of the parent.\r\n-        child: Column(\r\n-          // Column is also a layout widget. It takes a list of children and\r\n-          // arranges them vertically. By default, it sizes itself to fit its\r\n-          // children horizontally, and tries to be as tall as its parent.\r\n-          //\r\n-          // Column has various properties to control how it sizes itself and\r\n-          // how it positions its children. Here we use mainAxisAlignment to\r\n-          // center the children vertically; the main axis here is the vertical\r\n-          // axis because Columns are vertical (the cross axis would be\r\n-          // horizontal).\r\n-          //\r\n-          // TRY THIS: Invoke \"debug painting\" (choose the \"Toggle Debug Paint\"\r\n-          // action in the IDE, or press \"p\" in the console), to see the\r\n-          // wireframe for each widget.\r\n-          mainAxisAlignment: MainAxisAlignment.center,\r\n-          children: <Widget>[\r\n-            const Text(\r\n-              'You have pushed the button this many times:',\r\n-            ),\r\n-            Text(\r\n-              '$_counter',\r\n-              style: Theme.of(context).textTheme.headlineMedium,\r\n-            ),\r\n-          ],\r\n-        ),\r\n-      ),\r\n-      floatingActionButton: FloatingActionButton(\r\n-        onPressed: _incrementCounter,\r\n-        tooltip: 'Increment',\r\n-        child: const Icon(Icons.add),\r\n-      ), // This trailing comma makes auto-formatting nicer for build methods.\r\n-    );\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1730473675177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo_app/widgets/custom_splash_screen.dart';\r\n \r\n void main() {\r\n   runApp(const MyApp());\r\n }\r\n@@ -8,9 +9,10 @@\n   const MyApp({super.key});\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const MaterialApp(\r\n-     debugShowCheckedModeBanner: false,\r\n-     home: Cuspl,\r\n+      debugShowCheckedModeBanner: false,\r\n+      home: CustomSplashScreen(),\r\n+      th\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730473683925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n   Widget build(BuildContext context) {\r\n     return const MaterialApp(\r\n       debugShowCheckedModeBanner: false,\r\n       home: CustomSplashScreen(),\r\n-      th\r\n+      theme: Theme(data: data, child: child),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730473694693,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,8 @@\n   Widget build(BuildContext context) {\r\n     return const MaterialApp(\r\n       debugShowCheckedModeBanner: false,\r\n       home: CustomSplashScreen(),\r\n-      theme: Theme(data: data, child: child),\r\n+      theme: ThemeData(),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730473700758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,11 +8,13 @@\n class MyApp extends StatelessWidget {\r\n   const MyApp({super.key});\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const MaterialApp(\r\n+    return  MaterialApp(\r\n       debugShowCheckedModeBanner: false,\r\n-      home: CustomSplashScreen(),\r\n-      theme: ThemeData(),\r\n+      home: const CustomSplashScreen(),\r\n+      theme: ThemeData(\r\n+        \r\n+      ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730473720633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     return  MaterialApp(\r\n       debugShowCheckedModeBanner: false,\r\n       home: const CustomSplashScreen(),\r\n       theme: ThemeData(\r\n-        \r\n+        brightness: AppTheme\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730473726732,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo_app/app_theme.dart';\r\n import 'package:todo_app/widgets/custom_splash_screen.dart';\r\n \r\n void main() {\r\n   runApp(const MyApp());\r\n@@ -12,9 +13,9 @@\n     return  MaterialApp(\r\n       debugShowCheckedModeBanner: false,\r\n       home: const CustomSplashScreen(),\r\n       theme: ThemeData(\r\n-        brightness: AppTheme\r\n+        brightness: AppTheme.backgroundLight,\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730473873599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,13 +9,11 @@\n class MyApp extends StatelessWidget {\r\n   const MyApp({super.key});\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return  MaterialApp(\r\n+    return  const MaterialApp(\r\n       debugShowCheckedModeBanner: false,\r\n       home: const CustomSplashScreen(),\r\n-      theme: ThemeData(\r\n-        brightness: AppTheme.backgroundLight,\r\n-      ),\r\n+     \r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730473882135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,11 +9,13 @@\n class MyApp extends StatelessWidget {\r\n   const MyApp({super.key});\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return  const MaterialApp(\r\n+    return   MaterialApp(\r\n       debugShowCheckedModeBanner: false,\r\n       home: const CustomSplashScreen(),\r\n-     \r\n+      theme: AppTheme.lightTheme,\r\n+      darkTheme: AppTheme.darkTheme,\r\n+      themeMode: Appth.themeMode,\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730473902640,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n       debugShowCheckedModeBanner: false,\r\n       home: const CustomSplashScreen(),\r\n       theme: AppTheme.lightTheme,\r\n       darkTheme: AppTheme.darkTheme,\r\n-      themeMode: Appth.themeMode,\r\n+      themeMode: AppTheme.light,\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730473907864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n       debugShowCheckedModeBanner: false,\r\n       home: const CustomSplashScreen(),\r\n       theme: AppTheme.lightTheme,\r\n       darkTheme: AppTheme.darkTheme,\r\n-      themeMode: Thememo.light,\r\n+      themeMode: ThemeMode.light,\r\n     );\r\n   }\r\n }\r\n"
                 }
             ],
             "date": 1730466185395,
