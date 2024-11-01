@@ -1,0 +1,22 @@
+{
+    "sourceFile": "lib/screens/home_screen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1730469746462,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730469882783,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const HomeScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return const Scaffold();\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                }
+            ],
+            "date": 1730469746462,
+            "name": "Commit-0",
+            "content": "class HomeScreen extends StatelessWidget {\r\n  const HomeScreen({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return Container();\r\n  }\r\n}"
+        }
+    ]
+}
