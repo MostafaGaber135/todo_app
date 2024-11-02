@@ -1,0 +1,70 @@
+{
+    "sourceFile": "lib/tabs/tasks/add_task_bottom_sheet.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1730502562745,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730502568191,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n import 'package:flutter/material.dart';\r\n import 'package:intl/intl.dart';\r\n+import 'package:todo_app/firebase_functions.dart';\r\n import 'package:todo_app/models/task_model.dart';\r\n import 'package:todo_app/widgets/custom_elevated_button.dart';\r\n import 'package:todo_app/widgets/custom_text_form_field.dart';\r\n \r\n@@ -119,7 +120,7 @@\n       title: titleController.text,\r\n       description: descriptionController.text,\r\n       date: selectedDate,\r\n     );\r\n-    Firebasf\r\n+    FirebaseFunctions.addTasksToFirestore(task);\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730502584022,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,7 +120,7 @@\n       title: titleController.text,\r\n       description: descriptionController.text,\r\n       date: selectedDate,\r\n     );\r\n-    FirebaseFunctions.addTasksToFirestore(task);\r\n+    FirebaseFunctions.addTasksToFirestore(task).then();\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730502594176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,7 +120,9 @@\n       title: titleController.text,\r\n       description: descriptionController.text,\r\n       date: selectedDate,\r\n     );\r\n-    FirebaseFunctions.addTasksToFirestore(task).then();\r\n+    FirebaseFunctions.addTasksToFirestore(task).then((_){\r\n+      Navigator.of(context)\r\n+    });\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730502599418,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -121,8 +121,8 @@\n       description: descriptionController.text,\r\n       date: selectedDate,\r\n     );\r\n     FirebaseFunctions.addTasksToFirestore(task).then((_){\r\n-      Navigator.of(context)\r\n+      Navigator.of(context).pop();\r\n     });\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730502609148,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -122,7 +122,9 @@\n       date: selectedDate,\r\n     );\r\n     FirebaseFunctions.addTasksToFirestore(task).then((_){\r\n       Navigator.of(context).pop();\r\n-    });\r\n+    },\r\n+    \r\n+    ).;\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730502615467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,7 +124,7 @@\n     FirebaseFunctions.addTasksToFirestore(task).then((_){\r\n       Navigator.of(context).pop();\r\n     },\r\n     \r\n-    ).;\r\n+    ). catchError((error));\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730502628906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -120,11 +120,16 @@\n       title: titleController.text,\r\n       description: descriptionController.text,\r\n       date: selectedDate,\r\n     );\r\n-    FirebaseFunctions.addTasksToFirestore(task).then((_){\r\n-      Navigator.of(context).pop();\r\n-    },\r\n-    \r\n-    ). catchError((error));\r\n+    FirebaseFunctions.addTasksToFirestore(task).then(\r\n+      (_) {\r\n+        if(!mounted) return;\r\n+        Navigator.of(context).pop();\r\n+      },\r\n+    ).catchError(\r\n+      (error) {\r\n+        print(error);\r\n+      },\r\n+    );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730502658743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import 'dart:developer';\r\n+\r\n import 'package:flutter/material.dart';\r\n import 'package:intl/intl.dart';\r\n import 'package:todo_app/firebase_functions.dart';\r\n import 'package:todo_app/models/task_model.dart';\r\n@@ -120,16 +122,16 @@\n       title: titleController.text,\r\n       description: descriptionController.text,\r\n       date: selectedDate,\r\n     );\r\n-    FirebaseFunctions.addTasksToFirestore(task).then(\r\n+    FirebaseFunctions.addTasksToFirestore(task).timeout(\r\n       (_) {\r\n         if(!mounted) return;\r\n         Navigator.of(context).pop();\r\n       },\r\n     ).catchError(\r\n       (error) {\r\n-        print(error);\r\n+        log(error);\r\n       },\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730502666133,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,8 +123,9 @@\n       description: descriptionController.text,\r\n       date: selectedDate,\r\n     );\r\n     FirebaseFunctions.addTasksToFirestore(task).timeout(\r\n+      const Duration(mic)\r\n       (_) {\r\n         if(!mounted) return;\r\n         Navigator.of(context).pop();\r\n       },\r\n"
+                },
+                {
+                    "date": 1730502672654,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -123,9 +123,10 @@\n       description: descriptionController.text,\r\n       date: selectedDate,\r\n     );\r\n     FirebaseFunctions.addTasksToFirestore(task).timeout(\r\n-      const Duration(mic)\r\n+      const Duration(microseconds: 100),\r\n+      ont\r\n       (_) {\r\n         if(!mounted) return;\r\n         Navigator.of(context).pop();\r\n       },\r\n"
+                },
+                {
+                    "date": 1730502681250,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -124,13 +124,13 @@\n       date: selectedDate,\r\n     );\r\n     FirebaseFunctions.addTasksToFirestore(task).timeout(\r\n       const Duration(microseconds: 100),\r\n-      ont\r\n-      (_) {\r\n+      onTimeout: (){},\r\n+    \r\n         if(!mounted) return;\r\n         Navigator.of(context).pop();\r\n-      },\r\n+   \r\n     ).catchError(\r\n       (error) {\r\n         log(error);\r\n       },\r\n"
+                },
+                {
+                    "date": 1730502693507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,9 +127,9 @@\n       const Duration(microseconds: 100),\r\n       onTimeout: (){\r\n         if(!mounted) return;\r\n         Navigator.of(context).pop();\r\n-        \r\n+      },\r\n     ).catchError(\r\n       (error) {\r\n         log(error);\r\n       },\r\n"
+                },
+                {
+                    "date": 1730541225672,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -127,9 +127,9 @@\n       const Duration(microseconds: 100),\r\n       onTimeout: () {\r\n         if (!mounted) return;\r\n         Navigator.of(context).pop();\r\n-        pROV\r\n+        provider\r\n       },\r\n     ).catchError(\r\n       (error) {\r\n         log(error);\r\n"
+                }
+            ],
+            "date": 1730502562745,
+            "name": "Commit-0",
+            "content": "import 'package:flutter/material.dart';\r\nimport 'package:intl/intl.dart';\r\nimport 'package:todo_app/models/task_model.dart';\r\nimport 'package:todo_app/widgets/custom_elevated_button.dart';\r\nimport 'package:todo_app/widgets/custom_text_form_field.dart';\r\n\r\nclass AddTaskBottomSheet extends StatefulWidget {\r\n  const AddTaskBottomSheet({super.key});\r\n\r\n  @override\r\n  State<AddTaskBottomSheet> createState() => _AddTaskBottomSheetState();\r\n}\r\n\r\nclass _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {\r\n  TextEditingController titleController = TextEditingController();\r\n  TextEditingController descriptionController = TextEditingController();\r\n  DateTime selectedDate = DateTime.now();\r\n  DateFormat dateFormat = DateFormat(\r\n    'dd/MM/yyyy',\r\n  );\r\n  final formKey = GlobalKey<FormState>();\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    TextStyle? titleMediumStyle = Theme.of(context).textTheme.titleMedium;\r\n    return Container(\r\n      height: MediaQuery.sizeOf(context).height * 0.5,\r\n      padding: const EdgeInsets.all(\r\n        20,\r\n      ),\r\n      child: Form(\r\n        key: formKey,\r\n        child: Column(\r\n          children: [\r\n            Text(\r\n              'Add new task',\r\n              style: titleMediumStyle,\r\n            ),\r\n            const SizedBox(\r\n              height: 16,\r\n            ),\r\n            CustomTextFormField(\r\n              controller: titleController,\r\n              hintText: 'Enter task title',\r\n              validator: (value) {\r\n                if (value == null || value.trim().isEmpty) {\r\n                  return 'Please enter task title';\r\n                }\r\n                return null;\r\n              },\r\n            ),\r\n            const SizedBox(\r\n              height: 16,\r\n            ),\r\n            CustomTextFormField(\r\n              controller: descriptionController,\r\n              hintText: 'Enter task description',\r\n              validator: (value) {\r\n                if (value == null || value.trim().isEmpty) {\r\n                  return 'Please enter task description';\r\n                }\r\n                return null;\r\n              },\r\n            ),\r\n            const SizedBox(\r\n              height: 16,\r\n            ),\r\n            Text(\r\n              'Select date',\r\n              style: titleMediumStyle?.copyWith(\r\n                fontWeight: FontWeight.w400,\r\n              ),\r\n            ),\r\n            const SizedBox(\r\n              height: 8,\r\n            ),\r\n            InkWell(\r\n              onTap: () async {\r\n                DateTime? dateTime = await showDatePicker(\r\n                  context: context,\r\n                  firstDate: DateTime.now(),\r\n                  lastDate: DateTime.now().add(\r\n                    const Duration(\r\n                      days: 365,\r\n                    ),\r\n                  ),\r\n                  initialDate: selectedDate,\r\n                  initialEntryMode: DatePickerEntryMode.calendarOnly,\r\n                );\r\n                if (dateTime != null && dateTime == selectedDate) {\r\n                  selectedDate = dateTime;\r\n                }\r\n                setState(() {});\r\n              },\r\n              child: Text(\r\n                dateFormat.format(\r\n                  selectedDate,\r\n                ),\r\n              ),\r\n            ),\r\n            const SizedBox(\r\n              height: 32,\r\n            ),\r\n            CustomElevatedButton(\r\n              label: 'Add',\r\n              onPressed: () {\r\n                if (formKey.currentState!.validate()) {\r\n                  addTask();\r\n                }\r\n              },\r\n            ),\r\n          ],\r\n        ),\r\n      ),\r\n    );\r\n  }\r\n\r\n  void addTask() {\r\n    TaskModel task = TaskModel(\r\n      title: titleController.text,\r\n      description: descriptionController.text,\r\n      date: selectedDate,\r\n    );\r\n    Firebasf\r\n  }\r\n}\r\n"
+        }
+    ]
+}

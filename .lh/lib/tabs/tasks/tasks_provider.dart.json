@@ -1,0 +1,90 @@
+{
+    "sourceFile": "lib/tabs/tasks/tasks_provider.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 18,
+            "patches": [
+                {
+                    "date": 1730540248444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730540255906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n+import 'package:todo_app/models/task_model.dart';\r\n+\r\n class TasksProvider {\r\n-  \r\n+  List<TaskModel> \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540262105,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:todo_app/models/task_model.dart';\r\n \r\n class TasksProvider {\r\n-  List<TaskModel> \r\n+  List<TaskModel> tasks = [];\r\n+  \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540276425,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,9 @@\n import 'package:todo_app/models/task_model.dart';\r\n \r\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n-  \r\n+  Future<void> getTasks() async {\r\n+    tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n+    setState(() {});\r\n+  }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540284896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import 'package:todo_app/firebase_functions.dart';\r\n import 'package:todo_app/models/task_model.dart';\r\n \r\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n"
+                },
+                {
+                    "date": 1730540298172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    setState(() {});\r\n+    NotifyLis\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540305643,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    NotifyLis\r\n+    noty\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540316871,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    noty\r\n+    notifyLiser\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540323622,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    notifyLiser\r\n+    notifyListners();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540331716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    notifyListners();\r\n+    notifyListeners();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540374875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    notifyListeners();\r\n+    notifyLisn();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540415215,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    notifyLisn();\r\n+    not\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540421409,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    not\r\n+    notifyLisner()\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730540431089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n class TasksProvider {\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    notifyLisner()\r\n+    notifyListner();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730541011890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n import 'package:todo_app/firebase_functions.dart';\r\n import 'package:todo_app/models/task_model.dart';\r\n \r\n-class TasksProvider {\r\n+class TasksProvider  extends ChangeNotifier{\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    notifyListner();\r\n+    notifyListners();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730541026665,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,11 @@\n+import 'package:flutter/material.dart';\r\n import 'package:todo_app/firebase_functions.dart';\r\n import 'package:todo_app/models/task_model.dart';\r\n \r\n class TasksProvider  extends ChangeNotifier{\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n-    notifyListners();\r\n+    notifyListeners();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730541126799,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n import 'package:todo_app/firebase_functions.dart';\r\n import 'package:todo_app/models/task_model.dart';\r\n \r\n-class TasksProvider  extends ChangeNotifier{\r\n+class TasksProvider  with ChangeNotifier{\r\n   List<TaskModel> tasks = [];\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n     notifyListeners();\r\n"
+                },
+                {
+                    "date": 1730541486390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import 'package:todo_app/models/task_model.dart';\r\n \r\n class TasksProvider  with ChangeNotifier{\r\n   List<TaskModel> tasks = [];\r\n-  \r\n+  D\r\n   Future<void> getTasks() async {\r\n     tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n     notifyListeners();\r\n   }\r\n"
+                },
+                {
+                    "date": 1730541604625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+import 'package:flutter/material.dart';\r\n+import 'package:todo_app/firebase_functions.dart';\r\n+import 'package:todo_app/models/task_model.dart';\r\n+\r\n+class TasksProvider  with ChangeNotifier{\r\n+  List<TaskModel> tasks = [];\r\n+  DateTime selectedDate = DateTime.now();\r\n+  Future<void> getTasks() async {\r\n+    tasks = await FirebaseFunctions.getAllTasksFromFirestore();\r\n+    notifyListeners();\r\n+  }\r\n+  void changeSelectedDate(DateTime date){\r\n+    selectedDate = date;\r\n+    notifyListeners();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1730540248444,
+            "name": "Commit-0",
+            "content": "class TasksProvider {\r\n  \r\n}"
+        }
+    ]
+}

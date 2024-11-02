@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:todo_app/app_theme.dart';
-import 'package:todo_app/tabs/add_task_bottom_sheet.dart';
+import 'package:todo_app/tabs/tasks/add_task_bottom_sheet.dart';
 import 'package:todo_app/tabs/settings/settings_tab.dart';
 import 'package:todo_app/tabs/tasks/tasks_tab.dart';
 
@@ -60,9 +60,9 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () => showModalBottomSheet(
+          isScrollControlled: true,
           context: context,
           builder: (_) => const AddTaskBottomSheet(),
-          isScrollControlled: false,
         ),
         child: const Icon(
           Icons.add,
