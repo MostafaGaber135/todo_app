@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:todo_app/app_theme.dart';
 import 'package:todo_app/firebase_functions.dart';
 import 'package:todo_app/models/task_model.dart';
+import 'package:todo_app/tabs/tasks/add_task_bottom_sheet.dart';
 import 'package:todo_app/tabs/tasks/tasks_provider.dart';
 
 class TaskItem extends StatefulWidget {
@@ -33,9 +34,7 @@ class _TaskItemState extends State<TaskItem> {
           motion: const StretchMotion(),
           dismissible: DismissiblePane(onDismissed: () {
             FirebaseFunctions.deleteTaskFromFirestore(widget.task.id).timeout(
-              const Duration(
-                microseconds: 100,
-              ),
+              const Duration(microseconds: 100),
               onTimeout: () {
                 if (context.mounted) {
                   Provider.of<TasksProvider>(
@@ -55,7 +54,6 @@ class _TaskItemState extends State<TaskItem> {
                 Fluttertoast.showToast(
                   msg: "Something went wrong",
                   toastLength: Toast.LENGTH_LONG,
-                  timeInSecForIosWeb: 5,
                   backgroundColor: AppTheme.red,
                 );
               },
@@ -78,8 +76,6 @@ class _TaskItemState extends State<TaskItem> {
                     }
                     Fluttertoast.showToast(
                       msg: "Task deleted successfully",
-                      toastLength: Toast.LENGTH_LONG,
-                      timeInSecForIosWeb: 5,
                       backgroundColor: AppTheme.green,
                     );
                   },
@@ -87,8 +83,6 @@ class _TaskItemState extends State<TaskItem> {
                   (_) {
                     Fluttertoast.showToast(
                       msg: "Something went wrong",
-                      toastLength: Toast.LENGTH_LONG,
-                      timeInSecForIosWeb: 5,
                       backgroundColor: AppTheme.red,
                     );
                   },
@@ -100,7 +94,15 @@ class _TaskItemState extends State<TaskItem> {
               label: 'Delete',
             ),
             SlidableAction(
-              onPressed: (_) {},
+              onPressed: (_) {
+                showModalBottomSheet(
+                  isScrollControlled: true,
+                  context: context,
+                  builder: (context) => AddTaskBottomSheet(
+                    task: widget.task,
+                  ),
+                );
+              },
               backgroundColor: AppTheme.primary,
               foregroundColor: Colors.white,
               icon: FontAwesomeIcons.pen,
@@ -126,7 +128,7 @@ class _TaskItemState extends State<TaskItem> {
                 margin: const EdgeInsetsDirectional.only(
                   end: 12,
                 ),
-                color: AppTheme.primary,
+                color: widget.task.isDone ? AppTheme.green : AppTheme.primary,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -134,7 +136,9 @@ class _TaskItemState extends State<TaskItem> {
                   Text(
                     widget.task.title,
                     style: textTheme.titleMedium?.copyWith(
-                      color: AppTheme.primary,
+                      color: widget.task.isDone
+                          ? AppTheme.green
+                          : AppTheme.primary,
                     ),
                   ),
                   const SizedBox(
@@ -142,25 +146,37 @@ class _TaskItemState extends State<TaskItem> {
                   ),
                   Text(
                     widget.task.description,
-                    style: textTheme.titleSmall,
+                    style: textTheme.titleSmall?.copyWith(
+                      color: AppTheme.black,
+                    ),
                   ),
                 ],
               ),
               const Spacer(),
-              Container(
-                height: 34,
-                width: 69,
-                decoration: BoxDecoration(
-                  color: AppTheme.primary,
-                  borderRadius: BorderRadius.circular(
-                    10,
-                  ),
-                ),
-                child: const Icon(
-                  FontAwesomeIcons.check,
-                  color: AppTheme.white,
-                  size: 32,
-                ),
+              GestureDetector(
+                onTap: toggleTaskDone,
+                child: widget.task.isDone
+                    ? const Text(
+                        "Done!",
+                        style: TextStyle(
+                          color: AppTheme.green,
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    : Container(
+                        height: 34,
+                        width: 69,
+                        decoration: BoxDecoration(
+                          color: AppTheme.primary,
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: const Icon(
+                          FontAwesomeIcons.check,
+                          color: AppTheme.white,
+                          size: 32,
+                        ),
+                      ),
               ),
             ],
           ),
@@ -168,4 +184,18 @@ class _TaskItemState extends State<TaskItem> {
       ),
     );
   }
+
+  void toggleTaskDone() async {
+      setState(() {
+      widget.task.toggleDone();
+    });
+  await FirebaseFunctions.updateTaskInFirestore(widget.task.copyWith(
+      isDone: widget.task.isDone,
+    ));
+
+    Fluttertoast.showToast(
+      msg: widget.task.isDone ? "Task marked as done!" : "Task marked as not done!",
+      backgroundColor: AppTheme.green,
+    );
+  }   
 }

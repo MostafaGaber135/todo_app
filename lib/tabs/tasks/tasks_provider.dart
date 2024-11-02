@@ -10,10 +10,10 @@ class TasksProvider with ChangeNotifier {
         await FirebaseFunctions.getAllTasksFromFirestore();
     tasks = allTasks
         .where(
-          (tasks) =>
-              tasks.date.year == selectedDate.year &&
-              tasks.date.month == selectedDate.month &&
-              tasks.date.day == selectedDate.day,
+          (task) =>
+              task.date.year == selectedDate.year &&
+              task.date.month == selectedDate.month &&
+              task.date.day == selectedDate.day,
         )
         .toList();
     notifyListeners();
@@ -22,5 +22,13 @@ class TasksProvider with ChangeNotifier {
   void getSelectedDateTasks(DateTime date) {
     selectedDate = date;
     getTasks();
+  }
+
+  void updateTask(TaskModel updatedTask) {
+   final index = tasks.indexWhere((task) => task.id == updatedTask.id);
+    if (index != -1) {
+      tasks[index] = updatedTask;
+      notifyListeners();
+    }
   }
 }

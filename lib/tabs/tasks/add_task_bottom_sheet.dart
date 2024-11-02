@@ -10,8 +10,8 @@ import 'package:todo_app/widgets/custom_elevated_button.dart';
 import 'package:todo_app/widgets/custom_text_form_field.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
-  const AddTaskBottomSheet({super.key});
-
+  const AddTaskBottomSheet({super.key, this.task});
+  final TaskModel? task;
   @override
   State<AddTaskBottomSheet> createState() => _AddTaskBottomSheetState();
 }
@@ -24,6 +24,15 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
     'dd/MM/yyyy',
   );
   final formKey = GlobalKey<FormState>();
+  @override
+  void initState() {
+    super.initState();
+    titleController = TextEditingController(text: widget.task?.title ?? '');
+    descriptionController =
+        TextEditingController(text: widget.task?.description ?? '');
+    selectedDate = widget.task?.date ?? DateTime.now();
+  }
+
   @override
   Widget build(BuildContext context) {
     TextStyle? titleMediumStyle = Theme.of(context).textTheme.titleMedium;
@@ -52,7 +61,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
           child: Column(
             children: [
               Text(
-                'Add new task',
+                widget.task == null ? 'Add new task' : 'Edit task',
                 style: titleMediumStyle,
               ),
               const SizedBox(
@@ -121,10 +130,14 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 height: 32,
               ),
               CustomElevatedButton(
-                label: 'Add',
+                label: widget.task == null ? 'Add' : 'Save Changes',
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
-                    addTask();
+                    if (widget.task == null) {
+                      addTask();
+                    } else {
+                      updateTask();
+                    }
                   }
                 },
               ),
@@ -141,7 +154,9 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
       description: descriptionController.text,
       date: selectedDate,
     );
-    FirebaseFunctions.addTasksToFirestore(task).timeout(
+    FirebaseFunctions.addTasksToFirestore(
+      task,
+    ).timeout(
       const Duration(microseconds: 100),
       onTimeout: () {
         if (!mounted) return;
@@ -164,5 +179,39 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
         );
       },
     );
+  }
+
+  void updateTask() {
+    TaskModel updatedTask = widget.task!.copyWith(
+      title: titleController.text,
+      description: descriptionController.text,
+      date: selectedDate,
+    );
+    FirebaseFunctions.updateTaskInFirestore(
+      updatedTask,
+    ).timeout(
+      const Duration(
+        microseconds: 100,
+      ),
+      onTimeout: () {
+        if (!mounted) return;
+        Navigator.of(context).pop();
+        Provider.of<TasksProvider>(context, listen: false).updateTask(
+          updatedTask,
+        );
+        Provider.of<TasksProvider>(context, listen: false).getTasks();
+        Fluttertoast.showToast(
+          msg: "Task updated successfully",
+          toastLength: Toast.LENGTH_LONG,
+          backgroundColor: AppTheme.green,
+        );
+      },
+    ).catchError((error) {
+      Fluttertoast.showToast(
+        msg: "Something went wrong",
+        toastLength: Toast.LENGTH_LONG,
+        backgroundColor: AppTheme.red,
+      );
+    });
   }
 }
