@@ -1,0 +1,58 @@
+{
+    "sourceFile": "lib/firebase_functions.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1730501598832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730502173590,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n class FirebaseFunctions {\r\n-  \r\n+  static\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730502180829,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n class FirebaseFunctions {\r\n-  static\r\n+  static getTasksCOLLECTION\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730502188218,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n class FirebaseFunctions {\r\n-  static getTasksCOLLECTION\r\n+  static getTasks\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730502194338,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n class FirebaseFunctions {\r\n-  static getTasks\r\n+  static getTasksCollection() => \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730502202339,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n+import 'package:cloud_firestore/cloud_firestore.dart';\r\n+\r\n class FirebaseFunctions {\r\n-  static getTasksCollection() => \r\n+  static getTasksCollection() => FirebaseFirestore.instance\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730502207810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import 'package:cloud_firestore/cloud_firestore.dart';\r\n \r\n class FirebaseFunctions {\r\n-  static getTasksCollection() => FirebaseFirestore.instance\r\n+  static getTasksCollection() => FirebaseFirestore.instance.collection('tasks')\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730502216624,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import 'package:cloud_firestore/cloud_firestore.dart';\r\n \r\n class FirebaseFunctions {\r\n-  static getTasksCollection() => FirebaseFirestore.instance.collection('tasks')\r\n+  static getTasksCollection() => FirebaseFirestore.instance.collection('tasks',).withConverter(fromFirestore: fromFirestore, toFirestore: toFirestore)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730502222346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n import 'package:cloud_firestore/cloud_firestore.dart';\r\n \r\n class FirebaseFunctions {\r\n-  static getTasksCollection() => FirebaseFirestore.instance.collection('tasks',).withConverter(fromFirestore: fromFirestore, toFirestore: toFirestore)\r\n+  static getTasksCollection() => FirebaseFirestore.instance.collection('tasks',).withConverter<>(fromFirestore: fromFirestore, toFirestore: toFirestore)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730502228456,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:cloud_firestore/cloud_firestore.dart';\r\n+import 'package:todo_app/models/task_model.dart';\r\n \r\n class FirebaseFunctions {\r\n   static getTasksCollection() => FirebaseFirestore.instance.collection('tasks',).withConverter<TaskModel>(fromFirestore: fromFirestore, toFirestore: toFirestore)\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730502234537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import 'package:cloud_firestore/cloud_firestore.dart';\r\n import 'package:todo_app/models/task_model.dart';\r\n \r\n class FirebaseFunctions {\r\n-  static getTasksCollection() => FirebaseFirestore.instance.collection('tasks',).withConverter<TaskModel>(fromFirestore: fromFirestore, toFirestore: toFirestore);\r\n+  static getTasksCollection() => FirebaseFirestore.instance.collection('tasks',).withConverter<TaskModel>(fromFirestore: fromFirestore, toFirestore: toFirestore,);\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1730501598832,
+            "name": "Commit-0",
+            "content": "class FirebaseFunctions {\r\n  \r\n}"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 16,
+            "activePatchIndex": 17,
             "patches": [
                 {
                     "date": 1730466185395,
@@ -72,6 +72,10 @@
                 {
                     "date": 1730473907864,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,8 @@\n       debugShowCheckedModeBanner: false,\r\n       home: const CustomSplashScreen(),\r\n       theme: AppTheme.lightTheme,\r\n       darkTheme: AppTheme.darkTheme,\r\n-      themeMode: Thememo.light,\r\n+      themeMode: ThemeMode.light,\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730500640597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import 'package:todo_app/widgets/custom_splash_screen.dart';\r\n \r\n void main() async{\r\n   WidgetsFlutterBinding.ensureInitialized();\r\n-  awarunApp(const MyApp());\r\n+  awairunApp(const MyApp());\r\n }\r\n \r\n class MyApp extends StatelessWidget {\r\n   const MyApp({super.key});\r\n"
                 }
             ],
             "date": 1730466185395,

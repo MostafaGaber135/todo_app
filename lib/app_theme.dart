@@ -42,6 +42,11 @@ class AppTheme {
         color: black,
       ),
     ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: primary,
+      ),
+    ),
   );
   static ThemeData darkTheme = ThemeData();
 }
