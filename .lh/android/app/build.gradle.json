@@ -3,11 +3,35 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1730500749369,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730579062707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\r\n \r\n android {\r\n     namespace = \"com.example.todo_app\"\r\n-    compileSdk = flutter.compileSdkVersion\r\n+    compileSdk = 33\r\n     ndkVersion = flutter.ndkVersion\r\n \r\n     compileOptions {\r\n         sourceCompatibility = JavaVersion.VERSION_1_8\r\n"
+                },
+                {
+                    "date": 1730579088204,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\r\n \r\n android {\r\n     namespace = \"com.example.todo_app\"\r\n-    compileSdk = 33\r\n+    compileSdk = flutter.compileSdkVersion\r\n     ndkVersion = flutter.ndkVersion\r\n \r\n     compileOptions {\r\n         sourceCompatibility = JavaVersion.VERSION_1_8\r\n@@ -25,9 +25,9 @@\n         applicationId = \"com.example.todo_app\"\r\n         // You can update the following values to match your application needs.\r\n         // For more information, see: https://flutter.dev/to/review-gradle-config.\r\n         minSdk = flutter.minSdkVersion\r\n-        targetSdk = flutter.targetSdkVersion\r\n+        targetSdk = 33\r\n         versionCode = flutter.versionCode\r\n         versionName = flutter.versionName\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1730579094549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\r\n \r\n android {\r\n     namespace = \"com.example.todo_app\"\r\n-    compileSdk = flutter.compileSdkVersion\r\n+    compileSdk = 33\r\n     ndkVersion = flutter.ndkVersion\r\n \r\n     compileOptions {\r\n         sourceCompatibility = JavaVersion.VERSION_1_8\r\n"
+                },
+                {
+                    "date": 1730579152685,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\r\n \r\n android {\r\n     namespace = \"com.example.todo_app\"\r\n-    compileSdk = 33\r\n+    compileSdk = 34\r\n     ndkVersion = flutter.ndkVersion\r\n \r\n     compileOptions {\r\n         sourceCompatibility = JavaVersion.VERSION_1_8\r\n"
+                },
+                {
+                    "date": 1730579158299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n         applicationId = \"com.example.todo_app\"\r\n         // You can update the following values to match your application needs.\r\n         // For more information, see: https://flutter.dev/to/review-gradle-config.\r\n         minSdk = flutter.minSdkVersion\r\n-        targetSdk = 33\r\n+        targetSdk = 34\r\n         versionCode = flutter.versionCode\r\n         versionName = flutter.versionName\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1730579708305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\r\n \r\n android {\r\n     namespace = \"com.example.todo_app\"\r\n-    compileSdk = 34\r\n+    compileSdk = flutter.compileSdkVersion\r\n     ndkVersion = flutter.ndkVersion\r\n \r\n     compileOptions {\r\n         sourceCompatibility = JavaVersion.VERSION_1_8\r\n@@ -25,9 +25,9 @@\n         applicationId = \"com.example.todo_app\"\r\n         // You can update the following values to match your application needs.\r\n         // For more information, see: https://flutter.dev/to/review-gradle-config.\r\n         minSdk = flutter.minSdkVersion\r\n-        targetSdk = 34\r\n+        targetSdk = flutter.targetSdkVersion\r\n         versionCode = flutter.versionCode\r\n         versionName = flutter.versionName\r\n     }\r\n \r\n"
                 }
             ],
             "date": 1730500749369,

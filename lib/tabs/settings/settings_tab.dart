@@ -5,9 +5,31 @@ class SettingsTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Settings tab',
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Logout',
+                  style: Theme.of(context).textTheme.titleMedium,
+                ),
+                IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.logout_outlined,
+                    size: 28,
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
