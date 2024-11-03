@@ -186,16 +186,18 @@ class _TaskItemState extends State<TaskItem> {
   }
 
   void toggleTaskDone() async {
-      setState(() {
+    setState(() {
       widget.task.toggleDone();
     });
-  await FirebaseFunctions.updateTaskInFirestore(widget.task.copyWith(
+    await FirebaseFunctions.updateTaskInFirestore(widget.task.copyWith(
       isDone: widget.task.isDone,
     ));
 
     Fluttertoast.showToast(
-      msg: widget.task.isDone ? "Task marked as done!" : "Task marked as not done!",
+      msg: widget.task.isDone
+          ? "Task marked as done!"
+          : "Task marked as not done!",
       backgroundColor: AppTheme.green,
     );
-  }   
+  }
 }
