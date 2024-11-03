@@ -1,0 +1,146 @@
+{
+    "sourceFile": "lib/auth/login_screen.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 32,
+            "patches": [
+                {
+                    "date": 1730651432935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730651441476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,8 @@\n-statles\n\\ No newline at end of file\n+class LoginScreen extends StatelessWidget {\r\n+  const LoginScreen({super.key});\r\n+\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return Container();\r\n+  }\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730651449299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,6 @@\n+import 'package:flutter/material.dart';\r\n+\r\n class LoginScreen extends StatelessWidget {\r\n   const LoginScreen({super.key});\r\n \r\n   @override\r\n"
+                },
+                {
+                    "date": 1730651476765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class LoginScreen extends StatelessWidget {\r\n   const LoginScreen({super.key});\r\n-\r\n+STATI\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container();\r\n   }\r\n"
+                },
+                {
+                    "date": 1730651483923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class LoginScreen extends StatelessWidget {\r\n   const LoginScreen({super.key});\r\n-STATI\r\n+static const \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container();\r\n   }\r\n"
+                },
+                {
+                    "date": 1730651498351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n import 'package:flutter/material.dart';\r\n \r\n class LoginScreen extends StatelessWidget {\r\n   const LoginScreen({super.key});\r\n-static const \r\n+static const String routeName = '/login';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Container();\r\n   }\r\n"
+                },
+                {
+                    "date": 1730654305551,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const LoginScreen({super.key});\r\n static const String routeName = '/login';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Container();\r\n+    return const Scaffold();\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730654378430,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,9 @@\n   const LoginScreen({super.key});\r\n static const String routeName = '/login';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold();\r\n+    return const Scaffold(\r\n+      a\r\n+    );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730654384176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   const LoginScreen({super.key});\r\n static const String routeName = '/login';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Scaffold(\r\n-      a\r\n+    return  Scaffold(\r\n+      appBar: APP,\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730654472856,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,10 @@\n static const String routeName = '/login';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return  Scaffold(\r\n-      appBar: APP,\r\n+      appBar: AppBar(\r\n+        title: ,\r\n+      ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730654481569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n   @override\r\n   Widget build(BuildContext context) {\r\n     return  Scaffold(\r\n       appBar: AppBar(\r\n-        title: ,\r\n+        title: const Text('Login'),\r\n       ),\r\n     );\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730654546678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,17 @@\n import 'package:flutter/material.dart';\r\n \r\n class LoginScreen extends StatelessWidget {\r\n   const LoginScreen({super.key});\r\n-static const String routeName = '/login';\r\n+  static const String routeName = '/login';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return  Scaffold(\r\n+    return Scaffold(\r\n       appBar: AppBar(\r\n-        title: const Text('Login'),\r\n+        title: const Text(\r\n+          'Login',\r\n\\ No newline at end of file\n+        ),\r\n       ),\r\n+      \r\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730654555020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,10 @@\n         title: const Text(\r\n           'Login',\r\n         ),\r\n       ),\r\n-      \r\n+      body: const Column(\r\n+        \r\n+      ),\r\n\\ No newline at end of file\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730654571797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo_app/widgets/custom_text_form_field.dart';\r\n \r\n class LoginScreen extends StatelessWidget {\r\n   const LoginScreen({super.key});\r\n   static const String routeName = '/login';\r\n@@ -11,9 +12,11 @@\n           'Login',\r\n         ),\r\n       ),\r\n       body: const Column(\r\n-        \r\n+        children: [\r\n+          CustomTextFormField(controller: controller, hintText: hintText)\r\n+        ],\r\n       ),\r\n\\ No newline at end of file\n     );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730654580002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,10 @@\n         ),\r\n       ),\r\n       body: const Column(\r\n         children: [\r\n-          CustomTextFormField(controller: controller, hintText: hintText)\r\n+          CustomTextFormField(controller: controller, hintText: 'Email')\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730654589192,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,10 +13,11 @@\n         ),\r\n       ),\r\n       body: const Column(\r\n         children: [\r\n-          CustomTextFormField(controller: controller, hintText: 'Email')\r\n+          CustomTextFormField(controller: controller, hintText: 'Email',),\r\n+          CustomTextFormField(controller: controller, hintText: 'Email',),\r\n         ],\r\n       ),\r\n     );\r\n\\ No newline at end of file\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730654600758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,17 @@\n import 'package:flutter/material.dart';\r\n import 'package:todo_app/widgets/custom_text_form_field.dart';\r\n \r\n-class LoginScreen extends StatelessWidget {\r\n+class LoginScreen extends StatefulWidget {\r\n   const LoginScreen({super.key});\r\n   static const String routeName = '/login';\r\n+\r\n   @override\r\n+  State<LoginScreen> createState() => _LoginScreenState();\r\n+}\r\n+\r\n+class _LoginScreenState extends State<LoginScreen> {\r\n+  @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       appBar: AppBar(\r\n         title: const Text(\r\n@@ -14,10 +20,10 @@\n       ),\r\n       body: const Column(\r\n         children: [\r\n           CustomTextFormField(controller: controller, hintText: 'Email',),\r\n-          CustomTextFormField(controller: controller, hintText: 'Email',),\r\n+          CustomTextFormField(controller: controller, hintText: 'Password',),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730654629419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,9 @@\n   State<LoginScreen> createState() => _LoginScreenState();\r\n }\r\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n+  TextEditingController emailController = \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       appBar: AppBar(\r\n@@ -25,5 +26,5 @@\n         ],\r\n       ),\r\n     );\r\n   }\r\n-}\n\\ No newline at end of file\n+}\r\n"
+                },
+                {
+                    "date": 1730654638299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,10 @@\n   State<LoginScreen> createState() => _LoginScreenState();\r\n }\r\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n-  TextEditingController emailController = \r\n+  TextEditingController emailController = TextEditingController();\r\n+  TextEditingController emailController = TextEditingController();\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       appBar: AppBar(\r\n"
+                },
+                {
+                    "date": 1730654645646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n }\r\n \r\n class _LoginScreenState extends State<LoginScreen> {\r\n   TextEditingController emailController = TextEditingController();\r\n-  TextEditingController emailController = TextEditingController();\r\n+  TextEditingController passwordController = TextEditingController();\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return Scaffold(\r\n       appBar: AppBar(\r\n@@ -21,9 +21,9 @@\n         ),\r\n       ),\r\n       body: const Column(\r\n         children: [\r\n-          CustomTextFormField(controller: controller, hintText: 'Email',),\r\n+          CustomTextFormField(controller: emailController, hintText: 'Email',),\r\n           CustomTextFormField(controller: controller, hintText: 'Password',),\r\n         ],\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1730654664493,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,12 +19,19 @@\n         title: const Text(\r\n           'Login',\r\n         ),\r\n       ),\r\n-      body: const Column(\r\n+      body: Column(\r\n         children: [\r\n-          CustomTextFormField(controller: emailController, hintText: 'Email',),\r\n-          CustomTextFormField(controller: controller, hintText: 'Password',),\r\n+          CustomTextFormField(\r\n+            controller: emailController,\r\n+            hintText: 'Email',\r\n+          ),\r\n+          CustomTextFormField(\r\n+            controller: passwordController,\r\n+            hintText: 'Password',\r\n+          ),\r\n+          custom\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1730654673316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import 'package:flutter/material.dart';\r\n+import 'package:todo_app/widgets/custom_elevated_button.dart';\r\n import 'package:todo_app/widgets/custom_text_form_field.dart';\r\n \r\n class LoginScreen extends StatefulWidget {\r\n   const LoginScreen({super.key});\r\n@@ -29,9 +30,9 @@\n           CustomTextFormField(\r\n             controller: passwordController,\r\n             hintText: 'Password',\r\n           ),\r\n-          custom\r\n+          CustomElevatedButton(label: '', onPressed: (){})\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1730654683775,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,9 +30,9 @@\n           CustomTextFormField(\r\n             controller: passwordController,\r\n             hintText: 'Password',\r\n           ),\r\n-          CustomElevatedButton(label: '', onPressed: (){})\r\n+          CustomElevatedButton(label: 'Login', onPressed: (){},),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n"
+                },
+                {
+                    "date": 1730654696483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,10 +30,14 @@\n           CustomTextFormField(\r\n             controller: passwordController,\r\n             hintText: 'Password',\r\n           ),\r\n-          CustomElevatedButton(label: 'Login', onPressed: (){},),\r\n+          CustomElevatedButton(\r\n+            label: 'Login',\r\n+            onPressed: () {},\r\n+          ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n+  void login()\r\n }\r\n"
+                },
+                {
+                    "date": 1730654714559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,9 @@\n           'Login',\r\n         ),\r\n       ),\r\n       body: Column(\r\n+        main\r\n         children: [\r\n           CustomTextFormField(\r\n             controller: emailController,\r\n             hintText: 'Email',\r\n@@ -32,12 +33,13 @@\n             hintText: 'Password',\r\n           ),\r\n           CustomElevatedButton(\r\n             label: 'Login',\r\n-            onPressed: () {},\r\n+            onPressed: login,\r\n           ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n-  void login()\r\n+\r\n+  void login() {}\r\n }\r\n"
+                },
+                {
+                    "date": 1730654723008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,14 +21,15 @@\n           'Login',\r\n         ),\r\n       ),\r\n       body: Column(\r\n-        main\r\n+        mainAxisAlignment: MainAxisAlignment.center,\r\n         children: [\r\n           CustomTextFormField(\r\n             controller: emailController,\r\n             hintText: 'Email',\r\n           ),\r\n+          Sizedb\r\n           CustomTextFormField(\r\n             controller: passwordController,\r\n             hintText: 'Password',\r\n           ),\r\n"
+                },
+                {
+                    "date": 1730654731703,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,13 +27,18 @@\n           CustomTextFormField(\r\n             controller: emailController,\r\n             hintText: 'Email',\r\n           ),\r\n-          Sizedb\r\n+          const SizedBox(\r\n+            height: 16,\r\n+          ),\r\n           CustomTextFormField(\r\n             controller: passwordController,\r\n             hintText: 'Password',\r\n           ),\r\n+          const SizedBox(\r\n+            height: 16,\r\n+          ),\r\n           CustomElevatedButton(\r\n             label: 'Login',\r\n             onPressed: login,\r\n           ),\r\n"
+                },
+                {
+                    "date": 1730654742297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n             controller: passwordController,\r\n             hintText: 'Password',\r\n           ),\r\n           const SizedBox(\r\n-            height: 16,\r\n+            height: 32,\r\n           ),\r\n           CustomElevatedButton(\r\n             label: 'Login',\r\n             onPressed: login,\r\n"
+                },
+                {
+                    "date": 1730654773626,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,30 +20,33 @@\n         title: const Text(\r\n           'Login',\r\n         ),\r\n       ),\r\n-      body: Column(\r\n-        mainAxisAlignment: MainAxisAlignment.center,\r\n-        children: [\r\n-          CustomTextFormField(\r\n-            controller: emailController,\r\n-            hintText: 'Email',\r\n-          ),\r\n-          const SizedBox(\r\n-            height: 16,\r\n-          ),\r\n-          CustomTextFormField(\r\n-            controller: passwordController,\r\n-            hintText: 'Password',\r\n-          ),\r\n-          const SizedBox(\r\n-            height: 32,\r\n-          ),\r\n-          CustomElevatedButton(\r\n-            label: 'Login',\r\n-            onPressed: login,\r\n-          ),\r\n-        ],\r\n+      body: Padding(\r\n+        padding: const EdgeInsets.all(8.0),\r\n+        child: Column(\r\n+          mainAxisAlignment: MainAxisAlignment.center,\r\n+          children: [\r\n+            CustomTextFormField(\r\n+              controller: emailController,\r\n+              hintText: 'Email',\r\n+            ),\r\n+            const SizedBox(\r\n+              height: 16,\r\n+            ),\r\n+            CustomTextFormField(\r\n+              controller: passwordController,\r\n+              hintText: 'Password',\r\n+            ),\r\n+            const SizedBox(\r\n+              height: 32,\r\n+            ),\r\n+            CustomElevatedButton(\r\n+              label: 'Login',\r\n+              onPressed: login,\r\n+            ),\r\n+          ],\r\n+        ),\r\n       ),\r\n     );\r\n   }\r\n \r\n"
+                },
+                {
+                    "date": 1730655013318,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,11 @@\n           'Login',\r\n         ),\r\n       ),\r\n       body: Padding(\r\n-        padding: const EdgeInsets.all(8.0),\r\n+        padding: const EdgeInsets.symmetric(\r\n+          horizontal: 20,\r\n+        ),\r\n         child: Column(\r\n           mainAxisAlignment: MainAxisAlignment.center,\r\n           children: [\r\n             CustomTextFormField(\r\n@@ -43,8 +45,9 @@\n             CustomElevatedButton(\r\n               label: 'Login',\r\n               onPressed: login,\r\n             ),\r\n+            textb\r\n           ],\r\n         ),\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1730655018951,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,12 @@\n             CustomElevatedButton(\r\n               label: 'Login',\r\n               onPressed: login,\r\n             ),\r\n-            textb\r\n+             const SizedBox(\r\n+              height: 32,\r\n+            ),\r\n+            TextButton(onPressed: onPressed, child: child)\r\n           ],\r\n         ),\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1730655026796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n             ),\r\n              const SizedBox(\r\n               height: 8,\r\n             ),\r\n-            TextButton(onPressed: (), child: child)\r\n+            TextButton(onPressed: (){}, child: child)\r\n           ],\r\n         ),\r\n       ),\r\n     );\r\n"
+                },
+                {
+                    "date": 1730655059954,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n             ),\r\n              const SizedBox(\r\n               height: 8,\r\n             ),\r\n-            TextButton(onPressed: (){}, child: const Text(\"Don't have an account!\",))\r\n+            TextButton(onPressed: (){}, child: const Text(\"Don't have an account!\",),),\r\n           ],\r\n         ),\r\n       ),\r\n     );\r\n"
+                }
+            ],
+            "date": 1730651432935,
+            "name": "Commit-0",
+            "content": "statles"
+        }
+    ]
+}

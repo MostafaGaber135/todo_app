@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 16,
             "patches": [
                 {
                     "date": 1730471388282,
@@ -20,6 +20,58 @@
                 {
                     "date": 1730471409862,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,7 @@\n   const SettingsTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Center(child: const Text('data'),);\r\n+    return const Center(child: const Text('Settings tab',),);\r\n   }\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730669669714,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,7 +4,12 @@\n   const SettingsTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return const Center(child: const Text('Settings tab',),);\r\n+    return const Center(\r\n+      child:Column(\r\n\\ No newline at end of file\n+        children: [\r\n+          \r\n+        ],\r\n+      );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730669675851,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,11 @@\n   Widget build(BuildContext context) {\r\n     return const Center(\r\n       child:Column(\r\n         children: [\r\n-          \r\n+          Row(\r\n+            children: [],\r\n+          ),\r\n         ],\r\n\\ No newline at end of file\n       );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730669682324,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,10 +8,12 @@\n     return const Center(\r\n       child:Column(\r\n         children: [\r\n           Row(\r\n-            children: [],\r\n+            children: [\r\n+\r\n+            ],\r\n           ),\r\n         ],\r\n\\ No newline at end of file\n-      );\r\n+      ));\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730669697467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,15 +5,17 @@\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     return const Center(\r\n-      child:Column(\r\n+      child: Column(\r\n         children: [\r\n           Row(\r\n             children: [\r\n-\r\n+              Text('Logout',),\r\n+              \r\n             ],\r\n           ),\r\n         ],\r\n\\ No newline at end of file\n-      ));\r\n+      ),\r\n+    );\r\n   }\r\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730669707400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,12 @@\n         children: [\r\n           Row(\r\n             children: [\r\n               Text('Logout',),\r\n-              \r\n+              IconButton(onPressed: (), icon: icon)\r\n             ],\r\n           ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730669714436,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,12 @@\n         children: [\r\n           Row(\r\n             children: [\r\n               Text('Logout',),\r\n-              IconButton(onPressed: (), icon: icon)\r\n+              IconButton(onPressed: (){}, icon: Icon)\r\n             ],\r\n           ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730669720761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,12 +10,12 @@\n         children: [\r\n           Row(\r\n             children: [\r\n               Text('Logout',),\r\n-              IconButton(onPressed: (){}, icon: Icon)\r\n+              IconButton(onPressed: (){}, icon: Icon(Icons.logout))\r\n             ],\r\n           ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n\\ No newline at end of file\n-}\n+}\r\n"
+                },
+                {
+                    "date": 1730669729134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,21 @@\n+import 'package:flutter/material.dart';\r\n+\r\n+class SettingsTab extends StatelessWidget {\r\n+  const SettingsTab({super.key});\r\n+\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    return  Center(\r\n+      child: Column(\r\n+        children: [\r\n+          Row(\r\n+            children: [\r\n+              const Text('Logout',),\r\n+              IconButton(onPressed: (){}, icon: const Icon(Icons.logout_outlined,),),\r\n+            ],\r\n+          ),\r\n+        ],\r\n+      ),\r\n+    );\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1730669923181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,39 +4,26 @@\n   const SettingsTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return  Center(\r\n+    return Center(\r\n       child: Column(\r\n         children: [\r\n           Row(\r\n+            mainAxisAlignment: main,\r\n             children: [\r\n-              const Text('Logout',),\r\n-              IconButton(onPressed: (){}, icon: const Icon(Icons.logout_outlined,),),\r\n+              const Text(\r\n+                'Logout',\r\n+              ),\r\n+              IconButton(\r\n+                onPressed: () {},\r\n+                icon: const Icon(\r\n+                  Icons.logout_outlined,\r\n+                ),\r\n+              ),\r\n             ],\r\n           ),\r\n         ],\r\n       ),\r\n     );\r\n   }\r\n }\r\n-import 'package:flutter/material.dart';\r\n-\r\n-class SettingsTab extends StatelessWidget {\r\n-  const SettingsTab({super.key});\r\n-\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    return const Center(\r\n-      child: Column(\r\n-        children: [\r\n\\ No newline at end of file\n-          Row(\r\n-            children: [\r\n-              Text('Logout',),\r\n-              IconButton(onPressed: (){}, icon: Icon(Icons.logout))\r\n-            ],\r\n-          ),\r\n-        ],\r\n-      ),\r\n-    );\r\n-  }\r\n-}\n"
+                },
+                {
+                    "date": 1730669938832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,26 +4,24 @@\n   const SettingsTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Center(\r\n-      child: Column(\r\n-        children: [\r\n-          Row(\r\n-            mainAxisAlignment: main,\r\n-            children: [\r\n-              const Text(\r\n-                'Logout',\r\n+    return Column(\r\n+      children: [\r\n+        Row(\r\n+          mainAxisAlignment: MainAxisAlignment.spaceBetween,\r\n+          children: [\r\n+            const Text(\r\n+              'Logout',\r\n+            ),\r\n+            IconButton(\r\n+              onPressed: () {},\r\n+              icon: const Icon(\r\n+                Icons.logout_outlined,\r\n               ),\r\n-              IconButton(\r\n-                onPressed: () {},\r\n-                icon: const Icon(\r\n-                  Icons.logout_outlined,\r\n-                ),\r\n-              ),\r\n-            ],\r\n-          ),\r\n-        ],\r\n-      ),\r\n+            ),\r\n+          ],\r\n+        ),\r\n+      ],\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730669946876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,24 +4,27 @@\n   const SettingsTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Column(\r\n-      children: [\r\n-        Row(\r\n-          mainAxisAlignment: MainAxisAlignment.spaceBetween,\r\n-          children: [\r\n-            const Text(\r\n-              'Logout',\r\n-            ),\r\n-            IconButton(\r\n-              onPressed: () {},\r\n-              icon: const Icon(\r\n-                Icons.logout_outlined,\r\n+    return Padding(\r\n+      padding: const EdgeInsets.symmetric(8.0),\r\n+      child: Column(\r\n+        children: [\r\n+          Row(\r\n+            mainAxisAlignment: MainAxisAlignment.spaceBetween,\r\n+            children: [\r\n+              const Text(\r\n+                'Logout',\r\n               ),\r\n-            ),\r\n-          ],\r\n-        ),\r\n-      ],\r\n+              IconButton(\r\n+                onPressed: () {},\r\n+                icon: const Icon(\r\n+                  Icons.logout_outlined,\r\n+                ),\r\n+              ),\r\n+            ],\r\n+          ),\r\n+        ],\r\n+      ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730669954427,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,29 +4,31 @@\n   const SettingsTab({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    return Padding(\r\n-      padding: const EdgeInsets.symmetric(\r\n-        horizontal: 20,\r\n-      ),\r\n-      child: Column(\r\n-        children: [\r\n-          Row(\r\n-            mainAxisAlignment: MainAxisAlignment.spaceBetween,\r\n-            children: [\r\n-              const Text(\r\n-                'Logout',\r\n-              ),\r\n-              IconButton(\r\n-                onPressed: () {},\r\n-                icon: const Icon(\r\n-                  Icons.logout_outlined,\r\n+    return SafeArea(\r\n+      child: Padding(\r\n+        padding: const EdgeInsets.symmetric(\r\n+          horizontal: 20,\r\n+        ),\r\n+        child: Column(\r\n+          children: [\r\n+            Row(\r\n+              mainAxisAlignment: MainAxisAlignment.spaceBetween,\r\n+              children: [\r\n+                const Text(\r\n+                  'Logout',\r\n                 ),\r\n-              ),\r\n-            ],\r\n-          ),\r\n-        ],\r\n+                IconButton(\r\n+                  onPressed: () {},\r\n+                  icon: const Icon(\r\n+                    Icons.logout_outlined,\r\n+                  ),\r\n+                ),\r\n+              ],\r\n+            ),\r\n+          ],\r\n+        ),\r\n       ),\r\n     );\r\n   }\r\n }\r\n"
+                },
+                {
+                    "date": 1730669969484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n               mainAxisAlignment: MainAxisAlignment.spaceBetween,\r\n               children: [\r\n                 const Text(\r\n                   'Logout',\r\n-                  style: Theme.of(context),\r\n+                  style: Theme.of(context).,\r\n                 ),\r\n                 IconButton(\r\n                   onPressed: () {},\r\n                   icon: const Icon(\r\n"
                 }
             ],
             "date": 1730471388282,
