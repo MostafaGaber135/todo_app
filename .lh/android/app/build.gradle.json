@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1730500749369,
@@ -32,6 +32,26 @@
                 {
                     "date": 1730579708305,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\r\n \r\n android {\r\n     namespace = \"com.example.todo_app\"\r\n-    compileSdk = 34\r\n+    compileSdk = flutter.compileSdkVersion\r\n     ndkVersion = flutter.ndkVersion\r\n \r\n     compileOptions {\r\n         sourceCompatibility = JavaVersion.VERSION_1_8\r\n@@ -25,9 +25,9 @@\n         applicationId = \"com.example.todo_app\"\r\n         // You can update the following values to match your application needs.\r\n         // For more information, see: https://flutter.dev/to/review-gradle-config.\r\n         minSdk = flutter.minSdkVersion\r\n-        targetSdk = 34\r\n+        targetSdk = flutter.targetSdkVersion\r\n         versionCode = flutter.versionCode\r\n         versionName = flutter.versionName\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1730678584225,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).\r\n         applicationId = \"com.example.todo_app\"\r\n         // You can update the following values to match your application needs.\r\n         // For more information, see: https://flutter.dev/to/review-gradle-config.\r\n-        minSdk = flutter.minSdkVersion\r\n+        minSdk = 23\r\n         targetSdk = flutter.targetSdkVersion\r\n         versionCode = flutter.versionCode\r\n         versionName = flutter.versionName\r\n     }\r\n"
+                },
+                {
+                    "date": 1730776321559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\r\n \r\n android {\r\n     namespace = \"com.example.todo_app\"\r\n-    compileSdk = flutter.compileSdkVersion\r\n+    compileSdk = 30\r\n     ndkVersion = flutter.ndkVersion\r\n \r\n     compileOptions {\r\n         sourceCompatibility = JavaVersion.VERSION_1_8\r\n"
+                },
+                {
+                    "date": 1730777080018,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,8 +35,9 @@\n         release {\r\n             // TODO: Add your own signing config for the release build.\r\n             // Signing with the debug keys for now, so `flutter run --release` works.\r\n             signingConfig = signingConfigs.debug\r\n+             signingConfig signingConfigs.release\r\n         }\r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1730777109896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,10 +34,9 @@\n     buildTypes {\r\n         release {\r\n             // TODO: Add your own signing config for the release build.\r\n             // Signing with the debug keys for now, so `flutter run --release` works.\r\n-            signingConfig = signingConfigs.debug\r\n-             signingConfig signingConfigs.release\r\n+            signingConfig = signingConfigs.debugD\r\n         }\r\n     }\r\n }\r\n \r\n"
+                },
+                {
+                    "date": 1730780296118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n }\r\n \r\n android {\r\n     namespace = \"com.example.todo_app\"\r\n-    compileSdk = 30\r\n+    compileSdk = 34\r\n     ndkVersion = flutter.ndkVersion\r\n \r\n     compileOptions {\r\n         sourceCompatibility = JavaVersion.VERSION_1_8\r\n@@ -34,9 +34,9 @@\n     buildTypes {\r\n         release {\r\n             // TODO: Add your own signing config for the release build.\r\n             // Signing with the debug keys for now, so `flutter run --release` works.\r\n-            signingConfig = signingConfigs.debugD\r\n+            signingConfig = signingConfigs.debug\r\n         }\r\n     }\r\n }\r\n \r\n"
                 }
             ],
             "date": 1730500749369,

@@ -4,6 +4,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/app_theme.dart';
+import 'package:todo_app/auth/user_provider.dart';
 import 'package:todo_app/firebase_functions.dart';
 import 'package:todo_app/models/task_model.dart';
 import 'package:todo_app/tabs/tasks/add_task_bottom_sheet.dart';
@@ -33,14 +34,22 @@ class _TaskItemState extends State<TaskItem> {
         startActionPane: ActionPane(
           motion: const StretchMotion(),
           dismissible: DismissiblePane(onDismissed: () {
-            FirebaseFunctions.deleteTaskFromFirestore(widget.task.id).timeout(
-              const Duration(microseconds: 100),
-              onTimeout: () {
+            String userId = Provider.of<UserProvider>(
+              context,
+              listen: false,
+            ).currentUser!.id;
+            FirebaseFunctions.deleteTaskFromFirestore(
+              widget.task.id,
+              userId,
+            ).then(
+              (_) {
                 if (context.mounted) {
                   Provider.of<TasksProvider>(
                     context,
                     listen: false,
-                  ).getTasks();
+                  ).getTasks(
+                    userId,
+                  );
                 }
                 Fluttertoast.showToast(
                   msg: "Task deleted successfully",
@@ -62,17 +71,22 @@ class _TaskItemState extends State<TaskItem> {
           children: [
             SlidableAction(
               onPressed: (_) {
-                FirebaseFunctions.deleteTaskFromFirestore(widget.task.id)
-                    .timeout(
-                  const Duration(
-                    microseconds: 100,
-                  ),
-                  onTimeout: () {
+                String userId = Provider.of<UserProvider>(
+                  context,
+                  listen: false,
+                ).currentUser!.id;
+                FirebaseFunctions.deleteTaskFromFirestore(
+                  widget.task.id,
+                  userId,
+                ).then(
+                  (_) {
                     if (context.mounted) {
                       Provider.of<TasksProvider>(
                         context,
                         listen: false,
-                      ).getTasks();
+                      ).getTasks(
+                        userId,
+                      );
                     }
                     Fluttertoast.showToast(
                       msg: "Task deleted successfully",
@@ -186,13 +200,18 @@ class _TaskItemState extends State<TaskItem> {
   }
 
   void toggleTaskDone() async {
+    String userId = Provider.of<UserProvider>(
+      context,
+      listen: false,
+    ).currentUser!.id;
+
     setState(() {
       widget.task.toggleDone();
     });
-    await FirebaseFunctions.updateTaskInFirestore(widget.task.copyWith(
-      isDone: widget.task.isDone,
-    ));
-
+    await FirebaseFunctions.updateTaskInFirestore(
+      widget.task,
+      userId,
+    );
     Fluttertoast.showToast(
       msg: widget.task.isDone
           ? "Task marked as done!"

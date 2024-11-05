@@ -1,0 +1,58 @@
+{
+    "sourceFile": "lib/l10n/app_ar.arb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1730747164933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730747268093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n {\r\n-    \"todoList\" : \"ToDo List\"\r\n+    \"todoList\" : \"قائمة المهام\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730747277297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n {\r\n-    \"todoList\" : \"قائمة المهام\"\r\n+    \"todoList\" : \"قايمة المهام\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774338662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n {\r\n     \"todoList\" : \"قايمة المهام\"\r\n+    \"language\": \"اللغة\",\r\n+    \"@language\": {},\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774348584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n {\r\n-    \"todoList\" : \"قايمة المهام\"\r\n+    \"todoList\" : \"قايمة المهام\",\r\n+\r\n     \"language\": \"اللغة\",\r\n-    \"@language\": {},\r\n+    \"@language\": {}\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774353993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n     \"todoList\" : \"قايمة المهام\",\r\n-\r\n+\"@language\": {},\r\n     \"language\": \"اللغة\",\r\n     \"@language\": {}\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774658330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n-    \"todoList\" : \"قايمة المهام\",\r\n-\"@language\": {},\r\n-    \"language\": \"اللغة\",\r\n-    \"@language\": {}\r\n+    \"todoList\" : \"ToDo List\",\r\n+    \"logout\" : \"logout\",\r\n+    \"darkMode\": \"Dark Mode\",\r\n+    \"language\": \"Language\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774677014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n-    \"todoList\" : \"ToDo List\",\r\n+    \"todoList\" : \"قائمة المهام\",\r\n     \"logout\" : \"logout\",\r\n     \"darkMode\": \"Dark Mode\",\r\n     \"language\": \"Language\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774684876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n     \"todoList\" : \"قائمة المهام\",\r\n-    \"logout\" : \"logout\",\r\n+    \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"Dark Mode\",\r\n     \"language\": \"Language\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774716678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n     \"todoList\" : \"قائمة المهام\",\r\n     \"logout\" : \"تسجيل الخروج\",\r\n-    \"darkMode\": \"Dark Mode\",\r\n+    \"darkMode\": \"المظهر الداكن\",\r\n     \"language\": \"Language\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774723548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n     \"todoList\" : \"قائمة المهام\",\r\n     \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"المظهر الداكن\",\r\n-    \"language\": \"Language\"\r\n+    \"language\": \"اللغة\"\r\n }\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1730747164933,
+            "name": "Commit-0",
+            "content": "{\r\n    \"todoList\" : \"ToDo List\"\r\n}"
+        }
+    ]
+}

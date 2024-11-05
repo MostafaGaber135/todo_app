@@ -1,5 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
+import 'package:todo_app/app_theme.dart';
 import 'package:todo_app/auth/login_screen.dart';
+import 'package:todo_app/auth/user_provider.dart';
+import 'package:todo_app/firebase_functions.dart';
+import 'package:todo_app/screens/home_screen.dart';
 import 'package:todo_app/widgets/custom_elevated_button.dart';
 import 'package:todo_app/widgets/custom_text_form_field.dart';
 
@@ -16,6 +23,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   var formKey = GlobalKey<FormState>();
+  String emailPattern = r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$';
+  String passwordPattern =
+      r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$';
+  String namePattern = r'^[A-Za-z\s]{2,50}$';
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -35,28 +46,32 @@ class _RegisterScreenState extends State<RegisterScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CustomTextFormField(
-                    controller: nameController,
-                    hintText: 'Name',
-                    validator: (value) {
-                      if (value == null || value.trim().length < 4) {
-                        return 'Name can not be less than 5 characters';
-                      } else {
-                        return null;
-                      }
-                    }),
+                  controller: nameController,
+                  hintText: 'Name',
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your name';
+                    } else if (!validateName(value)) {
+                      return 'Enter a valid name';
+                    }
+                    return null;
+                  },
+                ),
                 const SizedBox(
                   height: 16,
                 ),
                 CustomTextFormField(
-                    controller: emailController,
-                    hintText: 'Email',
-                    validator: (value) {
-                      if (value == null || value.trim().length < 5) {
-                        return 'Email can not be less than 5 characters';
-                      } else {
-                        return null;
-                      }
-                    }),
+                  controller: emailController,
+                  hintText: 'Email',
+                  validator: (value) {
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    } else if (!validateEmail(value)) {
+                      return 'Enter a valid email';
+                    }
+                    return null;
+                  },
+                ),
                 const SizedBox(
                   height: 16,
                 ),
@@ -64,11 +79,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   controller: passwordController,
                   hintText: 'Password',
                   validator: (value) {
-                    if (value == null || value.trim().length < 8) {
-                      return 'Password can not be less than 8 characters';
-                    } else {
-                      return null;
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                    } else if (!validatePassword(value)) {
+                      return 'Enter a valid password';
                     }
+                    return null;
                   },
                   isPassword: true,
                 ),
@@ -99,6 +115,54 @@ class _RegisterScreenState extends State<RegisterScreen> {
   }
 
   void register() {
-    if (formKey.currentState!.validate()) {}
+    if (formKey.currentState!.validate()) {
+      FirebaseFunctions.register(
+        name: nameController.text,
+        email: emailController.text,
+        password: passwordController.text,
+      ).then(
+        (user) {
+          if (!mounted) return;
+          Provider.of<UserProvider>(
+            context,
+            listen: false,
+          ).updateUser(user);
+          Navigator.of(context).pushReplacementNamed(
+            HomeScreen.routeName,
+          );
+          Fluttertoast.showToast(
+            msg: "Account created successfully!",
+            backgroundColor: AppTheme.green,
+          );
+        },
+      ).catchError(
+        (error) {
+          String? message;
+          if (error is FirebaseAuthException) {
+            message = error.message;
+          }
+
+          Fluttertoast.showToast(
+            msg: message ?? "Something went wrong",
+            backgroundColor: AppTheme.red,
+          );
+        },
+      );
+    }
+  }
+
+  bool validateEmail(String email) {
+    RegExp regex = RegExp(emailPattern);
+    return regex.hasMatch(email);
+  }
+
+  bool validatePassword(String password) {
+    RegExp regex = RegExp(passwordPattern);
+    return regex.hasMatch(password);
+  }
+
+  bool validateName(String name) {
+    RegExp regex = RegExp(namePattern);
+    return regex.hasMatch(name);
   }
 }

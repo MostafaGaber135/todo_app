@@ -3,6 +3,7 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/app_theme.dart';
+import 'package:todo_app/auth/user_provider.dart';
 import 'package:todo_app/firebase_functions.dart';
 import 'package:todo_app/models/task_model.dart';
 import 'package:todo_app/tabs/tasks/tasks_provider.dart';
@@ -154,14 +155,18 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
       description: descriptionController.text,
       date: selectedDate,
     );
+    String userId = Provider.of<UserProvider>(
+      context,
+      listen: false,
+    ).currentUser!.id;
     FirebaseFunctions.addTasksToFirestore(
       task,
-    ).timeout(
-      const Duration(microseconds: 100),
-      onTimeout: () {
+      userId,
+    ).then(
+      (_) {
         if (!mounted) return;
         Navigator.of(context).pop();
-        Provider.of<TasksProvider>(context, listen: false).getTasks();
+        Provider.of<TasksProvider>(context, listen: false).getTasks(userId);
         Fluttertoast.showToast(
           msg: "Task added successfully",
           toastLength: Toast.LENGTH_LONG,
@@ -187,19 +192,19 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
       description: descriptionController.text,
       date: selectedDate,
     );
+    String userId =
+        Provider.of<UserProvider>(context, listen: false).currentUser!.id;
+
     FirebaseFunctions.updateTaskInFirestore(
       updatedTask,
-    ).timeout(
-      const Duration(
-        microseconds: 100,
-      ),
-      onTimeout: () {
+      userId,
+    ).then(
+     (_){
         if (!mounted) return;
         Navigator.of(context).pop();
-        Provider.of<TasksProvider>(context, listen: false).updateTask(
-          updatedTask,
-        );
-        Provider.of<TasksProvider>(context, listen: false).getTasks();
+        Provider.of<TasksProvider>(context, listen: false)
+            .updateTask(updatedTask);
+        Provider.of<TasksProvider>(context, listen: false).getTasks(userId);
         Fluttertoast.showToast(
           msg: "Task updated successfully",
           toastLength: Toast.LENGTH_LONG,

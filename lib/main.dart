@@ -1,20 +1,25 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/app_theme.dart';
+import 'package:todo_app/auth/forgot_password.dart';
 import 'package:todo_app/auth/login_screen.dart';
 import 'package:todo_app/auth/register_screen.dart';
+import 'package:todo_app/auth/user_provider.dart';
 import 'package:todo_app/screens/home_screen.dart';
 import 'package:todo_app/tabs/tasks/tasks_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await FirebaseFirestore.instance.disableNetwork();
+
   runApp(
-    ChangeNotifierProvider(
-      create: (_) => TasksProvider(),
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => TasksProvider()),
+        ChangeNotifierProvider(create: (_) => UserProvider()),
+      ],
       child: const TodoApp(),
     ),
   );
@@ -29,11 +34,17 @@ class TodoApp extends StatelessWidget {
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
       themeMode: ThemeMode.light,
-      initialRoute: HomeScreen.routeName,
+      localizationsDelegates: AppLocalizations.localizationsDelegates,
+      supportedLocales: AppLocalizations.supportedLocales,
+      locale: const Locale(
+        'en',
+      ),
+      initialRoute: LoginScreen.routeName,
       routes: {
         HomeScreen.routeName: (_) => const HomeScreen(),
         RegisterScreen.routeName: (_) => const RegisterScreen(),
         LoginScreen.routeName: (_) => const LoginScreen(),
+        ForgotPassword.routeName: (_) => const ForgotPassword(),
       },
     );
   }
