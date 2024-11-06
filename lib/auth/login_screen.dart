@@ -8,8 +8,10 @@ import 'package:todo_app/auth/register_screen.dart';
 import 'package:todo_app/auth/user_provider.dart';
 import 'package:todo_app/firebase_functions.dart';
 import 'package:todo_app/screens/home_screen.dart';
+import 'package:todo_app/tabs/settings/settings_provider.dart';
 import 'package:todo_app/widgets/custom_elevated_button.dart';
 import 'package:todo_app/widgets/custom_text_form_field.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -29,11 +31,17 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'Login',
+          title: Text(
+            AppLocalizations.of(context)!.login,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: settingsProvider.isDark
+                      ? AppTheme.white
+                      : AppTheme.backgroundColorBottomNavigationBar,
+                ),
           ),
         ),
         body: Padding(
@@ -47,12 +55,12 @@ class _LoginScreenState extends State<LoginScreen> {
               children: [
                 CustomTextFormField(
                   controller: emailController,
-                  hintText: 'Email',
+                  hintText: AppLocalizations.of(context)!.email,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your email';
+                      return AppLocalizations.of(context)!.pleaseEnterYourEmail;
                     } else if (!validateEmail(value)) {
-                      return 'Enter a valid email';
+                      return AppLocalizations.of(context)!.enteraValidEmail;
                     }
                     return null;
                   },
@@ -62,12 +70,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 CustomTextFormField(
                   controller: passwordController,
-                  hintText: 'Password',
+                  hintText: AppLocalizations.of(context)!.password,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your password';
+                      return AppLocalizations.of(context)!
+                          .pleaseEnterYourPassword;
                     } else if (!validatePassword(value)) {
-                      return 'Enter a valid password';
+                      return AppLocalizations.of(context)!.enteraValidPassword;
                     }
                     return null;
                   },
@@ -77,7 +86,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   height: 32,
                 ),
                 CustomElevatedButton(
-                  label: 'Login',
+                  label: AppLocalizations.of(context)!.login,
                   onPressed: login,
                 ),
                 const SizedBox(
@@ -87,16 +96,16 @@ class _LoginScreenState extends State<LoginScreen> {
                   onPressed: () => Navigator.of(context).pushReplacementNamed(
                     RegisterScreen.routeName,
                   ),
-                  child: const Text(
-                    "Don't have an account!",
+                  child: Text(
+                    AppLocalizations.of(context)!.donthaveaccount,
                   ),
                 ),
                 TextButton(
                   onPressed: () => Navigator.of(context).pushReplacementNamed(
                     ForgotPassword.routeName,
                   ),
-                  child: const Text(
-                    "Forgot password?",
+                  child: Text(
+                    AppLocalizations.of(context)!.forgotPassowrd,
                   ),
                 ),
               ],
@@ -123,23 +132,22 @@ class _LoginScreenState extends State<LoginScreen> {
             HomeScreen.routeName,
           );
           Fluttertoast.showToast(
-            msg: "Login successful!",
+            msg: AppLocalizations.of(context)!.loginSuccessful,
             backgroundColor: AppTheme.green,
           );
         },
-      ).catchError(
-        (error) {
-          String? message;
-          if (error is FirebaseAuthException) {
-            message = error.message;
-          }
+      ).catchError((error) {
+        String? message;
+        if (error is FirebaseAuthException) {
+          message = error.message;
+        }
 
-          Fluttertoast.showToast(
-            msg: message ?? "Something went wrong",
-            backgroundColor: AppTheme.red,
-          );
-        },
-      );
+        if (!mounted) return;
+        Fluttertoast.showToast(
+          msg: message ?? AppLocalizations.of(context)!.somethingWentWrong,
+          backgroundColor: AppTheme.red,
+        );
+      });
     }
   }
 

@@ -7,8 +7,10 @@ import 'package:todo_app/auth/login_screen.dart';
 import 'package:todo_app/auth/user_provider.dart';
 import 'package:todo_app/firebase_functions.dart';
 import 'package:todo_app/screens/home_screen.dart';
+import 'package:todo_app/tabs/settings/settings_provider.dart';
 import 'package:todo_app/widgets/custom_elevated_button.dart';
 import 'package:todo_app/widgets/custom_text_form_field.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -29,11 +31,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String namePattern = r'^[A-Za-z\s]{2,50}$';
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          title: const Text(
-            'Register',
+          title: Text(
+            AppLocalizations.of(context)!.register,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color: settingsProvider.isDark
+                      ? AppTheme.white
+                      : AppTheme.backgroundColorBottomNavigationBar,
+                ),
           ),
         ),
         body: Padding(
@@ -47,12 +55,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
               children: [
                 CustomTextFormField(
                   controller: nameController,
-                  hintText: 'Name',
+                  hintText: AppLocalizations.of(context)!.name,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your name';
+                      return AppLocalizations.of(context)!.pleaseEnterYourName;
                     } else if (!validateName(value)) {
-                      return 'Enter a valid name';
+                      return AppLocalizations.of(context)!.enteraValidName;
                     }
                     return null;
                   },
@@ -62,12 +70,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 CustomTextFormField(
                   controller: emailController,
-                  hintText: 'Email',
+                  hintText: AppLocalizations.of(context)!.email,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your email';
+                      return AppLocalizations.of(context)!.pleaseEnterYourEmail;
                     } else if (!validateEmail(value)) {
-                      return 'Enter a valid email';
+                      return AppLocalizations.of(context)!.enteraValidEmail;
                     }
                     return null;
                   },
@@ -77,12 +85,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 ),
                 CustomTextFormField(
                   controller: passwordController,
-                  hintText: 'Password',
+                  hintText: AppLocalizations.of(context)!.password,
                   validator: (value) {
                     if (value == null || value.isEmpty) {
-                      return 'Please enter your password';
+                      return AppLocalizations.of(context)!
+                          .pleaseEnterYourPassword;
                     } else if (!validatePassword(value)) {
-                      return 'Enter a valid password';
+                      return AppLocalizations.of(context)!.enteraValidPassword;
                     }
                     return null;
                   },
@@ -92,7 +101,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 32,
                 ),
                 CustomElevatedButton(
-                  label: 'Register',
+                  label: AppLocalizations.of(context)!.register,
                   onPressed: register,
                 ),
                 const SizedBox(
@@ -102,8 +111,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onPressed: () => Navigator.of(context).pushReplacementNamed(
                     LoginScreen.routeName,
                   ),
-                  child: const Text(
-                    "Already have an account!",
+                  child: Text(
+                    AppLocalizations.of(context)!.alreadyHaveAnAccount,
                   ),
                 ),
               ],

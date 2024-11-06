@@ -1,0 +1,18 @@
+{
+    "sourceFile": "lib/tabs/settings/settings_storage.dart",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1730822934735,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1730822934735,
+            "name": "Commit-0",
+            "content": "import 'dart:convert';\r\nimport 'dart:io';\r\nimport 'package:path_provider/path_provider.dart';\r\n\r\nclass SettingsStorage {\r\n  static const String _fileName = 'settings.json';\r\n\r\n  Future<File> _getLocalFile() async {\r\n    final directory = await getApplicationDocumentsDirectory();\r\n    return File('${directory.path}/$_fileName');\r\n  }\r\n\r\n  Future<Map<String, dynamic>> readSettings() async {\r\n    try {\r\n      final file = await _getLocalFile();\r\n      final contents = await file.readAsString();\r\n      return json.decode(contents);\r\n    } catch (e) {\r\n      return {}; // Return an empty map if there's an error\r\n    }\r\n  }\r\n\r\n  Future<void> writeSettings(Map<String, dynamic> settings) async {\r\n    final file = await _getLocalFile();\r\n    await file.writeAsString(json.encode(settings));\r\n  }\r\n}\r\n"
+        }
+    ]
+}

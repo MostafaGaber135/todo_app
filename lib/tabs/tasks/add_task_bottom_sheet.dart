@@ -6,9 +6,11 @@ import 'package:todo_app/app_theme.dart';
 import 'package:todo_app/auth/user_provider.dart';
 import 'package:todo_app/firebase_functions.dart';
 import 'package:todo_app/models/task_model.dart';
+import 'package:todo_app/tabs/settings/settings_provider.dart';
 import 'package:todo_app/tabs/tasks/tasks_provider.dart';
 import 'package:todo_app/widgets/custom_elevated_button.dart';
 import 'package:todo_app/widgets/custom_text_form_field.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class AddTaskBottomSheet extends StatefulWidget {
   const AddTaskBottomSheet({super.key, this.task});
@@ -36,6 +38,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
 
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     TextStyle? titleMediumStyle = Theme.of(context).textTheme.titleMedium;
     return Padding(
       padding: EdgeInsets.only(
@@ -43,13 +46,13 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
       ),
       child: Container(
         height: MediaQuery.sizeOf(context).height * 0.5,
-        decoration: const BoxDecoration(
-          color: AppTheme.white,
-          borderRadius: BorderRadius.horizontal(
-            left: Radius.circular(
+        decoration: BoxDecoration(
+          color: settingsProvider.isDark ? AppTheme.black : AppTheme.white,
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(
               15,
             ),
-            right: Radius.circular(
+            topRight: Radius.circular(
               15,
             ),
           ),
@@ -62,7 +65,9 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
           child: Column(
             children: [
               Text(
-                widget.task == null ? 'Add new task' : 'Edit task',
+                widget.task == null
+                    ? AppLocalizations.of(context)!.addNewTask
+                    : AppLocalizations.of(context)!.editTask,
                 style: titleMediumStyle,
               ),
               const SizedBox(
@@ -70,10 +75,10 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
               ),
               CustomTextFormField(
                 controller: titleController,
-                hintText: 'Enter task title',
+                hintText: AppLocalizations.of(context)!.enterTaskTitle,
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return 'Please enter task title';
+                    return AppLocalizations.of(context)!.pleaseEnterTaskTitle;
                   }
                   return null;
                 },
@@ -83,10 +88,11 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
               ),
               CustomTextFormField(
                 controller: descriptionController,
-                hintText: 'Enter task description',
+                hintText: AppLocalizations.of(context)!.enterTaskDescription,
                 validator: (value) {
                   if (value == null || value.trim().isEmpty) {
-                    return 'Please enter task description';
+                    return AppLocalizations.of(context)!
+                        .pleaseEnterTaskDescription;
                   }
                   return null;
                 },
@@ -95,7 +101,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 height: 16,
               ),
               Text(
-                'Select date',
+                AppLocalizations.of(context)!.selectDate,
                 style: titleMediumStyle?.copyWith(
                   fontWeight: FontWeight.w400,
                 ),
@@ -116,22 +122,27 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                     initialDate: selectedDate,
                     initialEntryMode: DatePickerEntryMode.calendarOnly,
                   );
-                  if (dateTime != null) {
-                    selectedDate = dateTime;
-                  }
+                  selectedDate = dateTime!;
                   setState(() {});
                 },
                 child: Text(
                   dateFormat.format(
                     selectedDate,
                   ),
+                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                        color: settingsProvider.isDark
+                            ? AppTheme.white
+                            : AppTheme.black,
+                      ),
                 ),
               ),
               const SizedBox(
                 height: 32,
               ),
               CustomElevatedButton(
-                label: widget.task == null ? 'Add' : 'Save Changes',
+                label: widget.task == null
+                    ? AppLocalizations.of(context)!.add
+                    : AppLocalizations.of(context)!.saveChanges,
                 onPressed: () {
                   if (formKey.currentState!.validate()) {
                     if (widget.task == null) {
@@ -168,7 +179,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
         Navigator.of(context).pop();
         Provider.of<TasksProvider>(context, listen: false).getTasks(userId);
         Fluttertoast.showToast(
-          msg: "Task added successfully",
+          msg:     AppLocalizations.of(context)!.taskAddedSuccessfully,
           toastLength: Toast.LENGTH_LONG,
           timeInSecForIosWeb: 5,
           backgroundColor: AppTheme.green,
@@ -176,8 +187,9 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
       },
     ).catchError(
       (error) {
+        if(!mounted)return;
         Fluttertoast.showToast(
-          msg: "Something went wrong",
+          msg:     AppLocalizations.of(context)!.somethingWentWrong,
           toastLength: Toast.LENGTH_LONG,
           timeInSecForIosWeb: 5,
           backgroundColor: AppTheme.red,
@@ -199,21 +211,22 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
       updatedTask,
       userId,
     ).then(
-     (_){
+      (_) {
         if (!mounted) return;
         Navigator.of(context).pop();
         Provider.of<TasksProvider>(context, listen: false)
             .updateTask(updatedTask);
         Provider.of<TasksProvider>(context, listen: false).getTasks(userId);
         Fluttertoast.showToast(
-          msg: "Task updated successfully",
+          msg:     AppLocalizations.of(context)!.taskUpdatedSuccessfully,
           toastLength: Toast.LENGTH_LONG,
           backgroundColor: AppTheme.green,
         );
       },
     ).catchError((error) {
+      if(!mounted)return;
       Fluttertoast.showToast(
-        msg: "Something went wrong",
+        msg:     AppLocalizations.of(context)!.somethingWentWrong,
         toastLength: Toast.LENGTH_LONG,
         backgroundColor: AppTheme.red,
       );
