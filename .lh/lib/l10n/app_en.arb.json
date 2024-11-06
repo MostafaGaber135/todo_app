@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 10,
+            "activePatchIndex": 11,
             "patches": [
                 {
                     "date": 1730747115029,
@@ -48,6 +48,10 @@
                 {
                     "date": 1730747241215,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,3 @@\n \"@todoList\": {\r\n     \"todoList\" : \"ToDo List\",\r\n }\r\n-{\r\n-   \r\n-    \"@todoList\": {}\r\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730844311316,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     \"todoList\" : \"ToDo List\",\r\n     \"logout\" : \"logout\",\r\n     \"darkMode\": \"Dark Mode\",\r\n     \"language\": \"Language\",\r\n+    \"Login\": \"Language\"\r\n     \"language\": \"Language\"\r\n     \"language\": \"Language\"\r\n     \"language\": \"Language\"\r\n-    \"language\": \"Language\"\r\n }\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1730747115029,

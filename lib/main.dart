@@ -7,8 +7,10 @@ import 'package:todo_app/auth/login_screen.dart';
 import 'package:todo_app/auth/register_screen.dart';
 import 'package:todo_app/auth/user_provider.dart';
 import 'package:todo_app/screens/home_screen.dart';
+import 'package:todo_app/tabs/settings/settings_provider.dart';
 import 'package:todo_app/tabs/tasks/tasks_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:todo_app/widgets/custom_splash_screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -19,6 +21,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (_) => TasksProvider()),
         ChangeNotifierProvider(create: (_) => UserProvider()),
+        ChangeNotifierProvider(create: (_) => SettingsProvider()),
       ],
       child: const TodoApp(),
     ),
@@ -29,18 +32,20 @@ class TodoApp extends StatelessWidget {
   const TodoApp({super.key});
   @override
   Widget build(BuildContext context) {
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       darkTheme: AppTheme.darkTheme,
-      themeMode: ThemeMode.light,
+      themeMode: settingsProvider.themeMode,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      locale: const Locale(
-        'en',
+      locale: Locale(
+        settingsProvider.languageCode,
       ),
-      initialRoute: LoginScreen.routeName,
+      initialRoute: CustomSplashScreen.routeName,
       routes: {
+        CustomSplashScreen.routeName: (_) => const CustomSplashScreen(),
         HomeScreen.routeName: (_) => const HomeScreen(),
         RegisterScreen.routeName: (_) => const RegisterScreen(),
         LoginScreen.routeName: (_) => const LoginScreen(),

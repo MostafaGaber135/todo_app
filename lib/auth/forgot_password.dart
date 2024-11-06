@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+import 'package:provider/provider.dart';
 import 'package:todo_app/auth/login_screen.dart';
 import 'package:todo_app/app_theme.dart';
+import 'package:todo_app/tabs/settings/settings_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:todo_app/widgets/custom_elevated_button.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
@@ -28,83 +33,75 @@ class _ForgotPasswordState extends State<ForgotPassword> {
       try {
         await FirebaseAuth.instance
             .sendPasswordResetEmail(email: emailController.text);
-        _showDialog('Password Reset Email Sent',
-            'Check your email for the password reset link.');
+        if (!mounted) return;
+        Fluttertoast.showToast(
+          msg: AppLocalizations.of(context)!.passwordResetEmailSent,
+          backgroundColor: AppTheme.green,
+        );
       } catch (error) {
-        _showDialog('Error', error.toString());
+        String? message;
+        if (!mounted) return;
+        Fluttertoast.showToast(
+          msg: message ?? AppLocalizations.of(context)!.somethingWentWrong,
+          backgroundColor: AppTheme.red,
+        );
       }
     }
   }
 
-  void _showDialog(String title, String content) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          title: Text(title),
-          content: Text(content),
-          actions: <Widget>[
-            TextButton(
-              child: const Text(
-                'OK',
-                style: TextStyle(
-                  color: AppTheme.primary,
-                ),
-              ),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        title: const Text('Forgot Password'),
-      ),
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: true,
+          title: Text(
+            AppLocalizations.of(context)!.forgotPassowrd,
+            style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  color:
+                      settingsProvider.isDark ? AppTheme.white : AppTheme.black,
+                ),
+          ),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.only(
+            right: 20,
+            left: 20,
           ),
           child: Form(
             key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: <Widget>[
-                Image.asset(
-                  'assets/images/forgot_password.png',
-                ),
+              children: [
                 TextFormField(
+                  style: TextStyle(
+                    color: settingsProvider.isDark
+                        ? AppTheme.white
+                        : AppTheme.black,
+                  ),
                   controller: emailController,
-                  decoration: const InputDecoration(
-                    labelText: 'Email',
-                    labelStyle: TextStyle(
+                  decoration: InputDecoration(
+                    labelText: AppLocalizations.of(context)!.email,
+                    labelStyle: const TextStyle(
                       color: AppTheme.primary,
                     ),
-                    enabledBorder: OutlineInputBorder(
+                    enabledBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
                         color: AppTheme.primary,
                       ),
                     ),
-                    focusedBorder: OutlineInputBorder(
+                    focusedBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
                         color: AppTheme.primary,
                       ),
                     ),
-                    errorBorder: OutlineInputBorder(
+                    errorBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
                         color: AppTheme.primary,
                       ),
                     ),
-                    focusedErrorBorder: OutlineInputBorder(
+                    focusedErrorBorder: const OutlineInputBorder(
                       borderSide: BorderSide(
                         color: AppTheme.primary,
                       ),
@@ -112,46 +109,41 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   ),
                   validator: (value) {
                     if (value!.isEmpty) {
-                      return 'Please enter your email';
+                      return AppLocalizations.of(context)!.pleaseEnterYourEmail;
                     }
                     if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
-                      return 'Please enter a valid email address';
+                      return AppLocalizations.of(context)!.enteraValidEmail;
                     }
                     return null;
                   },
                   onSaved: (value) => emailController.text = value!,
                 ),
-                const SizedBox(height: 16.0),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppTheme.primary,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8.0),
-                    ),
-                    padding: const EdgeInsets.all(16.0),
-                  ),
-                  onPressed: _validateAndSubmit,
-                  child: const Text(
-                    'Submit',
-                    style: TextStyle(
-                      fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
+                const SizedBox(
+                  height: 16,
                 ),
+                CustomElevatedButton(
+                    label: AppLocalizations.of(context)!.submit,
+                    onPressed: _validateAndSubmit),
                 const SizedBox(height: 16.0),
                 GestureDetector(
                   onTap: _navigateToSignIn,
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Text('Have an account? '),
-                      SizedBox(
+                      Text(
+                        AppLocalizations.of(context)!.haveAnAccount,
+                        style:
+                            Theme.of(context).textTheme.titleMedium?.copyWith(
+                                  color: settingsProvider.isDark
+                                      ? AppTheme.white
+                                      : AppTheme.black,
+                                ),
+                      ),
+                      const SizedBox(
                         width: 10,
                       ),
                       Text(
-                        'Login',
-                        style: TextStyle(
+                        AppLocalizations.of(context)!.login,
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           color: AppTheme.primary,
                         ),
