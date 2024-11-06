@@ -182,9 +182,9 @@ class _TaskItemState extends State<TaskItem> {
               GestureDetector(
                 onTap: toggleTaskDone,
                 child: widget.task.isDone
-                    ? const Text(
-                        "Done!",
-                        style: TextStyle(
+                    ? Text(
+                        AppLocalizations.of(context)!.done,
+                        style: const TextStyle(
                           color: AppTheme.green,
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
