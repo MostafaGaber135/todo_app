@@ -1,0 +1,310 @@
+{
+    "sourceFile": "lib/l10n/app_ar.arb",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 73,
+            "patches": [
+                {
+                    "date": 1730747164933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1730747268093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n {\r\n-    \"todoList\" : \"ToDo List\"\r\n+    \"todoList\" : \"قائمة المهام\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730747277297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,3 @@\n {\r\n-    \"todoList\" : \"قائمة المهام\"\r\n+    \"todoList\" : \"قايمة المهام\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774338662,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n {\r\n     \"todoList\" : \"قايمة المهام\"\r\n+    \"language\": \"اللغة\",\r\n+    \"@language\": {},\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774348584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n {\r\n-    \"todoList\" : \"قايمة المهام\"\r\n+    \"todoList\" : \"قايمة المهام\",\r\n+\r\n     \"language\": \"اللغة\",\r\n-    \"@language\": {},\r\n+    \"@language\": {}\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774353993,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n     \"todoList\" : \"قايمة المهام\",\r\n-\r\n+\"@language\": {},\r\n     \"language\": \"اللغة\",\r\n     \"@language\": {}\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774658330,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n-    \"todoList\" : \"قايمة المهام\",\r\n-\"@language\": {},\r\n-    \"language\": \"اللغة\",\r\n-    \"@language\": {}\r\n+    \"todoList\" : \"ToDo List\",\r\n+    \"logout\" : \"logout\",\r\n+    \"darkMode\": \"Dark Mode\",\r\n+    \"language\": \"Language\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774677014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n-    \"todoList\" : \"ToDo List\",\r\n+    \"todoList\" : \"قائمة المهام\",\r\n     \"logout\" : \"logout\",\r\n     \"darkMode\": \"Dark Mode\",\r\n     \"language\": \"Language\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774684876,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n     \"todoList\" : \"قائمة المهام\",\r\n-    \"logout\" : \"logout\",\r\n+    \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"Dark Mode\",\r\n     \"language\": \"Language\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774716678,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n     \"todoList\" : \"قائمة المهام\",\r\n     \"logout\" : \"تسجيل الخروج\",\r\n-    \"darkMode\": \"Dark Mode\",\r\n+    \"darkMode\": \"المظهر الداكن\",\r\n     \"language\": \"Language\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730774723548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n {\r\n     \"todoList\" : \"قائمة المهام\",\r\n     \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"المظهر الداكن\",\r\n-    \"language\": \"Language\"\r\n+    \"language\": \"اللغة\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730844625886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,16 @@\n {\r\n     \"todoList\" : \"قائمة المهام\",\r\n     \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"المظهر الداكن\",\r\n-    \"language\": \"اللغة\"\r\n+    \"language\": \"اللغة\",\r\n+    \"login\": \"Login\",\r\n+    \"email\": \"Email\",\r\n+    \"password\": \"Password\",\r\n+    \"donthaveaccount\": \"Don't have an account!\",\r\n+    \"forgotPassowrd\" : \"Forgot Password?\",\r\n+    \"name\":\"Name\",\r\n+    \"register\":\"Register\",\r\n+    \"alreadyHaveAnAccount\": \"Already have an account!\",\r\n+    \"submit\": \"Submit\",\r\n+    \"haveAnAccount\":\"Have an account?\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730844635519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     \"todoList\" : \"قائمة المهام\",\r\n     \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"المظهر الداكن\",\r\n     \"language\": \"اللغة\",\r\n-    \"login\": \"Login\",\r\n+    \"login\": \"تسجيل الدخول\",\r\n     \"email\": \"Email\",\r\n     \"password\": \"Password\",\r\n     \"donthaveaccount\": \"Don't have an account!\",\r\n     \"forgotPassowrd\" : \"Forgot Password?\",\r\n"
+                },
+                {
+                    "date": 1730844642351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"المظهر الداكن\",\r\n     \"language\": \"اللغة\",\r\n     \"login\": \"تسجيل الدخول\",\r\n-    \"email\": \"Email\",\r\n+    \"email\": \"بريد إلكتروني\",\r\n     \"password\": \"Password\",\r\n     \"donthaveaccount\": \"Don't have an account!\",\r\n     \"forgotPassowrd\" : \"Forgot Password?\",\r\n     \"name\":\"Name\",\r\n"
+                },
+                {
+                    "date": 1730844652538,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n     \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"المظهر الداكن\",\r\n     \"language\": \"اللغة\",\r\n     \"login\": \"تسجيل الدخول\",\r\n-    \"email\": \"بريد إلكتروني\",\r\n+    \"email\": \"البريد إلكتروني\",\r\n     \"password\": \"Password\",\r\n     \"donthaveaccount\": \"Don't have an account!\",\r\n     \"forgotPassowrd\" : \"Forgot Password?\",\r\n     \"name\":\"Name\",\r\n"
+                },
+                {
+                    "date": 1730844666524,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,10 +3,10 @@\n     \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"المظهر الداكن\",\r\n     \"language\": \"اللغة\",\r\n     \"login\": \"تسجيل الدخول\",\r\n-    \"email\": \"البريد إلكتروني\",\r\n-    \"password\": \"Password\",\r\n+    \"email\": \"البريد إلكترونى\",\r\n+    \"password\": \"كلمة المرور\",\r\n     \"donthaveaccount\": \"Don't have an account!\",\r\n     \"forgotPassowrd\" : \"Forgot Password?\",\r\n     \"name\":\"Name\",\r\n     \"register\":\"Register\",\r\n"
+                },
+                {
+                    "date": 1730844684484,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     \"language\": \"اللغة\",\r\n     \"login\": \"تسجيل الدخول\",\r\n     \"email\": \"البريد إلكترونى\",\r\n     \"password\": \"كلمة المرور\",\r\n-    \"donthaveaccount\": \"Don't have an account!\",\r\n+    \"donthaveaccount\": \"ليس لديك حساب!\",\r\n     \"forgotPassowrd\" : \"Forgot Password?\",\r\n     \"name\":\"Name\",\r\n     \"register\":\"Register\",\r\n     \"alreadyHaveAnAccount\": \"Already have an account!\",\r\n"
+                },
+                {
+                    "date": 1730844713778,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     \"login\": \"تسجيل الدخول\",\r\n     \"email\": \"البريد إلكترونى\",\r\n     \"password\": \"كلمة المرور\",\r\n     \"donthaveaccount\": \"ليس لديك حساب!\",\r\n-    \"forgotPassowrd\" : \"Forgot Password?\",\r\n+    \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n     \"name\":\"Name\",\r\n     \"register\":\"Register\",\r\n     \"alreadyHaveAnAccount\": \"Already have an account!\",\r\n     \"submit\": \"Submit\",\r\n"
+                },
+                {
+                    "date": 1730844729012,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n     \"email\": \"البريد إلكترونى\",\r\n     \"password\": \"كلمة المرور\",\r\n     \"donthaveaccount\": \"ليس لديك حساب!\",\r\n     \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n-    \"name\":\"Name\",\r\n+    \"name\":\"الاسم\",\r\n     \"register\":\"Register\",\r\n     \"alreadyHaveAnAccount\": \"Already have an account!\",\r\n     \"submit\": \"Submit\",\r\n     \"haveAnAccount\":\"Have an account?\"\r\n"
+                },
+                {
+                    "date": 1730844754117,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n     \"password\": \"كلمة المرور\",\r\n     \"donthaveaccount\": \"ليس لديك حساب!\",\r\n     \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n     \"name\":\"الاسم\",\r\n-    \"register\":\"Register\",\r\n+    \"register\":\"تسجيل\",\r\n     \"alreadyHaveAnAccount\": \"Already have an account!\",\r\n     \"submit\": \"Submit\",\r\n     \"haveAnAccount\":\"Have an account?\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730844764531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,8 +9,8 @@\n     \"donthaveaccount\": \"ليس لديك حساب!\",\r\n     \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n     \"name\":\"الاسم\",\r\n     \"register\":\"تسجيل\",\r\n-    \"alreadyHaveAnAccount\": \"Already have an account!\",\r\n+    \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n     \"submit\": \"Submit\",\r\n     \"haveAnAccount\":\"Have an account?\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730844828747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,7 +10,7 @@\n     \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n     \"name\":\"الاسم\",\r\n     \"register\":\"تسجيل\",\r\n     \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n-    \"submit\": \"Submit\",\r\n+    \"submit\": \"تقديم\",\r\n     \"haveAnAccount\":\"Have an account?\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730844840761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,6 +11,6 @@\n     \"name\":\"الاسم\",\r\n     \"register\":\"تسجيل\",\r\n     \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n     \"submit\": \"تقديم\",\r\n-    \"haveAnAccount\":\"Have an account?\"\r\n+    \"haveAnAccount\":\"هل لديك حساب؟\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730844856890,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n {\r\n-    \"todoList\" : \"قائمة المهام\",\r\n+    \"todoList\" : \"قائمة المه,\r\n+    \"@todoList\": {}ام\",\r\n     \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"المظهر الداكن\",\r\n     \"language\": \"اللغة\",\r\n     \"login\": \"تسجيل الدخول\",\r\n"
+                },
+                {
+                    "date": 1730844864426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+{\r\n+    \"todoList\" : \"قائمة المهام\",\r\n+    \"logout\" : \"تسجيل الخروج\",\r\n+    \"darkMode\": \"المظهر الداكن\",\r\n+    \"language\": \"اللغة\",\r\n+    \"login\": \"تسجيل الدخول\",\r\n+    \"email\": \"البريد إلكترونى\",\r\n+    \"password\": \"كلمة المرور\",\r\n+    \"donthaveaccount\": \"ليس لديك حساب!\",\r\n+    \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n+    \"name\":\"الاسم\",\r\n+    \"register\":\"تسجيل\",\r\n+    \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n+    \"submit\": \"تقديم\",\r\n+    \"haveAnAccount\":\"هل لديك حساب؟\"\r\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730844869765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n {\r\n     \"todoList\" : \"قائمة المهام\",\r\n+    \"@todoList\": {},\r\n     \"logout\" : \"تسجيل الخروج\",\r\n     \"darkMode\": \"المظهر الداكن\",\r\n     \"language\": \"اللغة\",\r\n     \"login\": \"تسجيل الدخول\",\r\n@@ -12,22 +13,5 @@\n     \"register\":\"تسجيل\",\r\n     \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n     \"submit\": \"تقديم\",\r\n     \"haveAnAccount\":\"هل لديك حساب؟\"\r\n-}\n-{\r\n-    \"todoList\" : \"قائمة المه,\r\n-    \"@todoList\": {}ام\",\r\n-    \"logout\" : \"تسجيل الخروج\",\r\n-    \"darkMode\": \"المظهر الداكن\",\r\n-    \"language\": \"اللغة\",\r\n-    \"login\": \"تسجيل الدخول\",\r\n-    \"email\": \"البريد إلكترونى\",\r\n-    \"password\": \"كلمة المرور\",\r\n-    \"donthaveaccount\": \"ليس لديك حساب!\",\r\n-    \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n-    \"name\":\"الاسم\",\r\n-    \"register\":\"تسجيل\",\r\n-    \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n-    \"submit\": \"تقديم\",\r\n-    \"haveAnAccount\":\"هل لديك حساب؟\"\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730844875134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,11 @@\n {\r\n     \"todoList\" : \"قائمة المهام\",\r\n     \"@todoList\": {},\r\n     \"logout\" : \"تسجيل الخروج\",\r\n+    \"@logout\": {},\r\n     \"darkMode\": \"المظهر الداكن\",\r\n+    \"@darkMode\": {},\r\n     \"language\": \"اللغة\",\r\n     \"login\": \"تسجيل الدخول\",\r\n     \"email\": \"البريد إلكترونى\",\r\n     \"password\": \"كلمة المرور\",\r\n"
+                },
+                {
+                    "date": 1730844882211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,11 +5,15 @@\n     \"@logout\": {},\r\n     \"darkMode\": \"المظهر الداكن\",\r\n     \"@darkMode\": {},\r\n     \"language\": \"اللغة\",\r\n+    \"@language\": {},\r\n     \"login\": \"تسجيل الدخول\",\r\n+    \"@login\": {},\r\n     \"email\": \"البريد إلكترونى\",\r\n+    \"@email\": {},\r\n     \"password\": \"كلمة المرور\",\r\n+    \"@password\": {},\r\n     \"donthaveaccount\": \"ليس لديك حساب!\",\r\n     \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n     \"name\":\"الاسم\",\r\n     \"register\":\"تسجيل\",\r\n"
+                },
+                {
+                    "date": 1730844891398,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,8 +13,9 @@\n     \"@email\": {},\r\n     \"password\": \"كلمة المرور\",\r\n     \"@password\": {},\r\n     \"donthaveaccount\": \"ليس لديك حساب!\",\r\n+    \"@donthaveaccount\": {},\r\n     \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n     \"name\":\"الاسم\",\r\n     \"register\":\"تسجيل\",\r\n     \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n"
+                },
+                {
+                    "date": 1730844930403,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n {\r\n+    \"@@locale\": \"ar\",\r\n     \"todoList\" : \"قائمة المهام\",\r\n     \"@todoList\": {},\r\n     \"logout\" : \"تسجيل الخروج\",\r\n     \"@logout\": {},\r\n@@ -15,10 +16,16 @@\n     \"@password\": {},\r\n     \"donthaveaccount\": \"ليس لديك حساب!\",\r\n     \"@donthaveaccount\": {},\r\n     \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n+    \"@forgotPassowrd\": {},\r\n     \"name\":\"الاسم\",\r\n+    \"@name\": {},\r\n     \"register\":\"تسجيل\",\r\n+    \"@register\": {},\r\n     \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n\\ No newline at end of file\n+    \"@alreadyHaveAnAccount\": {},\r\n     \"submit\": \"تقديم\",\r\n-    \"haveAnAccount\":\"هل لديك حساب؟\"\r\n-}\n+    \"@submit\": {},\r\n+    \"haveAnAccount\":\"هل لديك حساب؟\",\r\n+    \"@haveAnAccount\": {}\r\n+}\r\n"
+                },
+                {
+                    "date": 1730846425925,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,9 @@\n     \"submit\": \"تقديم\",\r\n     \"@submit\": {},\r\n     \"haveAnAccount\":\"هل لديك حساب؟\",\r\n     \"@haveAnAccount\": {}\r\n-}\n\\ No newline at end of file\n+    \"pleaseEnterYourEmail\": \"Please enter your email\",\r\n+    \"@pleaseEnterYourEmail\": {},\r\n+    \"pleaseEnterYourPassword\": \"Please enter your password\",\r\n+    \"@pleaseEnterYourPassword\": {}\r\n+}\r\n"
+                },
+                {
+                    "date": 1730846467319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,10 +26,10 @@\n     \"@alreadyHaveAnAccount\": {},\r\n     \"submit\": \"تقديم\",\r\n     \"@submit\": {},\r\n     \"haveAnAccount\":\"هل لديك حساب؟\",\r\n-    \"@haveAnAccount\": {}\r\n-    \"pleaseEnterYourEmail\": \"Please enter your email\",\r\n+    \"@haveAnAccount\": {},\r\n+    \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكتروني\",\r\n     \"@pleaseEnterYourEmail\": {},\r\n     \"pleaseEnterYourPassword\": \"Please enter your password\",\r\n     \"@pleaseEnterYourPassword\": {}\r\n }\r\n"
+                },
+                {
+                    "date": 1730846474186,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n     \"submit\": \"تقديم\",\r\n     \"@submit\": {},\r\n     \"haveAnAccount\":\"هل لديك حساب؟\",\r\n     \"@haveAnAccount\": {},\r\n-    \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكتروني\",\r\n+    \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكترونى\",\r\n     \"@pleaseEnterYourEmail\": {},\r\n     \"pleaseEnterYourPassword\": \"Please enter your password\",\r\n     \"@pleaseEnterYourPassword\": {}\r\n }\r\n"
+                },
+                {
+                    "date": 1730846482068,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -29,7 +29,7 @@\n     \"haveAnAccount\":\"هل لديك حساب؟\",\r\n     \"@haveAnAccount\": {},\r\n     \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكترونى\",\r\n     \"@pleaseEnterYourEmail\": {},\r\n-    \"pleaseEnterYourPassword\": \"Please enter your password\",\r\n+    \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n     \"@pleaseEnterYourPassword\": {}\r\n }\r\n"
+                },
+                {
+                    "date": 1730846684709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -30,6 +30,10 @@\n     \"@haveAnAccount\": {},\r\n     \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكترونى\",\r\n     \"@pleaseEnterYourEmail\": {},\r\n     \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n-    \"@pleaseEnterYourPassword\": {}\r\n+    \"@pleaseEnterYourPassword\": {},\r\n+    \"EnteraValidEmail\": \"Enter a valid email\",\r\n+    \"@EnteraValidEmail\": {},\r\n+    \"EnteraValidPassword\": \"Enter a valid password\",\r\n+    \"@EnteraValidPassword\": {}\r\n }\r\n"
+                },
+                {
+                    "date": 1730846690960,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,39 @@\n+{\r\n+    \"@@locale\": \"ar\",\r\n+    \"todoList\" : \"قائمة المهام\",\r\n+    \"@todoList\": {},\r\n+    \"logout\" : \"تسجيل الخروج\",\r\n+    \"@logout\": {},\r\n+    \"darkMode\": \"المظهر الداكن\",\r\n+    \"@darkMode\": {},\r\n+    \"language\": \"اللغة\",\r\n+    \"@language\": {},\r\n+    \"login\": \"تسجيل الدخول\",\r\n+    \"@login\": {},\r\n+    \"email\": \"البريد إلكترونى\",\r\n+    \"@email\": {},\r\n+    \"password\": \"كلمة المرور\",\r\n+    \"@password\": {},\r\n+    \"donthaveaccount\": \"ليس لديك حساب!\",\r\n+    \"@donthaveaccount\": {},\r\n+    \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n+    \"@forgotPassowrd\": {},\r\n+    \"name\":\"الاسم\",\r\n+    \"@name\": {},\r\n+    \"register\":\"تسجيل\",\r\n+    \"@register\": {},\r\n+    \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n+    \"@alreadyHaveAnAccount\": {},\r\n+    \"submit\": \"تقديم\",\r\n+    \"@submit\": {},\r\n+    \"haveAnAccount\":\"هل لديك حساب؟\",\r\n+    \"@haveAnAccount\": {},\r\n+    \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكترونى\",\r\n+    \"@pleaseEnterYourEmail\": {},\r\n+    \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n+    \"@pleaseEnterYourPassword\": {},\r\n+    \"EnteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n+    \"@EnteraValidEmail\": {},\r\n+    \"EnteraValidPassword\": \"Enter a valid password\",\r\n+    \"@EnteraValidPassword\": {}\r\n+}\r\n"
+                },
+                {
+                    "date": 1730846703274,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -33,46 +33,7 @@\n     \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n     \"@pleaseEnterYourPassword\": {},\r\n     \"EnteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n     \"@EnteraValidEmail\": {},\r\n-    \"EnteraValidPassword\": \"Enter a valid password\",\r\n+    \"EnteraValidPassword\": \"أدخل كلمة مرور صالحة\",\r\n     \"@EnteraValidPassword\": {}\r\n }\r\n-{\r\n-    \"@@locale\": \"ar\",\r\n-    \"todoList\" : \"قائمة المهام\",\r\n-    \"@todoList\": {},\r\n-    \"logout\" : \"تسجيل الخروج\",\r\n-    \"@logout\": {},\r\n-    \"darkMode\": \"المظهر الداكن\",\r\n-    \"@darkMode\": {},\r\n-    \"language\": \"اللغة\",\r\n-    \"@language\": {},\r\n-    \"login\": \"تسجيل الدخول\",\r\n-    \"@login\": {},\r\n-    \"email\": \"البريد إلكترونى\",\r\n-    \"@email\": {},\r\n-    \"password\": \"كلمة المرور\",\r\n-    \"@password\": {},\r\n-    \"donthaveaccount\": \"ليس لديك حساب!\",\r\n-    \"@donthaveaccount\": {},\r\n-    \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n-    \"@forgotPassowrd\": {},\r\n-    \"name\":\"الاسم\",\r\n-    \"@name\": {},\r\n-    \"register\":\"تسجيل\",\r\n-    \"@register\": {},\r\n-    \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n-    \"@alreadyHaveAnAccount\": {},\r\n-    \"submit\": \"تقديم\",\r\n-    \"@submit\": {},\r\n-    \"haveAnAccount\":\"هل لديك حساب؟\",\r\n-    \"@haveAnAccount\": {},\r\n-    \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكترونى\",\r\n-    \"@pleaseEnterYourEmail\": {},\r\n-    \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n-    \"@pleaseEnterYourPassword\": {},\r\n-    \"EnteraValidEmail\": \"Enter a valid email\",\r\n-    \"@EnteraValidEmail\": {},\r\n-    \"EnteraValidPassword\": \"Enter a valid password\",\r\n-    \"@EnteraValidPassword\": {}\r\n-}\r\n"
+                },
+                {
+                    "date": 1730847154845,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -34,6 +34,10 @@\n     \"@pleaseEnterYourPassword\": {},\r\n     \"EnteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n     \"@EnteraValidEmail\": {},\r\n     \"EnteraValidPassword\": \"أدخل كلمة مرور صالحة\",\r\n-    \"@EnteraValidPassword\": {}\r\n+    \"@EnteraValidPassword\": {},\r\n+    \"pleaseEnterYourName\": \"Please enter your name\",\r\n+    \"@pleaseEnterYourName\": {},\r\n+    \"enteraValidName\": \"Enter a valid name\",\r\n+    \"@enteraValidName\": {}\r\n }\r\n"
+                },
+                {
+                    "date": 1730847164372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -35,9 +35,9 @@\n     \"EnteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n     \"@EnteraValidEmail\": {},\r\n     \"EnteraValidPassword\": \"أدخل كلمة مرور صالحة\",\r\n     \"@EnteraValidPassword\": {},\r\n-    \"pleaseEnterYourName\": \"Please enter your name\",\r\n+    \"pleaseEnterYourName\": \"الرجاء إدخال اسمك\",\r\n     \"@pleaseEnterYourName\": {},\r\n     \"enteraValidName\": \"Enter a valid name\",\r\n     \"@enteraValidName\": {}\r\n }\r\n"
+                },
+                {
+                    "date": 1730847170466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,43 @@\n+{\r\n+    \"@@locale\": \"ar\",\r\n+    \"todoList\" : \"قائمة المهام\",\r\n+    \"@todoList\": {},\r\n+    \"logout\" : \"تسجيل الخروج\",\r\n+    \"@logout\": {},\r\n+    \"darkMode\": \"المظهر الداكن\",\r\n+    \"@darkMode\": {},\r\n+    \"language\": \"اللغة\",\r\n+    \"@language\": {},\r\n+    \"login\": \"تسجيل الدخول\",\r\n+    \"@login\": {},\r\n+    \"email\": \"البريد إلكترونى\",\r\n+    \"@email\": {},\r\n+    \"password\": \"كلمة المرور\",\r\n+    \"@password\": {},\r\n+    \"donthaveaccount\": \"ليس لديك حساب!\",\r\n+    \"@donthaveaccount\": {},\r\n+    \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n+    \"@forgotPassowrd\": {},\r\n+    \"name\":\"الاسم\",\r\n+    \"@name\": {},\r\n+    \"register\":\"تسجيل\",\r\n+    \"@register\": {},\r\n+    \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n+    \"@alreadyHaveAnAccount\": {},\r\n+    \"submit\": \"تقديم\",\r\n+    \"@submit\": {},\r\n+    \"haveAnAccount\":\"هل لديك حساب؟\",\r\n+    \"@haveAnAccount\": {},\r\n+    \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكترونى\",\r\n+    \"@pleaseEnterYourEmail\": {},\r\n+    \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n+    \"@pleaseEnterYourPassword\": {},\r\n+    \"EnteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n+    \"@EnteraValidEmail\": {},\r\n+    \"EnteraValidPassword\": \"أدخل كلمة مرور صالحة\",\r\n+    \"@EnteraValidPassword\": {},\r\n+    \"pleaseEnterYourName\": \"الرجاء إدخال اسمك\",\r\n+    \"@pleaseEnterYourName\": {},\r\n+    \"enteraValidName\": \"أدخل اسمًا صالحًا\",\r\n+    \"@enteraValidName\": {}\r\n+}\r\n"
+                },
+                {
+                    "date": 1730847534707,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -31,56 +31,13 @@\n     \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكترونى\",\r\n     \"@pleaseEnterYourEmail\": {},\r\n     \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n     \"@pleaseEnterYourPassword\": {},\r\n-    \"EnteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n+    \"enteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n     \"@EnteraValidEmail\": {},\r\n     \"EnteraValidPassword\": \"أدخل كلمة مرور صالحة\",\r\n     \"@EnteraValidPassword\": {},\r\n     \"pleaseEnterYourName\": \"الرجاء إدخال اسمك\",\r\n     \"@pleaseEnterYourName\": {},\r\n     \"enteraValidName\": \"أدخل اسمًا صالحًا\",\r\n     \"@enteraValidName\": {}\r\n }\r\n-{\r\n-    \"@@locale\": \"ar\",\r\n-    \"todoList\" : \"قائمة المهام\",\r\n-    \"@todoList\": {},\r\n-    \"logout\" : \"تسجيل الخروج\",\r\n-    \"@logout\": {},\r\n-    \"darkMode\": \"المظهر الداكن\",\r\n-    \"@darkMode\": {},\r\n-    \"language\": \"اللغة\",\r\n-    \"@language\": {},\r\n-    \"login\": \"تسجيل الدخول\",\r\n-    \"@login\": {},\r\n-    \"email\": \"البريد إلكترونى\",\r\n-    \"@email\": {},\r\n-    \"password\": \"كلمة المرور\",\r\n-    \"@password\": {},\r\n-    \"donthaveaccount\": \"ليس لديك حساب!\",\r\n-    \"@donthaveaccount\": {},\r\n-    \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n-    \"@forgotPassowrd\": {},\r\n-    \"name\":\"الاسم\",\r\n-    \"@name\": {},\r\n-    \"register\":\"تسجيل\",\r\n-    \"@register\": {},\r\n-    \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n-    \"@alreadyHaveAnAccount\": {},\r\n-    \"submit\": \"تقديم\",\r\n-    \"@submit\": {},\r\n-    \"haveAnAccount\":\"هل لديك حساب؟\",\r\n-    \"@haveAnAccount\": {},\r\n-    \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكترونى\",\r\n-    \"@pleaseEnterYourEmail\": {},\r\n-    \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n-    \"@pleaseEnterYourPassword\": {},\r\n-    \"EnteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n-    \"@EnteraValidEmail\": {},\r\n-    \"EnteraValidPassword\": \"أدخل كلمة مرور صالحة\",\r\n-    \"@EnteraValidPassword\": {},\r\n-    \"pleaseEnterYourName\": \"الرجاء إدخال اسمك\",\r\n-    \"@pleaseEnterYourName\": {},\r\n-    \"enteraValidName\": \"Enter a valid name\",\r\n-    \"@enteraValidName\": {}\r\n-}\r\n"
+                },
+                {
+                    "date": 1730847544102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,11 +32,11 @@\n     \"@pleaseEnterYourEmail\": {},\r\n     \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n     \"@pleaseEnterYourPassword\": {},\r\n     \"enteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n-    \"@EnteraValidEmail\": {},\r\n-    \"EnteraValidPassword\": \"أدخل كلمة مرور صالحة\",\r\n-    \"@EnteraValidPassword\": {},\r\n+    \"@enteraValidEmail\": {},\r\n+    \"enteraValidPassword\": \"أدخل كلمة مرور صالحة\",\r\n+    \"@enteraValidPassword\": {},\r\n     \"pleaseEnterYourName\": \"الرجاء إدخال اسمك\",\r\n     \"@pleaseEnterYourName\": {},\r\n     \"enteraValidName\": \"أدخل اسمًا صالحًا\",\r\n     \"@enteraValidName\": {}\r\n"
+                },
+                {
+                    "date": 1730847797233,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,6 +38,7 @@\n     \"@enteraValidPassword\": {},\r\n     \"pleaseEnterYourName\": \"الرجاء إدخال اسمك\",\r\n     \"@pleaseEnterYourName\": {},\r\n     \"enteraValidName\": \"أدخل اسمًا صالحًا\",\r\n-    \"@enteraValidName\": {}\r\n+    \"@enteraValidName\": {},\r\n+    \r\n }\r\n"
+                },
+                {
+                    "date": 1730847808355,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,6 +39,7 @@\n     \"pleaseEnterYourName\": \"الرجاء إدخال اسمك\",\r\n     \"@pleaseEnterYourName\": {},\r\n     \"enteraValidName\": \"أدخل اسمًا صالحًا\",\r\n     \"@enteraValidName\": {},\r\n-    \r\n+    \"loginSuccessful\":\"Login successful!\",\r\n+  \"@loginSuccessful\": {},\r\n }\r\n"
+                },
+                {
+                    "date": 1730847815157,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -39,7 +39,7 @@\n     \"pleaseEnterYourName\": \"الرجاء إدخال اسمك\",\r\n     \"@pleaseEnterYourName\": {},\r\n     \"enteraValidName\": \"أدخل اسمًا صالحًا\",\r\n     \"@enteraValidName\": {},\r\n-    \"loginSuccessful\":\"Login successful!\",\r\n+    \"loginSuccessful\":\"تم تسجيل الدخول بنجاح!\",\r\n   \"@loginSuccessful\": {},\r\n }\r\n"
+                },
+                {
+                    "date": 1730847860586,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,5 +41,7 @@\n     \"enteraValidName\": \"أدخل اسمًا صالحًا\",\r\n     \"@enteraValidName\": {},\r\n     \"loginSuccessful\":\"تم تسجيل الدخول بنجاح!\",\r\n   \"@loginSuccessful\": {},\r\n+  \"somethingWentWrong\": \"Something went wrong\",\r\n+  \"@somethingWentWrong\":{}\r\n }\r\n"
+                },
+                {
+                    "date": 1730850150035,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -41,7 +41,9 @@\n     \"enteraValidName\": \"أدخل اسمًا صالحًا\",\r\n     \"@enteraValidName\": {},\r\n     \"loginSuccessful\":\"تم تسجيل الدخول بنجاح!\",\r\n   \"@loginSuccessful\": {},\r\n-  \"somethingWentWrong\": \"Something went wrong\",\r\n-  \"@somethingWentWrong\":{}\r\n+  \"somethingWentWrong\": \"حدث خطأ ما\",\r\n+  \"@somethingWentWrong\":{},\r\n+  \"passwordResetEmailSent\": \"Password Reset Email Sent, Check your email for the password reset link.\",\r\n+  \"@passwordResetEmailSent\": {}\r\n }\r\n"
+                },
+                {
+                    "date": 1730850160534,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -43,7 +43,7 @@\n     \"loginSuccessful\":\"تم تسجيل الدخول بنجاح!\",\r\n   \"@loginSuccessful\": {},\r\n   \"somethingWentWrong\": \"حدث خطأ ما\",\r\n   \"@somethingWentWrong\":{},\r\n-  \"passwordResetEmailSent\": \"Password Reset Email Sent, Check your email for the password reset link.\",\r\n+  \"passwordResetEmailSent\": \"تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور، تحقق من بريدك الإلكتروني بحثًا عن رابط إعادة تعيين كلمة المرور.\",\r\n   \"@passwordResetEmailSent\": {}\r\n }\r\n"
+                },
+                {
+                    "date": 1730850182411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,49 +1,49 @@\n {\r\n-    \"@@locale\": \"ar\",\r\n-    \"todoList\" : \"قائمة المهام\",\r\n-    \"@todoList\": {},\r\n-    \"logout\" : \"تسجيل الخروج\",\r\n-    \"@logout\": {},\r\n-    \"darkMode\": \"المظهر الداكن\",\r\n-    \"@darkMode\": {},\r\n-    \"language\": \"اللغة\",\r\n-    \"@language\": {},\r\n-    \"login\": \"تسجيل الدخول\",\r\n-    \"@login\": {},\r\n-    \"email\": \"البريد إلكترونى\",\r\n-    \"@email\": {},\r\n-    \"password\": \"كلمة المرور\",\r\n-    \"@password\": {},\r\n-    \"donthaveaccount\": \"ليس لديك حساب!\",\r\n-    \"@donthaveaccount\": {},\r\n-    \"forgotPassowrd\" : \"هل نسيت كلمة السر؟\",\r\n-    \"@forgotPassowrd\": {},\r\n-    \"name\":\"الاسم\",\r\n-    \"@name\": {},\r\n-    \"register\":\"تسجيل\",\r\n-    \"@register\": {},\r\n-    \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n-    \"@alreadyHaveAnAccount\": {},\r\n-    \"submit\": \"تقديم\",\r\n-    \"@submit\": {},\r\n-    \"haveAnAccount\":\"هل لديك حساب؟\",\r\n-    \"@haveAnAccount\": {},\r\n-    \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكترونى\",\r\n-    \"@pleaseEnterYourEmail\": {},\r\n-    \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n-    \"@pleaseEnterYourPassword\": {},\r\n-    \"enteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n-    \"@enteraValidEmail\": {},\r\n-    \"enteraValidPassword\": \"أدخل كلمة مرور صالحة\",\r\n-    \"@enteraValidPassword\": {},\r\n-    \"pleaseEnterYourName\": \"الرجاء إدخال اسمك\",\r\n-    \"@pleaseEnterYourName\": {},\r\n-    \"enteraValidName\": \"أدخل اسمًا صالحًا\",\r\n-    \"@enteraValidName\": {},\r\n-    \"loginSuccessful\":\"تم تسجيل الدخول بنجاح!\",\r\n+  \"@@locale\": \"ar\",\r\n+  \"todoList\": \"قائمة المهام\",\r\n+  \"@todoList\": {},\r\n+  \"logout\": \"تسجيل الخروج\",\r\n+  \"@logout\": {},\r\n+  \"darkMode\": \"المظهر الداكن\",\r\n+  \"@darkMode\": {},\r\n+  \"language\": \"اللغة\",\r\n+  \"@language\": {},\r\n+  \"login\": \"تسجيل الدخول\",\r\n+  \"@login\": {},\r\n+  \"email\": \"البريد إلكترونى\",\r\n+  \"@email\": {},\r\n+  \"password\": \"كلمة المرور\",\r\n+  \"@password\": {},\r\n+  \"donthaveaccount\": \"ليس لديك حساب!\",\r\n+  \"@donthaveaccount\": {},\r\n+  \"forgotPassowrd\": \"هل نسيت كلمة السر؟\",\r\n+  \"@forgotPassowrd\": {},\r\n+  \"name\": \"الاسم\",\r\n+  \"@name\": {},\r\n+  \"register\": \"تسجيل\",\r\n+  \"@register\": {},\r\n+  \"alreadyHaveAnAccount\": \"لديك حساب بالفعل!\",\r\n+  \"@alreadyHaveAnAccount\": {},\r\n+  \"submit\": \"تقديم\",\r\n+  \"@submit\": {},\r\n+  \"haveAnAccount\": \"هل لديك حساب؟\",\r\n+  \"@haveAnAccount\": {},\r\n+  \"pleaseEnterYourEmail\": \"الرجاء إدخال بريدك الإلكترونى\",\r\n+  \"@pleaseEnterYourEmail\": {},\r\n+  \"pleaseEnterYourPassword\": \"الرجاء إدخال كلمة المرور الخاصة بك\",\r\n+  \"@pleaseEnterYourPassword\": {},\r\n+  \"enteraValidEmail\": \"أدخل بريدًا إلكترونيًا صالحًا\",\r\n+  \"@enteraValidEmail\": {},\r\n+  \"enteraValidPassword\": \"أدخل كلمة مرور صالحة\",\r\n+  \"@enteraValidPassword\": {},\r\n+  \"pleaseEnterYourName\": \"الرجاء إدخال اسمك\",\r\n+  \"@pleaseEnterYourName\": {},\r\n+  \"enteraValidName\": \"أدخل اسمًا صالحًا\",\r\n+  \"@enteraValidName\": {},\r\n+  \"loginSuccessful\": \"تم تسجيل الدخول بنجاح!\",\r\n   \"@loginSuccessful\": {},\r\n   \"somethingWentWrong\": \"حدث خطأ ما\",\r\n-  \"@somethingWentWrong\":{},\r\n+  \"@somethingWentWrong\": {},\r\n   \"passwordResetEmailSent\": \"تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور، تحقق من بريدك الإلكتروني بحثًا عن رابط إعادة تعيين كلمة المرور.\",\r\n   \"@passwordResetEmailSent\": {}\r\n }\r\n"
+                },
+                {
+                    "date": 1730852696147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,5 +45,6 @@\n   \"somethingWentWrong\": \"حدث خطأ ما\",\r\n   \"@somethingWentWrong\": {},\r\n   \"passwordResetEmailSent\": \"تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور، تحقق من بريدك الإلكتروني بحثًا عن رابط إعادة تعيين كلمة المرور.\",\r\n   \"@passwordResetEmailSent\": {}\r\n+  \r\n }\r\n"
+                },
+                {
+                    "date": 1730852725807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,7 +44,38 @@\n   \"@loginSuccessful\": {},\r\n   \"somethingWentWrong\": \"حدث خطأ ما\",\r\n   \"@somethingWentWrong\": {},\r\n   \"passwordResetEmailSent\": \"تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور، تحقق من بريدك الإلكتروني بحثًا عن رابط إعادة تعيين كلمة المرور.\",\r\n-  \"@passwordResetEmailSent\": {}\r\n-  \r\n+  \"@passwordResetEmailSent\": {},\r\n+  \"addNewTask\":\"Add new task\",\r\n+  \"@addNewTask\": {},\r\n+  \"editTask\" : \"Edit Task\",\r\n+\"@editTask\" :{},\r\n+  \"enterTaskTitle\":\"Enter task title\",\r\n+  \"@enterTaskTitle\":{},\r\n+  \"PleaseEnterTaskTitle\":\"Please enter task title\",\r\n+  \"@PleaseEnterTaskTitle\":{},\r\n+  \"enterTaskDescription\":\"Enter task description\",\r\n+  \"@enterTaskDescription\":{},\r\n+  \"pleaseEnterTaskDescription\":\"Please enter task description\",\r\n+  \"@pleaseEnterTaskDescription\":{},\r\n+  \"selectDate\":\"Select date\",\r\n+  \"@selectDate\":{},\r\n+  \"add\":\"Add\",\r\n+  \"@add\":{},\r\n+  \"saveChanges\": \"Save Changes\",\r\n+  \"@saveChanges\":{},\r\n+  \"taskAddedSuccessfully\":\"Task added successfully\",\r\n+  \"@taskAddedSuccessfully\":{},\r\n+  \"taskUpdatedSuccessfully\":\"Task updated successfully\",\r\n+  \"@taskUpdatedSuccessfully\":{},\r\n+  \"taskDeletedSuccessfully\":\"Task deleted successfully\",\r\n+  \"@taskDeletedSuccessfully\":{},\r\n+  \"edit\":\"Edit\",\r\n+  \"@edit\":{},\r\n+  \"done\":\"Done!\",\r\n+  \"@done\":{},\r\n+  \"taskMarkedAsDone\":\"Task marked as done!\",\r\n+  \"@taskMarkedAsDone\":{},\r\n+  \"taskMarkedAsNotDone\":\"Task marked as not done!\",\r\n+  \"@taskMarkedAsNotDone\":{}\r\n }\r\n"
+                },
+                {
+                    "date": 1730852738167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n   \"somethingWentWrong\": \"حدث خطأ ما\",\r\n   \"@somethingWentWrong\": {},\r\n   \"passwordResetEmailSent\": \"تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور، تحقق من بريدك الإلكتروني بحثًا عن رابط إعادة تعيين كلمة المرور.\",\r\n   \"@passwordResetEmailSent\": {},\r\n-  \"addNewTask\":\"Add new task\",\r\n+  \"addNewTask\":\"إضافة مهمة جديدة\",\r\n   \"@addNewTask\": {},\r\n   \"editTask\" : \"Edit Task\",\r\n \"@editTask\" :{},\r\n   \"enterTaskTitle\":\"Enter task title\",\r\n"
+                },
+                {
+                    "date": 1730852747365,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n   \"passwordResetEmailSent\": \"تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور، تحقق من بريدك الإلكتروني بحثًا عن رابط إعادة تعيين كلمة المرور.\",\r\n   \"@passwordResetEmailSent\": {},\r\n   \"addNewTask\":\"إضافة مهمة جديدة\",\r\n   \"@addNewTask\": {},\r\n-  \"editTask\" : \"Edit Task\",\r\n+  \"editTask\" : \"تحرير المهمةk\",\r\n \"@editTask\" :{},\r\n   \"enterTaskTitle\":\"Enter task title\",\r\n   \"@enterTaskTitle\":{},\r\n   \"PleaseEnterTaskTitle\":\"Please enter task title\",\r\n"
+                },
+                {
+                    "date": 1730852765923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,11 +47,11 @@\n   \"passwordResetEmailSent\": \"تم إرسال البريد الإلكتروني لإعادة تعيين كلمة المرور، تحقق من بريدك الإلكتروني بحثًا عن رابط إعادة تعيين كلمة المرور.\",\r\n   \"@passwordResetEmailSent\": {},\r\n   \"addNewTask\":\"إضافة مهمة جديدة\",\r\n   \"@addNewTask\": {},\r\n-  \"editTask\" : \"تحرير المهمةk\",\r\n+  \"editTask\" : \"تحرير المهمة\",\r\n \"@editTask\" :{},\r\n-  \"enterTaskTitle\":\"Enter task title\",\r\n+  \"enterTaskTitle\":\"أدخل عنوان المهمة\",\r\n   \"@enterTaskTitle\":{},\r\n   \"PleaseEnterTaskTitle\":\"Please enter task title\",\r\n   \"@PleaseEnterTaskTitle\":{},\r\n   \"enterTaskDescription\":\"Enter task description\",\r\n"
+                },
+                {
+                    "date": 1730852774995,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,9 @@\n   \"editTask\" : \"تحرير المهمة\",\r\n \"@editTask\" :{},\r\n   \"enterTaskTitle\":\"أدخل عنوان المهمة\",\r\n   \"@enterTaskTitle\":{},\r\n-  \"PleaseEnterTaskTitle\":\"Please enter task title\",\r\n+  \"PleaseEnterTaskTitle\":\"الرجاء إدخال عنوان المهمة\",\r\n   \"@PleaseEnterTaskTitle\":{},\r\n   \"enterTaskDescription\":\"Enter task description\",\r\n   \"@enterTaskDescription\":{},\r\n   \"pleaseEnterTaskDescription\":\"Please enter task description\",\r\n"
+                },
+                {
+                    "date": 1730852780459,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -53,9 +53,9 @@\n   \"enterTaskTitle\":\"أدخل عنوان المهمة\",\r\n   \"@enterTaskTitle\":{},\r\n   \"PleaseEnterTaskTitle\":\"الرجاء إدخال عنوان المهمة\",\r\n   \"@PleaseEnterTaskTitle\":{},\r\n-  \"enterTaskDescription\":\"Enter task description\",\r\n+  \"enterTaskDescription\":\"أدخل وصف المهمة\",\r\n   \"@enterTaskDescription\":{},\r\n   \"pleaseEnterTaskDescription\":\"Please enter task description\",\r\n   \"@pleaseEnterTaskDescription\":{},\r\n   \"selectDate\":\"Select date\",\r\n"
+                },
+                {
+                    "date": 1730852786244,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -55,9 +55,9 @@\n   \"PleaseEnterTaskTitle\":\"الرجاء إدخال عنوان المهمة\",\r\n   \"@PleaseEnterTaskTitle\":{},\r\n   \"enterTaskDescription\":\"أدخل وصف المهمة\",\r\n   \"@enterTaskDescription\":{},\r\n-  \"pleaseEnterTaskDescription\":\"Please enter task description\",\r\n+  \"pleaseEnterTaskDescription\":\"الرجاء إدخال وصف المهمة\",\r\n   \"@pleaseEnterTaskDescription\":{},\r\n   \"selectDate\":\"Select date\",\r\n   \"@selectDate\":{},\r\n   \"add\":\"Add\",\r\n"
+                },
+                {
+                    "date": 1730852792597,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -57,9 +57,9 @@\n   \"enterTaskDescription\":\"أدخل وصف المهمة\",\r\n   \"@enterTaskDescription\":{},\r\n   \"pleaseEnterTaskDescription\":\"الرجاء إدخال وصف المهمة\",\r\n   \"@pleaseEnterTaskDescription\":{},\r\n-  \"selectDate\":\"Select date\",\r\n+  \"selectDate\":\"اختر التاريخ\",\r\n   \"@selectDate\":{},\r\n   \"add\":\"Add\",\r\n   \"@add\":{},\r\n   \"saveChanges\": \"Save Changes\",\r\n"
+                },
+                {
+                    "date": 1730852808953,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,9 +59,9 @@\n   \"pleaseEnterTaskDescription\":\"الرجاء إدخال وصف المهمة\",\r\n   \"@pleaseEnterTaskDescription\":{},\r\n   \"selectDate\":\"اختر التاريخ\",\r\n   \"@selectDate\":{},\r\n-  \"add\":\"Add\",\r\n+  \"add\":\"أضاف\",\r\n   \"@add\":{},\r\n   \"saveChanges\": \"Save Changes\",\r\n   \"@saveChanges\":{},\r\n   \"taskAddedSuccessfully\":\"Task added successfully\",\r\n"
+                },
+                {
+                    "date": 1730852844124,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -59,11 +59,11 @@\n   \"pleaseEnterTaskDescription\":\"الرجاء إدخال وصف المهمة\",\r\n   \"@pleaseEnterTaskDescription\":{},\r\n   \"selectDate\":\"اختر التاريخ\",\r\n   \"@selectDate\":{},\r\n-  \"add\":\"أضاف\",\r\n+  \"add\":\"أضف\",\r\n   \"@add\":{},\r\n-  \"saveChanges\": \"Save Changes\",\r\n+  \"saveChanges\": \"حفظ التغييرات\",\r\n   \"@saveChanges\":{},\r\n   \"taskAddedSuccessfully\":\"Task added successfully\",\r\n   \"@taskAddedSuccessfully\":{},\r\n   \"taskUpdatedSuccessfully\":\"Task updated successfully\",\r\n"
+                },
+                {
+                    "date": 1730852851102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -63,9 +63,9 @@\n   \"add\":\"أضف\",\r\n   \"@add\":{},\r\n   \"saveChanges\": \"حفظ التغييرات\",\r\n   \"@saveChanges\":{},\r\n-  \"taskAddedSuccessfully\":\"Task added successfully\",\r\n+  \"taskAddedSuccessfully\":\"تمت إضافة المهمة بنجاح\",\r\n   \"@taskAddedSuccessfully\":{},\r\n   \"taskUpdatedSuccessfully\":\"Task updated successfully\",\r\n   \"@taskUpdatedSuccessfully\":{},\r\n   \"taskDeletedSuccessfully\":\"Task deleted successfully\",\r\n"
+                },
+                {
+                    "date": 1730852857593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -65,9 +65,9 @@\n   \"saveChanges\": \"حفظ التغييرات\",\r\n   \"@saveChanges\":{},\r\n   \"taskAddedSuccessfully\":\"تمت إضافة المهمة بنجاح\",\r\n   \"@taskAddedSuccessfully\":{},\r\n-  \"taskUpdatedSuccessfully\":\"Task updated successfully\",\r\n+  \"taskUpdatedSuccessfully\":\"تم تحديث المهمة بنجاح\",\r\n   \"@taskUpdatedSuccessfully\":{},\r\n   \"taskDeletedSuccessfully\":\"Task deleted successfully\",\r\n   \"@taskDeletedSuccessfully\":{},\r\n   \"edit\":\"Edit\",\r\n"
+                },
+                {
+                    "date": 1730852864270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n   \"taskAddedSuccessfully\":\"تمت إضافة المهمة بنجاح\",\r\n   \"@taskAddedSuccessfully\":{},\r\n   \"taskUpdatedSuccessfully\":\"تم تحديث المهمة بنجاح\",\r\n   \"@taskUpdatedSuccessfully\":{},\r\n-  \"taskDeletedSuccessfully\":\"Task deleted successfully\",\r\n+  \"taskDeletedSuccessfully\":\"تم حذف المهمة بنجاح\",\r\n   \"@taskDeletedSuccessfully\":{},\r\n   \"edit\":\"Edit\",\r\n   \"@edit\":{},\r\n   \"done\":\"Done!\",\r\n"
+                },
+                {
+                    "date": 1730852880540,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -69,9 +69,9 @@\n   \"taskUpdatedSuccessfully\":\"تم تحديث المهمة بنجاح\",\r\n   \"@taskUpdatedSuccessfully\":{},\r\n   \"taskDeletedSuccessfully\":\"تم حذف المهمة بنجاح\",\r\n   \"@taskDeletedSuccessfully\":{},\r\n-  \"edit\":\"Edit\",\r\n+  \"edit\":\"حرر\",\r\n   \"@edit\":{},\r\n   \"done\":\"Done!\",\r\n   \"@done\":{},\r\n   \"taskMarkedAsDone\":\"Task marked as done!\",\r\n"
+                },
+                {
+                    "date": 1730852891982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -71,9 +71,9 @@\n   \"taskDeletedSuccessfully\":\"تم حذف المهمة بنجاح\",\r\n   \"@taskDeletedSuccessfully\":{},\r\n   \"edit\":\"حرر\",\r\n   \"@edit\":{},\r\n-  \"done\":\"Done!\",\r\n+  \"done\":\"تم!\",\r\n   \"@done\":{},\r\n   \"taskMarkedAsDone\":\"Task marked as done!\",\r\n   \"@taskMarkedAsDone\":{},\r\n   \"taskMarkedAsNotDone\":\"Task marked as not done!\",\r\n"
+                },
+                {
+                    "date": 1730852903400,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -73,9 +73,9 @@\n   \"edit\":\"حرر\",\r\n   \"@edit\":{},\r\n   \"done\":\"تم!\",\r\n   \"@done\":{},\r\n-  \"taskMarkedAsDone\":\"Task marked as done!\",\r\n+  \"taskMarkedAsDone\":\"تم وضع علامة على المهمة على أنها تم!\",\r\n   \"@taskMarkedAsDone\":{},\r\n   \"taskMarkedAsNotDone\":\"Task marked as not done!\",\r\n   \"@taskMarkedAsNotDone\":{}\r\n }\r\n"
+                },
+                {
+                    "date": 1730852914550,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -75,7 +75,7 @@\n   \"done\":\"تم!\",\r\n   \"@done\":{},\r\n   \"taskMarkedAsDone\":\"تم وضع علامة على المهمة على أنها تم!\",\r\n   \"@taskMarkedAsDone\":{},\r\n-  \"taskMarkedAsNotDone\":\"Task marked as not done!\",\r\n+  \"taskMarkedAsNotDone\":\"تم وضع علامة على المهمة على أنها لم تتم!\",\r\n   \"@taskMarkedAsNotDone\":{}\r\n }\r\n"
+                },
+                {
+                    "date": 1730853616970,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,5 +77,7 @@\n   \"taskMarkedAsDone\":\"تم وضع علامة على المهمة على أنها تم!\",\r\n   \"@taskMarkedAsDone\":{},\r\n   \"taskMarkedAsNotDone\":\"تم وضع علامة على المهمة على أنها لم تتم!\",\r\n   \"@taskMarkedAsNotDone\":{}\r\n+  \"delete\":\"Delete\",\r\n+  \"@delete\":{}\r\n }\r\n"
+                },
+                {
+                    "date": 1730853624011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -76,8 +76,8 @@\n   \"@done\":{},\r\n   \"taskMarkedAsDone\":\"تم وضع علامة على المهمة على أنها تم!\",\r\n   \"@taskMarkedAsDone\":{},\r\n   \"taskMarkedAsNotDone\":\"تم وضع علامة على المهمة على أنها لم تتم!\",\r\n-  \"@taskMarkedAsNotDone\":{}\r\n+  \"@taskMarkedAsNotDone\":{},\r\n   \"delete\":\"Delete\",\r\n   \"@delete\":{}\r\n }\r\n"
+                },
+                {
+                    "date": 1730853647445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -77,7 +77,8 @@\n   \"taskMarkedAsDone\":\"تم وضع علامة على المهمة على أنها تم!\",\r\n   \"@taskMarkedAsDone\":{},\r\n   \"taskMarkedAsNotDone\":\"تم وضع علامة على المهمة على أنها لم تتم!\",\r\n   \"@taskMarkedAsNotDone\":{},\r\n-  \"delete\":\"Delete\",\r\n-  \"@delete\":{}\r\n+  \"delete\":\"حذف\",\r\n+  \"@delete\":{},\r\n+  \"please\"\r\n }\r\n"
+                },
+                {
+                    "date": 1730853654683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,6 +79,6 @@\n   \"taskMarkedAsNotDone\":\"تم وضع علامة على المهمة على أنها لم تتم!\",\r\n   \"@taskMarkedAsNotDone\":{},\r\n   \"delete\":\"حذف\",\r\n   \"@delete\":{},\r\n-  \"please\"\r\n+  \"pleasenert\"\r\n }\r\n"
+                },
+                {
+                    "date": 1730853661226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,6 +79,6 @@\n   \"taskMarkedAsNotDone\":\"تم وضع علامة على المهمة على أنها لم تتم!\",\r\n   \"@taskMarkedAsNotDone\":{},\r\n   \"delete\":\"حذف\",\r\n   \"@delete\":{},\r\n-  \"pleasenert\"\r\n+  \"pleaseEnterTaskTitle\":\"\"\r\n }\r\n"
+                },
+                {
+                    "date": 1730853721620,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -79,6 +79,5 @@\n   \"taskMarkedAsNotDone\":\"تم وضع علامة على المهمة على أنها لم تتم!\",\r\n   \"@taskMarkedAsNotDone\":{},\r\n   \"delete\":\"حذف\",\r\n   \"@delete\":{},\r\n-  \"pleaseEnterTaskTitle\":\"\"\r\n }\r\n"
+                },
+                {
+                    "date": 1730853756751,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,10 +51,10 @@\n   \"editTask\" : \"تحرير المهمة\",\r\n \"@editTask\" :{},\r\n   \"enterTaskTitle\":\"أدخل عنوان المهمة\",\r\n   \"@enterTaskTitle\":{},\r\n-  \"PleaseEnterTaskTitle\":\"الرجاء إدخال عنوان المهمة\",\r\n-  \"@PleaseEnterTaskTitle\":{},\r\n+  \"pleaseEnterTaskTitle\":\"الرجاء إدخال عنوان المهمة\",\r\n+  \"@pleaseEnterTaskTitle\":{},\r\n   \"enterTaskDescription\":\"أدخل وصف المهمة\",\r\n   \"@enterTaskDescription\":{},\r\n   \"pleaseEnterTaskDescription\":\"الرجاء إدخال وصف المهمة\",\r\n   \"@pleaseEnterTaskDescription\":{},\r\n@@ -78,6 +78,6 @@\n   \"@taskMarkedAsDone\":{},\r\n   \"taskMarkedAsNotDone\":\"تم وضع علامة على المهمة على أنها لم تتم!\",\r\n   \"@taskMarkedAsNotDone\":{},\r\n   \"delete\":\"حذف\",\r\n-  \"@delete\":{},\r\n+  \"@delete\":{}\r\n }\r\n"
+                }
+            ],
+            "date": 1730747164933,
+            "name": "Commit-0",
+            "content": "{\r\n    \"todoList\" : \"ToDo List\"\r\n}"
+        }
+    ]
+}

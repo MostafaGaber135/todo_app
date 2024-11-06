@@ -4,10 +4,13 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_app/app_theme.dart';
+import 'package:todo_app/auth/user_provider.dart';
 import 'package:todo_app/firebase_functions.dart';
 import 'package:todo_app/models/task_model.dart';
+import 'package:todo_app/tabs/settings/settings_provider.dart';
 import 'package:todo_app/tabs/tasks/add_task_bottom_sheet.dart';
 import 'package:todo_app/tabs/tasks/tasks_provider.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class TaskItem extends StatefulWidget {
   const TaskItem({
@@ -23,6 +26,7 @@ class _TaskItemState extends State<TaskItem> {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
     return Container(
       margin: const EdgeInsets.symmetric(
         vertical: 8,
@@ -33,17 +37,26 @@ class _TaskItemState extends State<TaskItem> {
         startActionPane: ActionPane(
           motion: const StretchMotion(),
           dismissible: DismissiblePane(onDismissed: () {
-            FirebaseFunctions.deleteTaskFromFirestore(widget.task.id).timeout(
-              const Duration(microseconds: 100),
-              onTimeout: () {
+            String userId = Provider.of<UserProvider>(
+              context,
+              listen: false,
+            ).currentUser!.id;
+            FirebaseFunctions.deleteTaskFromFirestore(
+              widget.task.id,
+              userId,
+            ).then(
+              (_) {
                 if (context.mounted) {
                   Provider.of<TasksProvider>(
                     context,
                     listen: false,
-                  ).getTasks();
+                  ).getTasks(
+                    userId,
+                  );
                 }
+                if (!context.mounted) return;
                 Fluttertoast.showToast(
-                  msg: "Task deleted successfully",
+                  msg: AppLocalizations.of(context)!.taskDeletedSuccessfully,
                   toastLength: Toast.LENGTH_LONG,
                   timeInSecForIosWeb: 5,
                   backgroundColor: AppTheme.green,
@@ -51,8 +64,9 @@ class _TaskItemState extends State<TaskItem> {
               },
             ).catchError(
               (_) {
+                if (!context.mounted) return;
                 Fluttertoast.showToast(
-                  msg: "Something went wrong",
+                  msg: AppLocalizations.of(context)!.somethingWentWrong,
                   toastLength: Toast.LENGTH_LONG,
                   backgroundColor: AppTheme.red,
                 );
@@ -62,27 +76,35 @@ class _TaskItemState extends State<TaskItem> {
           children: [
             SlidableAction(
               onPressed: (_) {
-                FirebaseFunctions.deleteTaskFromFirestore(widget.task.id)
-                    .timeout(
-                  const Duration(
-                    microseconds: 100,
-                  ),
-                  onTimeout: () {
+                String userId = Provider.of<UserProvider>(
+                  context,
+                  listen: false,
+                ).currentUser!.id;
+                FirebaseFunctions.deleteTaskFromFirestore(
+                  widget.task.id,
+                  userId,
+                ).then(
+                  (_) {
                     if (context.mounted) {
                       Provider.of<TasksProvider>(
                         context,
                         listen: false,
-                      ).getTasks();
+                      ).getTasks(
+                        userId,
+                      );
                     }
+                    if (!context.mounted) return;
                     Fluttertoast.showToast(
-                      msg: "Task deleted successfully",
+                      msg:
+                          AppLocalizations.of(context)!.taskDeletedSuccessfully,
                       backgroundColor: AppTheme.green,
                     );
                   },
                 ).catchError(
                   (_) {
+                    if (!context.mounted) return;
                     Fluttertoast.showToast(
-                      msg: "Something went wrong",
+                      msg: AppLocalizations.of(context)!.somethingWentWrong,
                       backgroundColor: AppTheme.red,
                     );
                   },
@@ -91,7 +113,7 @@ class _TaskItemState extends State<TaskItem> {
               backgroundColor: AppTheme.red,
               foregroundColor: Colors.white,
               icon: FontAwesomeIcons.trash,
-              label: 'Delete',
+              label: AppLocalizations.of(context)!.delete,
             ),
             SlidableAction(
               onPressed: (_) {
@@ -106,7 +128,7 @@ class _TaskItemState extends State<TaskItem> {
               backgroundColor: AppTheme.primary,
               foregroundColor: Colors.white,
               icon: FontAwesomeIcons.pen,
-              label: 'Edit',
+              label: AppLocalizations.of(context)!.edit,
             ),
           ],
         ),
@@ -115,7 +137,9 @@ class _TaskItemState extends State<TaskItem> {
             20,
           ),
           decoration: BoxDecoration(
-            color: AppTheme.white,
+            color: settingsProvider.isDark
+                ? AppTheme.backgroundColorBottomNavigationBar
+                : AppTheme.white,
             borderRadius: BorderRadius.circular(
               15,
             ),
@@ -147,7 +171,9 @@ class _TaskItemState extends State<TaskItem> {
                   Text(
                     widget.task.description,
                     style: textTheme.titleSmall?.copyWith(
-                      color: AppTheme.black,
+                      color: settingsProvider.isDark
+                          ? AppTheme.white
+                          : AppTheme.backgroundColorBottomNavigationBar,
                     ),
                   ),
                 ],
@@ -186,18 +212,24 @@ class _TaskItemState extends State<TaskItem> {
   }
 
   void toggleTaskDone() async {
+    String userId = Provider.of<UserProvider>(
+      context,
+      listen: false,
+    ).currentUser!.id;
+
     setState(() {
       widget.task.toggleDone();
     });
-    await FirebaseFunctions.updateTaskInFirestore(widget.task.copyWith(
-      isDone: widget.task.isDone,
-    ));
-
+    await FirebaseFunctions.updateTaskInFirestore(
+      widget.task,
+      userId,
+    );
+    if (!mounted) return;
     Fluttertoast.showToast(
       msg: widget.task.isDone
-          ? "Task marked as done!"
-          : "Task marked as not done!",
-      backgroundColor: AppTheme.green,
+          ? AppLocalizations.of(context)!.taskMarkedAsDone
+          : AppLocalizations.of(context)!.taskMarkedAsNotDone,
+      backgroundColor: widget.task.isDone ? AppTheme.green : AppTheme.red,
     );
   }
 }

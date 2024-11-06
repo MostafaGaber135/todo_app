@@ -5,9 +5,9 @@ import 'package:todo_app/models/task_model.dart';
 class TasksProvider with ChangeNotifier {
   List<TaskModel> tasks = [];
   DateTime selectedDate = DateTime.now();
-  Future<void> getTasks() async {
+  Future<void> getTasks(String userId) async {
     List<TaskModel> allTasks =
-        await FirebaseFunctions.getAllTasksFromFirestore();
+        await FirebaseFunctions.getAllTasksFromFirestore(userId);
     tasks = allTasks
         .where(
           (task) =>
@@ -19,16 +19,21 @@ class TasksProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void getSelectedDateTasks(DateTime date) {
+  void getSelectedDateTasks(DateTime date, String userId) {
     selectedDate = date;
-    getTasks();
+    getTasks(userId);
   }
 
   void updateTask(TaskModel updatedTask) {
-   final index = tasks.indexWhere((task) => task.id == updatedTask.id);
+    final index = tasks.indexWhere((task) => task.id == updatedTask.id);
     if (index != -1) {
       tasks[index] = updatedTask;
       notifyListeners();
     }
+  }
+
+  void resetData(){
+    tasks = [];
+    selectedDate = DateTime.now();
   }
 }

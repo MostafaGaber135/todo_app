@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 29,
+            "activePatchIndex": 38,
             "patches": [
                 {
                     "date": 1730466603522,
@@ -124,6 +124,42 @@
                 {
                     "date": 1730469752796,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,15 +1,16 @@\n import 'dart:async';\r\n \r\n import 'package:flutter/material.dart';\r\n+import 'package:todo_app/screens/home_screen.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n \r\n   @override\r\n   Widget build(BuildContext context) {\r\n     Timer(const Duration(seconds: 3,), (){\r\n-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> HomeScreen(),),);\r\n+      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const HomeScreen(),),);\r\n     }\r\n     );\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n"
+                },
+                {
+                    "date": 1730845018058,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,15 +4,22 @@\n import 'package:todo_app/screens/home_screen.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n-\r\n+  static const String routeName = '/login';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n-    Timer(const Duration(seconds: 3,), (){\r\n-      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const HomeScreen(),),);\r\n-    }\r\n-    );\r\n+    Timer(\r\n+        const Duration(\r\n+          seconds: 3,\r\n+        ), () {\r\n+      Navigator.pushReplacement(\r\n+        context,\r\n+        MaterialPageRoute(\r\n+          builder: (context) => const HomeScreen(),\r\n+        ),\r\n+      );\r\n+    });\r\n     return Scaffold(\r\n       backgroundColor: const Color(\r\n         0XFFDFECDB,\r\n       ),\r\n"
+                },
+                {
+                    "date": 1730845497896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import 'package:todo_app/screens/home_screen.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n-  static const String routeName = '/login';\r\n+  static const String routeName = '/splash';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n     Timer(\r\n         const Duration(\r\n@@ -14,9 +14,9 @@\n         ), () {\r\n       Navigator.pushReplacement(\r\n         context,\r\n         MaterialPageRoute(\r\n-          builder: (context) => const HomeScreen(),\r\n+          builder: (context) => const Login(),\r\n         ),\r\n       );\r\n     });\r\n     return Scaffold(\r\n"
+                },
+                {
+                    "date": 1730850383299,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,35 @@\n+import 'dart:async';\r\n+\r\n+import 'package:flutter/material.dart';\r\n+import 'package:todo_app/auth/login_screen.dart';\r\n+\r\n+class CustomSplashScreen extends StatelessWidget {\r\n+  const CustomSplashScreen({super.key});\r\n+  static const String routeName = '/splash';\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    Timer(\r\n+        const Duration(\r\n+          seconds: 3,\r\n+        ), () {\r\n+      Navigator.pushReplacement(\r\n+        context,\r\n+        MaterialPageRoute(\r\n+          builder: (context) => const LoginScreen(),\r\n+        ),\r\n+      );\r\n+    });\r\n+    return Scaffold(\r\n+      backgroundColor: const Color(\r\n+      settingsProvider.changeTheme(\r\n+                    isDark ? ThemeMode.dark : ThemeMode.light,\r\n+                  ),\r\n+      ),\r\n+      body: Center(\r\n+        child: Image.asset(\r\n+          'assets/images/logo.png',\r\n+        ),\r\n+      ),\r\n+    );\r\n+  }\r\n+}\r\n"
+                },
+                {
+                    "date": 1730850410321,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,9 @@\n   const CustomSplashScreen({super.key});\r\n   static const String routeName = '/splash';\r\n   @override\r\n   Widget build(BuildContext context) {\r\n+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);\r\n     Timer(\r\n         const Duration(\r\n           seconds: 3,\r\n         ), () {\r\n@@ -32,37 +33,4 @@\n       ),\r\n     );\r\n   }\r\n }\r\n-import 'dart:async';\r\n-\r\n-import 'package:flutter/material.dart';\r\n-import 'package:todo_app/screens/home_screen.dart';\r\n-\r\n-class CustomSplashScreen extends StatelessWidget {\r\n-  const CustomSplashScreen({super.key});\r\n-  static const String routeName = '/splash';\r\n-  @override\r\n-  Widget build(BuildContext context) {\r\n-    Timer(\r\n-        const Duration(\r\n-          seconds: 3,\r\n-        ), () {\r\n-      Navigator.pushReplacement(\r\n-        context,\r\n-        MaterialPageRoute(\r\n-          builder: (context) => const Login(),\r\n-        ),\r\n-      );\r\n-    });\r\n-    return Scaffold(\r\n-      backgroundColor: const Color(\r\n-        0XFFDFECDB,\r\n-      ),\r\n-      body: Center(\r\n-        child: Image.asset(\r\n-          'assets/images/logo.png',\r\n-        ),\r\n-      ),\r\n-    );\r\n-  }\r\n-}\r\n"
+                },
+                {
+                    "date": 1730850415920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,10 @@\n import 'dart:async';\r\n \r\n import 'package:flutter/material.dart';\r\n+import 'package:provider/provider.dart';\r\n import 'package:todo_app/auth/login_screen.dart';\r\n+import 'package:todo_app/tabs/settings/settings_provider.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n   const CustomSplashScreen({super.key});\r\n   static const String routeName = '/splash';\r\n"
+                },
+                {
+                    "date": 1730850462438,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,13 +22,13 @@\n         ),\r\n       );\r\n     });\r\n     return Scaffold(\r\n-      backgroundColor: const Color(\r\n+      backgroundColor:  \r\n       settingsProvider.changeTheme(\r\n                     isDark ? ThemeMode.dark : ThemeMode.light,\r\n                   ),\r\n-      ),\r\n+      \r\n       body: Center(\r\n         child: Image.asset(\r\n           'assets/images/logo.png',\r\n         ),\r\n"
+                },
+                {
+                    "date": 1730850469426,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import 'dart:async';\r\n \r\n import 'package:flutter/material.dart';\r\n import 'package:provider/provider.dart';\r\n+import 'package:todo_app/app_theme.dart';\r\n import 'package:todo_app/auth/login_screen.dart';\r\n import 'package:todo_app/tabs/settings/settings_provider.dart';\r\n \r\n class CustomSplashScreen extends StatelessWidget {\r\n@@ -23,11 +24,11 @@\n       );\r\n     });\r\n     return Scaffold(\r\n       backgroundColor:  \r\n-      settingsProvider.changeTheme(\r\n-                    isDark ? ThemeMode.dark : ThemeMode.light,\r\n-                  ),\r\n+       settingsProvider.isDark\r\n+                ? AppTheme.backgroundColorBottomNavigationBar\r\n+                : AppTheme.white,\r\n       \r\n       body: Center(\r\n         child: Image.asset(\r\n           'assets/images/logo.png',\r\n"
+                },
+                {
+                    "date": 1730850489282,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n     return Scaffold(\r\n       backgroundColor:  \r\n        settingsProvider.isDark\r\n                 ? AppTheme.backgroundColorBottomNavigationBar\r\n-                : AppTheme.white,\r\n+                : AppTheme.backgroundLight,\r\n       \r\n       body: Center(\r\n         child: Image.asset(\r\n           'assets/images/logo.png',\r\n"
+                },
+                {
+                    "date": 1730850497199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,37 @@\n+import 'dart:async';\r\n+\r\n+import 'package:flutter/material.dart';\r\n+import 'package:provider/provider.dart';\r\n+import 'package:todo_app/app_theme.dart';\r\n+import 'package:todo_app/auth/login_screen.dart';\r\n+import 'package:todo_app/tabs/settings/settings_provider.dart';\r\n+\r\n+class CustomSplashScreen extends StatelessWidget {\r\n+  const CustomSplashScreen({super.key});\r\n+  static const String routeName = '/splash';\r\n+  @override\r\n+  Widget build(BuildContext context) {\r\n+    SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);\r\n+    Timer(\r\n+        const Duration(\r\n+          seconds: 3,\r\n+        ), () {\r\n+      Navigator.pushReplacement(\r\n+        context,\r\n+        MaterialPageRoute(\r\n+          builder: (context) => const LoginScreen(),\r\n+        ),\r\n+      );\r\n+    });\r\n+    return Scaffold(\r\n+      backgroundColor: settingsProvider.isDark\r\n+          ? AppTheme.backgroundDark\r\n+          : AppTheme.backgroundLight,\r\n+      body: Center(\r\n+        child: Image.asset(\r\n+          'assets/images/logo.png',\r\n+        ),\r\n+      ),\r\n+    );\r\n+  }\r\n+}\r\n"
                 }
             ],
             "date": 1730466603521,

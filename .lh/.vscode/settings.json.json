@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 2,
+            "activePatchIndex": 8,
             "patches": [
                 {
                     "date": 1730500887601,
@@ -16,6 +16,30 @@
                 {
                     "date": 1730546672023,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n {\r\n     \"cSpell.words\": [\r\n         \"cupertino\",\r\n-        \"Firestore\"\r\n+        \"Firestore\",\r\n+        \"Fluttertoast\"\r\n     ]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730731082883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {\r\n     \"cSpell.words\": [\r\n         \"cupertino\",\r\n         \"Firestore\",\r\n-        \"Fluttertoast\"\r\n+        \"Fluttertoast\",\r\n+        \"forogot\"\r\n     ]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730747271625,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,7 +2,8 @@\n     \"cSpell.words\": [\r\n         \"cupertino\",\r\n         \"Firestore\",\r\n         \"Fluttertoast\",\r\n-        \"forogot\"\r\n+        \"forogot\",\r\n+        \"قائمة\"\r\n     ]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730747279883,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,7 +3,8 @@\n         \"cupertino\",\r\n         \"Firestore\",\r\n         \"Fluttertoast\",\r\n         \"forogot\",\r\n+        \"المهام\",\r\n         \"قائمة\"\r\n     ]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730770713880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n         \"cupertino\",\r\n         \"Firestore\",\r\n         \"Fluttertoast\",\r\n         \"forogot\",\r\n+        \"العربية\",\r\n         \"المهام\",\r\n         \"قائمة\"\r\n     ]\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1730810189695,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n         \"cupertino\",\r\n         \"Firestore\",\r\n         \"Fluttertoast\",\r\n         \"forogot\",\r\n+        \"prefs\",\r\n         \"العربية\",\r\n         \"المهام\",\r\n         \"قائمة\"\r\n     ]\r\n"
+                },
+                {
+                    "date": 1730844887206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {\r\n     \"cSpell.words\": [\r\n         \"cupertino\",\r\n+        \"donthaveaccount\",\r\n         \"Firestore\",\r\n         \"Fluttertoast\",\r\n         \"forogot\",\r\n         \"prefs\",\r\n"
                 }
             ],
             "date": 1730500887601,

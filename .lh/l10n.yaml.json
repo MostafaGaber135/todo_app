@@ -1,0 +1,18 @@
+{
+    "sourceFile": "l10n.yaml",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1730747081199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1730747081199,
+            "name": "Commit-0",
+            "content": "arb-dir: lib/l10n\r\ntemplate-arb-file: app_en.arb\r\noutput-localization-file: app_localizations.dart"
+        }
+    ]
+}
