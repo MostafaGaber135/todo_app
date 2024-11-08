@@ -98,7 +98,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   label: AppLocalizations.of(context)!.submit,
                   onPressed: _validateAndSubmit,
                 ),
-                const SizedBox(height: 16.0),
+                const SizedBox(
+                  height: 16,
+                ),
                 GestureDetector(
                   onTap: _navigateToSignIn,
                   child: Row(
