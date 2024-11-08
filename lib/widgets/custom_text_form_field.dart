@@ -30,9 +30,23 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
       controller: widget.controller,
       decoration: InputDecoration(
         hintText: widget.hintText,
-        hintStyle: Theme.of(context).textTheme.titleMedium?.copyWith(
-              color: settingsProvider.isDark ? AppTheme.white : AppTheme.black,
+        hintStyle: Theme.of(context).textTheme.labelMedium?.copyWith(
+              color: settingsProvider.isDark
+                  ? AppTheme.greyLightTransparent
+                  : AppTheme.greyTranslucent,
             ),
+        enabledBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: AppTheme.primary,
+            width: 2.0,
+          ),
+        ),
+        focusedBorder: const UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: AppTheme.primary,
+            width: 2.0,
+          ),
+        ),
         suffixIcon: widget.isPassword
             ? IconButton(
                 onPressed: () {
@@ -43,12 +57,17 @@ class _CustomTextFormFieldState extends State<CustomTextFormField> {
                   isObscure
                       ? Icons.visibility_outlined
                       : Icons.visibility_off_outlined,
+                  color: settingsProvider.isDark
+                      ? AppTheme.greyLightTransparent
+                      : AppTheme.greyTranslucent,
                 ),
               )
             : null,
       ),
       style: TextStyle(
-        color: settingsProvider.isDark ? AppTheme.white : AppTheme.black,
+        color: settingsProvider.isDark
+            ? AppTheme.greyLightTransparent
+            : AppTheme.greyTranslucent,
       ),
       validator: widget.validator,
       obscureText: isObscure,
