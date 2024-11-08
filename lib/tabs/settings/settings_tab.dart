@@ -31,92 +31,151 @@ class _SettingsTabState extends State<SettingsTab> {
   @override
   Widget build(BuildContext context) {
     SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 20,
-          vertical: 20,
-        ),
-        child: Column(
+    double screenHeight = MediaQuery.sizeOf(context).height;
+    return Column(
+      children: [
+        Stack(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  AppLocalizations.of(context)!.logout,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-                IconButton(
-                  onPressed: () {
-                    FirebaseFunctions.logout();
-                    Navigator.of(context).pushReplacementNamed(LoginScreen.routeName);
-                    Provider.of<TasksProvider>(context, listen: false).resetData();
-                    Provider.of<UserProvider>(context, listen: false).updateUser(null);
-                  },
-                  icon: const Icon(
-                    Icons.logout_outlined,
-                    size: 28,
-                  ),
-                ),
-              ],
+            Container(
+              height: screenHeight * 0.2,
+              width: double.infinity,
+              color: AppTheme.primary,
             ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  AppLocalizations.of(context)!.darkMode,
-                  style: Theme.of(context).textTheme.titleMedium,
+            PositionedDirectional(
+              top: 35,
+              start: 20,
+              child: SafeArea(
+                child: Text(
+                  AppLocalizations.of(context)!.settings,
+                  style: Theme.of(context).textTheme.headlineLarge?.copyWith(
+                        color: settingsProvider.isDark
+                            ? AppTheme.backgroundDark
+                            : AppTheme.white,
+                      ),
                 ),
-                Switch(
-                  value: settingsProvider.isDark,
-                  onChanged: (isDark) => settingsProvider.changeTheme(
-                    isDark ? ThemeMode.dark : ThemeMode.light,
-                  ),
-                  activeTrackColor: AppTheme.grey,
-                ),
-              ],
-            ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  AppLocalizations.of(context)!.language,
-                  style: Theme.of(context).textTheme.titleMedium,
-                ),
-                DropdownButtonHideUnderline(
-                  child: DropdownButton<Language>(
-                    value: languages.firstWhere(
-                      (language) => language.code == settingsProvider.languageCode,
-                    ),
-                    items: languages
-                        .map((language) => DropdownMenuItem(
-                              value: language,
-                              child: Text(
-                                language.name,
-                                style: Theme.of(context).textTheme.titleMedium,
-                              ),
-                            ))
-                        .toList(),
-                    onChanged: (selectedLanguage) {
-                      if (selectedLanguage != null) {
-                        settingsProvider.changeLanguage(selectedLanguage.code);
-                      }
-                    },
-                    borderRadius: BorderRadius.circular(20),
-                    dropdownColor: settingsProvider.isDark ? AppTheme.primary : AppTheme.primary,
-                    icon: Icon(
-                      Icons.arrow_drop_down,
-                      color: settingsProvider.isDark ? AppTheme.white : AppTheme.black,
-                    ),
-                  ),
-                ),
-              ],
+              ),
             ),
           ],
         ),
-      ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 20,
+          ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    AppLocalizations.of(context)!.logout,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          color: settingsProvider.isDark
+                              ? AppTheme.white
+                              : AppTheme.darkGrey,
+                        ),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      FirebaseFunctions.logout();
+                      Navigator.of(context)
+                          .pushReplacementNamed(LoginScreen.routeName);
+                      Provider.of<TasksProvider>(context, listen: false)
+                          .resetData();
+                      Provider.of<UserProvider>(context, listen: false)
+                          .updateUser(null);
+                    },
+                    icon: const Icon(
+                      Icons.logout_outlined,
+                      size: 28,
+                    ),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    AppLocalizations.of(context)!.darkMode,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          color: settingsProvider.isDark
+                              ? AppTheme.white
+                              : AppTheme.darkGrey,
+                        ),
+                  ),
+                  Switch(
+                    value: settingsProvider.isDark,
+                    onChanged: (isDark) => settingsProvider.changeTheme(
+                      isDark ? ThemeMode.dark : ThemeMode.light,
+                    ),
+                    activeTrackColor: AppTheme.grey,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 16),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    AppLocalizations.of(context)!.language,
+                    style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                          color: settingsProvider.isDark
+                              ? AppTheme.white
+                              : AppTheme.darkGrey,
+                        ),
+                  ),
+                  DropdownButtonHideUnderline(
+                    child: DropdownButton<Language>(
+                      menuWidth: 115,
+                      value: languages.firstWhere(
+                        (language) =>
+                            language.code == settingsProvider.languageCode,
+                      ),
+                      items: languages
+                          .map(
+                            (language) => DropdownMenuItem(
+                              value: language,
+                              child: Text(
+                                language.name,
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .titleMedium
+                                    ?.copyWith(
+                                      color: settingsProvider.isDark
+                                          ? AppTheme.primary
+                                          : AppTheme.primary,
+                                    ),
+                              ),
+                            ),
+                          )
+                          .toList(),
+                      onChanged: (selectedLanguage) {
+                        if (selectedLanguage != null) {
+                          settingsProvider
+                              .changeLanguage(selectedLanguage.code);
+                        }
+                      },
+                      borderRadius: BorderRadius.circular(
+                        20,
+                      ),
+                      dropdownColor: settingsProvider.isDark
+                          ? AppTheme.backgroundColorBottomNavigationBar
+                          : AppTheme.white,
+                      icon: Icon(
+                        Icons.arrow_drop_down,
+                        color: settingsProvider.isDark
+                            ? AppTheme.primary
+                            : AppTheme.primary,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ],
     );
   }
 }

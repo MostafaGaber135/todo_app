@@ -35,19 +35,19 @@ class _TasksTabState extends State<TasksTab> {
         Stack(
           children: [
             Container(
-              height: screenHeight * 0.15,
+              height: screenHeight * 0.2,
               width: double.infinity,
               color: AppTheme.primary,
             ),
             PositionedDirectional(
-              top: 20,
+              top: 35,
               start: 20,
               child: SafeArea(
                 child: Text(
                   AppLocalizations.of(context)!.todoList,
-                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                  style: Theme.of(context).textTheme.headlineLarge?.copyWith(
                         color: settingsProvider.isDark
-                            ? AppTheme.backgroundColorBottomNavigationBar
+                            ? AppTheme.backgroundDark
                             : AppTheme.white,
                       ),
                 ),
@@ -55,7 +55,7 @@ class _TasksTabState extends State<TasksTab> {
             ),
             Padding(
               padding: EdgeInsets.only(
-                top: screenHeight * 0.12,
+                top: screenHeight * 0.16,
               ),
               child: EasyInfiniteDateTimeLine(
                 firstDate: DateTime.now().subtract(
@@ -95,11 +95,10 @@ class _TasksTabState extends State<TasksTab> {
                       fontWeight: FontWeight.bold,
                       color: AppTheme.primary,
                     ),
-                    dayStrStyle: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: AppTheme.primary,
-                    ),
+                    dayStrStyle:
+                        Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: AppTheme.primary,
+                            ),
                   ),
                   inactiveDayStyle: DayStyle(
                     decoration: BoxDecoration(
@@ -112,20 +111,18 @@ class _TasksTabState extends State<TasksTab> {
                         ),
                       ),
                     ),
-                    dayNumStyle: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: settingsProvider.isDark
-                          ? AppTheme.white
-                          : AppTheme.backgroundColorBottomNavigationBar,
-                    ),
-                    dayStrStyle: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: settingsProvider.isDark
-                          ? AppTheme.white
-                          : AppTheme.backgroundColorBottomNavigationBar,
-                    ),
+                    dayNumStyle:
+                        Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: settingsProvider.isDark
+                                  ? AppTheme.white
+                                  : AppTheme.black,
+                            ),
+                    dayStrStyle:
+                        Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: settingsProvider.isDark
+                                  ? AppTheme.white
+                                  : AppTheme.black,
+                            ),
                   ),
                   todayStyle: DayStyle(
                     decoration: BoxDecoration(
@@ -138,20 +135,18 @@ class _TasksTabState extends State<TasksTab> {
                         ),
                       ),
                     ),
-                    dayNumStyle: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: settingsProvider.isDark
-                          ? AppTheme.white
-                          : AppTheme.backgroundColorBottomNavigationBar,
-                    ),
-                    dayStrStyle: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                      color: settingsProvider.isDark
-                          ? AppTheme.white
-                          : AppTheme.backgroundColorBottomNavigationBar,
-                    ),
+                    dayNumStyle:
+                        Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: settingsProvider.isDark
+                                  ? AppTheme.white
+                                  : AppTheme.black,
+                            ),
+                    dayStrStyle:
+                        Theme.of(context).textTheme.bodyLarge?.copyWith(
+                              color: settingsProvider.isDark
+                                  ? AppTheme.white
+                                  : AppTheme.black,
+                            ),
                   ),
                 ),
               ),

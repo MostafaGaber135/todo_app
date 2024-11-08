@@ -21,7 +21,7 @@ class CustomElevatedButton extends StatelessWidget {
       ),
       child: Text(
         label,
-        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+        style: Theme.of(context).textTheme.labelSmall?.copyWith(
               fontWeight: FontWeight.w400,
               color: AppTheme.white,
             ),

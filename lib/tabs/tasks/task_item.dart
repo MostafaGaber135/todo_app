@@ -159,7 +159,7 @@ class _TaskItemState extends State<TaskItem> {
                 children: [
                   Text(
                     widget.task.title,
-                    style: textTheme.titleMedium?.copyWith(
+                    style: textTheme.bodyMedium?.copyWith(
                       color: widget.task.isDone
                           ? AppTheme.green
                           : AppTheme.primary,
@@ -170,7 +170,7 @@ class _TaskItemState extends State<TaskItem> {
                   ),
                   Text(
                     widget.task.description,
-                    style: textTheme.titleSmall?.copyWith(
+                    style: textTheme.bodySmall?.copyWith(
                       color: settingsProvider.isDark
                           ? AppTheme.white
                           : AppTheme.backgroundColorBottomNavigationBar,
@@ -184,11 +184,10 @@ class _TaskItemState extends State<TaskItem> {
                 child: widget.task.isDone
                     ? Text(
                         AppLocalizations.of(context)!.done,
-                        style: const TextStyle(
-                          color: AppTheme.green,
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style:
+                            Theme.of(context).textTheme.headlineLarge?.copyWith(
+                                  color: AppTheme.green,
+                                ),
                       )
                     : Container(
                         height: 34,

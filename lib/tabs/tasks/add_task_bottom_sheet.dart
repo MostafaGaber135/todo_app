@@ -39,7 +39,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
   @override
   Widget build(BuildContext context) {
     SettingsProvider settingsProvider = Provider.of<SettingsProvider>(context);
-    TextStyle? titleMediumStyle = Theme.of(context).textTheme.titleMedium;
+    TextStyle? bodyMediumStyle = Theme.of(context).textTheme.bodyMedium;
     return Padding(
       padding: EdgeInsets.only(
         bottom: MediaQuery.of(context).viewInsets.bottom,
@@ -47,7 +47,9 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
       child: Container(
         height: MediaQuery.sizeOf(context).height * 0.5,
         decoration: BoxDecoration(
-          color: settingsProvider.isDark ? AppTheme.black : AppTheme.white,
+          color: settingsProvider.isDark
+              ? AppTheme.backgroundColorBottomNavigationBar
+              : AppTheme.white,
           borderRadius: const BorderRadius.only(
             topLeft: Radius.circular(
               15,
@@ -68,7 +70,11 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                 widget.task == null
                     ? AppLocalizations.of(context)!.addNewTask
                     : AppLocalizations.of(context)!.editTask,
-                style: titleMediumStyle,
+                style: bodyMediumStyle?.copyWith(
+                  color: settingsProvider.isDark
+                      ? AppTheme.white
+                      : AppTheme.darkAccent,
+                ),
               ),
               const SizedBox(
                 height: 16,
@@ -102,12 +108,14 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
               ),
               Text(
                 AppLocalizations.of(context)!.selectDate,
-                style: titleMediumStyle?.copyWith(
-                  fontWeight: FontWeight.w400,
+                style: bodyMediumStyle?.copyWith(
+                  color: settingsProvider.isDark
+                      ? AppTheme.white
+                      : AppTheme.darkAccent,
                 ),
               ),
               const SizedBox(
-                height: 8,
+                height: 12,
               ),
               InkWell(
                 onTap: () async {
@@ -129,7 +137,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
                   dateFormat.format(
                     selectedDate,
                   ),
-                  style: Theme.of(context).textTheme.titleSmall?.copyWith(
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
                         color: settingsProvider.isDark
                             ? AppTheme.white
                             : AppTheme.black,
@@ -179,7 +187,7 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
         Navigator.of(context).pop();
         Provider.of<TasksProvider>(context, listen: false).getTasks(userId);
         Fluttertoast.showToast(
-          msg:     AppLocalizations.of(context)!.taskAddedSuccessfully,
+          msg: AppLocalizations.of(context)!.taskAddedSuccessfully,
           toastLength: Toast.LENGTH_LONG,
           timeInSecForIosWeb: 5,
           backgroundColor: AppTheme.green,
@@ -187,9 +195,9 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
       },
     ).catchError(
       (error) {
-        if(!mounted)return;
+        if (!mounted) return;
         Fluttertoast.showToast(
-          msg:     AppLocalizations.of(context)!.somethingWentWrong,
+          msg: AppLocalizations.of(context)!.somethingWentWrong,
           toastLength: Toast.LENGTH_LONG,
           timeInSecForIosWeb: 5,
           backgroundColor: AppTheme.red,
@@ -218,15 +226,15 @@ class _AddTaskBottomSheetState extends State<AddTaskBottomSheet> {
             .updateTask(updatedTask);
         Provider.of<TasksProvider>(context, listen: false).getTasks(userId);
         Fluttertoast.showToast(
-          msg:     AppLocalizations.of(context)!.taskUpdatedSuccessfully,
+          msg: AppLocalizations.of(context)!.taskUpdatedSuccessfully,
           toastLength: Toast.LENGTH_LONG,
           backgroundColor: AppTheme.green,
         );
       },
     ).catchError((error) {
-      if(!mounted)return;
+      if (!mounted) return;
       Fluttertoast.showToast(
-        msg:     AppLocalizations.of(context)!.somethingWentWrong,
+        msg: AppLocalizations.of(context)!.somethingWentWrong,
         toastLength: Toast.LENGTH_LONG,
         backgroundColor: AppTheme.red,
       );

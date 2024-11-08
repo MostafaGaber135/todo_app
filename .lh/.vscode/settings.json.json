@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 8,
+            "activePatchIndex": 10,
             "patches": [
                 {
                     "date": 1730500887601,
@@ -40,6 +40,14 @@
                 {
                     "date": 1730844887206,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n {\r\n     \"cSpell.words\": [\r\n         \"cupertino\",\r\n+        \"donthaveaccount\",\r\n         \"Firestore\",\r\n         \"Fluttertoast\",\r\n         \"forogot\",\r\n         \"prefs\",\r\n"
+                },
+                {
+                    "date": 1731088771433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n         \"Firestore\",\r\n         \"Fluttertoast\",\r\n         \"forogot\",\r\n         \"prefs\",\r\n+        \"Roboto\",\r\n         \"العربية\",\r\n         \"المهام\",\r\n         \"قائمة\"\r\n     ]\r\n"
+                },
+                {
+                    "date": 1731094468230,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n         \"Fluttertoast\",\r\n         \"forogot\",\r\n         \"prefs\",\r\n         \"Roboto\",\r\n+        \"الإعدادات\",\r\n         \"العربية\",\r\n         \"المهام\",\r\n         \"قائمة\"\r\n     ]\r\n"
                 }
             ],
             "date": 1730500887601,
