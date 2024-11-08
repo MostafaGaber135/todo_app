@@ -95,8 +95,9 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                   height: 16,
                 ),
                 CustomElevatedButton(
-                    label: AppLocalizations.of(context)!.submit,
-                    onPressed: _validateAndSubmit),
+                  label: AppLocalizations.of(context)!.submit,
+                  onPressed: _validateAndSubmit,
+                ),
                 const SizedBox(height: 16.0),
                 GestureDetector(
                   onTap: _navigateToSignIn,
