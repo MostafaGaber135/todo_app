@@ -7,6 +7,7 @@ import 'package:todo_app/app_theme.dart';
 import 'package:todo_app/tabs/settings/settings_provider.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:todo_app/widgets/custom_elevated_button.dart';
+import 'package:todo_app/widgets/custom_text_form_field.dart';
 
 class ForgotPassword extends StatefulWidget {
   const ForgotPassword({super.key});
@@ -18,6 +19,10 @@ class ForgotPassword extends StatefulWidget {
 class _ForgotPasswordState extends State<ForgotPassword> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
+  var formKey = GlobalKey<FormState>();
+  String emailPattern = r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$';
+  String passwordPattern =
+      r'^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$';
 
   bool _validateAndSave() {
     final form = _formKey.currentState;
@@ -74,49 +79,17 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextFormField(
-                  style: TextStyle(
-                    color: settingsProvider.isDark
-                        ? AppTheme.white
-                        : AppTheme.black,
-                  ),
+                CustomTextFormField(
                   controller: emailController,
-                  decoration: InputDecoration(
-                    labelText: AppLocalizations.of(context)!.email,
-                    labelStyle: const TextStyle(
-                      color: AppTheme.primary,
-                    ),
-                    enabledBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: AppTheme.primary,
-                      ),
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: AppTheme.primary,
-                      ),
-                    ),
-                    errorBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: AppTheme.primary,
-                      ),
-                    ),
-                    focusedErrorBorder: const OutlineInputBorder(
-                      borderSide: BorderSide(
-                        color: AppTheme.primary,
-                      ),
-                    ),
-                  ),
+                  hintText: AppLocalizations.of(context)!.email,
                   validator: (value) {
-                    if (value!.isEmpty) {
+                    if (value == null || value.isEmpty) {
                       return AppLocalizations.of(context)!.pleaseEnterYourEmail;
-                    }
-                    if (!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)) {
+                    } else if (!validateEmail(value)) {
                       return AppLocalizations.of(context)!.enteraValidEmail;
                     }
                     return null;
                   },
-                  onSaved: (value) => emailController.text = value!,
                 ),
                 const SizedBox(
                   height: 16,
@@ -157,6 +130,11 @@ class _ForgotPasswordState extends State<ForgotPassword> {
         ),
       ),
     );
+  }
+
+  bool validateEmail(String email) {
+    RegExp regex = RegExp(emailPattern);
+    return regex.hasMatch(email);
   }
 
   void _navigateToSignIn() {
